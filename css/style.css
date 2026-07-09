@@ -1,7 +1,6 @@
 /* === 无忧睡眠 - 自有内容中枢 === */
 /* 设计方向：温暖、安静、可信赖 */
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+/* 字体策略：使用国内系统字体栈，避免 Google Fonts 国内加载失败导致首屏慢/字体降级 */
 
 :root {
   --bg: #faf8f5;
