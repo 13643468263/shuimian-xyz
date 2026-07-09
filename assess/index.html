@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>免费失眠类型测评 — 高仰珍无忧睡眠</title>
+  <meta name="description" content="2分钟12题，判断你是焦虑型、生物钟紊乱型、神经疲劳型还是习惯熬夜型失眠。先分型，再解决，比看100篇文章更管用。">
+  <meta name="keywords" content="失眠测评,失眠类型测试,焦虑型失眠,生物钟紊乱,神经疲劳,习惯熬夜">
+  <link rel="canonical" href="https://shuimian.xyz/assess/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="免费失眠类型测评 — 2分钟搞清楚你是哪种失眠">
+  <meta property="og:description" content="焦虑型/生物钟紊乱型/神经疲劳型/习惯熬夜型——先分型，再解决。">
+  <meta property="og:url" content="https://shuimian.xyz/assess/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .assess-wrap { max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; }
+    .assess-hero { text-align: center; padding: 48px 0 24px; }
+    .assess-hero h1 { font-family: "Noto Serif SC", serif; font-size: 28px; line-height: 1.45; margin-bottom: 12px; }
+    .assess-hero p { color: var(--text-mid); font-size: 15px; max-width: 480px; margin: 0 auto 24px; }
+    .trust-pills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 28px; }
+    .trust-pill { background: var(--accent-light); color: var(--accent-dark); font-size: 12px; padding: 6px 14px; border-radius: 20px; font-weight: 600; }
+
+    .progress-bar { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; margin-bottom: 28px; max-width: 400px; margin-left: auto; margin-right: auto; }
+    .progress-fill { height: 100%; background: var(--accent); width: 0%; transition: width 0.4s ease; }
+    .progress-text { text-align: center; font-size: 13px; color: var(--text-light); margin-bottom: 8px; }
+
+    .question-card { background: var(--card); border-radius: var(--radius); padding: 28px 24px; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 20px; }
+    .question-card h3 { font-size: 19px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+    .question-card .q-tip { font-size: 13px; color: var(--text-light); margin-bottom: 22px; }
+    .question-card .q-num { color: var(--accent-dark); font-size: 14px; margin-bottom: 6px; }
+
+    .option-list { display: flex; flex-direction: column; gap: 12px; }
+    .option-btn {
+      display: flex; align-items: center; gap: 14px; text-align: left;
+      padding: 16px 18px; border-radius: 12px; border: 2px solid var(--border);
+      background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.6;
+      cursor: pointer; transition: all 0.18s; font-weight: 500;
+    }
+    .option-btn:hover { border-color: var(--accent); background: var(--accent-light); }
+    .option-btn .opt-letter { width: 30px; height: 30px; border-radius: 50%; background: var(--border); color: var(--text-mid); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; transition: all 0.18s; }
+    .option-btn:hover .opt-letter { background: var(--accent); color: #fff; }
+
+    .result-card { background: var(--card); border-radius: var(--radius); padding: 32px 28px; box-shadow: var(--shadow); border: 1px solid var(--border); text-align: center; }
+    .result-emoji { font-size: 56px; margin-bottom: 12px; }
+    .result-type { font-family: "Noto Serif SC", serif; font-size: 24px; color: var(--text); margin-bottom: 8px; }
+    .result-score { color: var(--text-mid); font-size: 14px; margin-bottom: 22px; }
+    .result-desc { text-align: left; color: var(--text-mid); font-size: 15px; line-height: 1.85; margin-bottom: 24px; }
+    .result-desc strong { color: var(--text); }
+    .result-actions { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+
+    .score-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px; text-align: left; }
+    .score-item { background: var(--bg); border-radius: 12px; padding: 16px; border: 1px solid var(--border); }
+    .score-item .label { font-size: 13px; color: var(--text-light); margin-bottom: 6px; }
+    .score-item .value { font-size: 18px; font-weight: 700; color: var(--text); }
+    .score-item.winner { background: var(--accent-light); border-color: var(--accent); }
+    .score-item.winner .value { color: var(--accent-dark); }
+
+    .recommend-list { text-align: left; margin-bottom: 24px; }
+    .recommend-list li { padding: 12px 0; border-bottom: 1px solid var(--border); color: var(--text-mid); font-size: 15px; line-height: 1.7; list-style: none; }
+    .recommend-list li:last-child { border-bottom: none; }
+    .recommend-list li::before { content: "✓"; color: var(--accent); font-weight: 700; margin-right: 10px; }
+
+    .wechat-card { background: var(--warm-light); border: 1px dashed var(--warm); border-radius: 12px; padding: 20px; margin-top: 24px; text-align: left; }
+    .wechat-card h4 { color: var(--warm-dark); font-size: 16px; margin-bottom: 8px; }
+    .wechat-card p { color: var(--text-mid); font-size: 14px; line-height: 1.7; margin-bottom: 0; }
+    .wechat-id { font-weight: 700; color: var(--text); font-size: 15px; }
+
+    .btn-full { width: 100%; justify-content: center; max-width: 360px; }
+    .btn-restart { background: transparent; color: var(--text-mid); border: 1px solid var(--border); }
+    .btn-restart:hover { background: var(--bg); color: var(--text); }
+
+    .analyze-anim { text-align: center; padding: 60px 20px; }
+    .analyze-anim .spinner { width: 48px; height: 48px; border: 4px solid var(--accent-light); border-top-color: var(--accent); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 20px; }
+    .analyze-anim p { color: var(--text-mid); font-size: 15px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .hidden { display: none !important; }
+
+    @media (max-width: 640px) {
+      .assess-hero h1 { font-size: 22px; }
+      .score-breakdown { grid-template-columns: 1fr; }
+      .question-card h3 { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">高仰珍<span>无忧睡眠</span><span class="dot"></span></a>
+    <nav class="nav-links">
+      <a href="/">首页</a>
+      <a href="/blog/">文章</a>
+      <a href="/assess/" class="nav-cta">免费测评</a>
+      <a href="/#training" class="nav-cta nav-warm">训练营</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="assess-hero">
+    <h1>2分钟，搞清楚你是哪种失眠</h1>
+    <p>焦虑型、生物钟紊乱型、神经疲劳型、习惯熬夜型——<br>先分型，再解决。你的失眠，原因可能跟你想的不一样。</p>
+    <div class="trust-pills">
+      <span class="trust-pill">✓ 12题，4种维度</span>
+      <span class="trust-pill">✓ 免费即时出结果</span>
+      <span class="trust-pill">✓ 基于 CBT-I 与睡眠医学</span>
+    </div>
+  </div>
+
+  <div class="assess-wrap">
+    <!-- 开始页 -->
+    <div id="start-view" class="question-card" style="text-align: center;">
+      <h3>做这个测评之前，先了解一件事</h3>
+      <p style="text-align: left; color: var(--text-mid); font-size: 15px; line-height: 1.85; margin-bottom: 24px;">
+        失眠不是一种病，是<strong>四种不同的状态</strong>。焦虑型的人越想睡越清醒；生物钟紊乱的人是「身体时间在另一个时区」；神经疲劳型的人大脑和身体都过度透支；习惯熬夜型的人则是昼夜节律被手机/工作硬生生拖偏了。<br><br>
+        用错方法 = 白忙活。花 2 分钟做完，你会拿到：你的主失眠类型 + 3 条针对性改善建议 + 是否适合训练营的判断。
+      </p>
+      <button class="btn btn-primary btn-full" onclick="startQuiz()">开始测评</button>
+    </div>
+
+    <!-- 题目区 -->
+    <div id="quiz-view" class="hidden">
+      <div class="progress-text" id="progress-text">第 1 / 12 题</div>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <div id="question-container"></div>
+    </div>
+
+    <!-- 分析动画 -->
+    <div id="analyze-view" class="analyze-anim hidden">
+      <div class="spinner"></div>
+      <p>正在分析你的睡眠类型…</p>
+    </div>
+
+    <!-- 结果页 -->
+    <div id="result-view" class="hidden">
+      <div class="result-card">
+        <div class="result-emoji" id="result-emoji">🌙</div>
+        <h2 class="result-type" id="result-type">你的失眠类型</h2>
+        <div class="result-score" id="result-score">得分详情</div>
+        <div class="score-breakdown" id="score-breakdown"></div>
+        <div class="result-desc" id="result-desc"></div>
+        <ul class="recommend-list" id="recommend-list"></ul>
+        <div class="result-actions">
+          <a href="/" class="btn btn-warm btn-full">了解 56 天训练营 →</a>
+          <button class="btn btn-restart btn-full" onclick="restartQuiz()">重新测评</button>
+        </div>
+      </div>
+
+      <div class="wechat-card">
+        <h4>想进一步聊聊你的结果？</h4>
+        <p>
+          加微信 <span class="wechat-id">【你的微信号】</span>，发送「测评」两字，我会给你发一份针对你类型的 7 天改善清单。名额有限，先加先得。
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-brand">无忧睡眠</div>
+  <p>不靠药物睡好觉 · 56天有人陪你做</p>
+  <div class="footer-links">
+    <a href="/">首页</a>
+    <a href="/blog/">文章</a>
+    <a href="/assess/">测评</a>
+  </div>
+  <p class="footer-copy">&copy; 2026 太原无忧睡眠科技有限公司 · 版权所有</p>
+</footer>
+
+<script>
+  const questions = [
+    // 焦虑型
+    { q: "躺下后，脑子里是不是停不下来？", tip: "比如反复想工作、明天的事、为什么还没睡着…", dim: "anxiety", options: [
+      { t: "完全不会，躺下基本放空", s: 0 },
+      { t: "偶尔，但一会儿就过去了", s: 1 },
+      { t: "经常，越想睡想得越多", s: 2 },
+      { t: "几乎每晚，越想越清醒", s: 3 }
+    ]},
+    { q: "睡不着时，你会不会焦虑或担心明天状态？", tip: "比如担心黑眼圈、身体垮掉、工作做不好", dim: "anxiety", options: [
+      { t: "不会，我心态比较放松", s: 0 },
+      { t: "偶尔有点担心", s: 1 },
+      { t: "经常担心，会烦躁", s: 2 },
+      { t: "非常焦虑，甚至害怕睡觉这件事", s: 3 }
+    ]},
+    { q: "白天出现心慌、胸闷、肌肉紧张的情况多吗？", tip: "这些身体信号常伴随焦虑型失眠", dim: "anxiety", options: [
+      { t: "基本没有", s: 0 },
+      { t: "偶尔，压力大时才有", s: 1 },
+      { t: "一周有 2~3 天", s: 2 },
+      { t: "几乎每天都有", s: 3 }
+    ]},
+    // 生物钟紊乱型
+    { q: "你通常几点自然犯困？", tip: "不看闹钟，看身体真实的睡意", dim: "circadian", options: [
+      { t: "22:00 前", s: 0 },
+      { t: "23:00~24:00", s: 1 },
+      { t: "凌晨 1:00~2:00", s: 2 },
+      { t: "凌晨 3:00 以后或更晚", s: 3 }
+    ]},
+    { q: "周末不上班时，你会睡到几点？", tip: "周末补觉是生物钟紊乱的典型信号", dim: "circadian", options: [
+      { t: "和平时差不多", s: 0 },
+      { t: "晚 1 小时左右", s: 1 },
+      { t: "晚 2~3 小时", s: 2 },
+      { t: "直接睡到中午甚至下午", s: 3 }
+    ]},
+    { q: "是不是经常凌晨 2~4 点才能睡着，然后白天特别困？", tip: "这是典型的「睡眠相位后移」", dim: "circadian", options: [
+      { t: "从不", s: 0 },
+      { t: "偶尔熬夜会这样", s: 1 },
+      { t: "一个月里多次", s: 2 },
+      { t: "长期如此，像活在另一个时区", s: 3 }
+    ]},
+    // 神经疲劳型
+    { q: "白天感觉身体很沉、脑子转不动，但晚上反而有点兴奋？", tip: "身体累但神经停不下来", dim: "neuro", options: [
+      { t: "没有这种情况", s: 0 },
+      { t: "偶尔累了会这样", s: 1 },
+      { t: "经常，很累也睡不着", s: 2 },
+      { t: "几乎每天，白天透支晚上亢奋", s: 3 }
+    ]},
+    { q: "是不是长期高强度用脑、照顾家庭、或工作压力大？", tip: "长期高负荷会让神经系统过度敏感", dim: "neuro", options: [
+      { t: "生活节奏比较轻松", s: 0 },
+      { t: "偶尔有高强度阶段", s: 1 },
+      { t: "经常处于高压状态", s: 2 },
+      { t: "长期处于高压，没有真正放松过", s: 3 }
+    ]},
+    { q: "睡眠是不是浅、容易醒、多梦，醒来像没睡？", tip: "神经疲劳常导致睡眠质量差", dim: "neuro", options: [
+      { t: "睡得挺沉，醒来有精神", s: 0 },
+      { t: "偶尔睡得浅", s: 1 },
+      { t: "经常睡不踏实", s: 2 },
+      { t: "几乎每天，醒来比睡前还累", s: 3 }
+    ]},
+    // 习惯熬夜型
+    { q: "睡前是不是离不开手机/平板/电视？", tip: "屏幕蓝光和即时刺激会拖偏入睡时间", dim: "habit", options: [
+      { t: "睡前不看电子设备", s: 0 },
+      { t: "看一会儿，但能按时放下", s: 1 },
+      { t: "经常刷到很晚，明知该睡却停不下来", s: 2 },
+      { t: "几乎每晚都这样，报复性熬夜", s: 3 }
+    ]},
+    { q: "有没有「明知该睡了，但不想结束这一天」的感觉？", tip: "这是心理层面的「睡前拖延」", dim: "habit", options: [
+      { t: "没有，到点就睡", s: 0 },
+      { t: "偶尔", s: 1 },
+      { t: "经常", s: 2 },
+      { t: "几乎每天，这是我不睡的主要原因", s: 3 }
+    ]},
+    { q: "你的作息是不是长期不规律？", tip: "比如每天入睡时间差 2 小时以上", dim: "habit", options: [
+      { t: "非常规律，固定时间睡固定时间起", s: 0 },
+      { t: "大体规律，偶尔波动", s: 1 },
+      { t: "不太规律，经常变化", s: 2 },
+      { t: "很乱，没有固定作息", s: 3 }
+    ]}
+  ];
+
+  const types = {
+    anxiety: {
+      name: "焦虑型失眠",
+      emoji: "😰",
+      desc: "你的失眠主要跟「大脑安静不下来」有关。一躺下就开始想事、担心、反刍，身体累了但神经系统还在高速运转。这不是你意志力不够，而是<strong>情绪唤醒系统没有关闭</strong>。对付焦虑型失眠，核心是降低睡前的认知唤醒，而不是逼自己睡。",
+      recs: [
+        "睡前 1 小时做「焦虑外化」：把脑子里的担心写到纸上，告诉自己明天再处理",
+        "练习 4-7-8 呼吸法或身体扫描，把注意力从念头转移到呼吸和身体",
+        "如果躺 20 分钟还睡不着，离开床，去 dim 的地方做点无聊的事，有睡意再回床"
+      ]
+    },
+    circadian: {
+      name: "生物钟紊乱型失眠",
+      emoji: "🌙",
+      desc: "你的生物钟已经偏离了正常的昼夜节律。不是你不困，是你的身体觉得现在还是「白天」。这种情况常见于长期晚睡晚起、轮班、跨时区、或周末过度补觉。解决的关键是<strong>用光照和行为把生物钟慢慢拨回来</strong>，而不是吃助眠药。",
+      recs: [
+        "每天固定起床时间（误差不超过 30 分钟），即使周末也一样",
+        "起床后 30 分钟内接触自然光或明亮灯光 15~30 分钟",
+        "晚上 22:00 后调暗灯光，减少屏幕亮度；必要时戴防蓝光眼镜"
+      ]
+    },
+    neuro: {
+      name: "神经疲劳型失眠",
+      emoji: "🔋",
+      desc: "你不是不想睡，是大脑和身体长期处于「高耗」状态，自主神经系统平衡被打破了。特征是：白天没精神、晚上睡不着、睡眠浅、多梦、易醒。这种失眠需要<strong>先修复神经系统，而不是逼自己早睡</strong>。",
+      recs: [
+        "白天安排 10~20 分钟「主动休息」（闭眼、冥想、散步），而不是一直硬撑",
+        "减少咖啡因和酒精，下午 14:00 后不再喝咖啡/浓茶",
+        "睡前 2 小时做温和拉伸或热水澡，帮助副交感神经接管身体"
+      ]
+    },
+    habit: {
+      name: "习惯熬夜型失眠",
+      emoji: "📱",
+      desc: "你的失眠主要跟作息习惯和行为奖励有关。屏幕、即时信息、报复性熬夜让大脑把「晚睡」和「爽」连在了一起。你不是真的不困，是<strong>睡前的行为模式在主导你</strong>。",
+      recs: [
+        "设定一个「睡前 1 小时仪式」：洗漱→调暗灯光→看书/听轻音乐→上床",
+        "手机 22:30 后放到卧室外，或用 App 锁住娱乐软件",
+        "用「早起倒逼晚睡」：先把起床时间固定，白天不补觉，晚上自然困"
+      ]
+    }
+  };
+
+  let current = 0;
+  let answers = [];
+
+  function startQuiz() {
+    document.getElementById('start-view').classList.add('hidden');
+    document.getElementById('quiz-view').classList.remove('hidden');
+    renderQuestion();
+  }
+
+  function renderQuestion() {
+    const q = questions[current];
+    const container = document.getElementById('question-container');
+    document.getElementById('progress-text').textContent = `第 ${current + 1} / ${questions.length} 题`;
+    document.getElementById('progress-fill').style.width = `${((current) / questions.length) * 100}%`;
+
+    let html = `
+      <div class="question-card">
+        <div class="q-num">Q${current + 1}</div>
+        <h3>${q.q}</h3>
+        <p class="q-tip">${q.tip}</p>
+        <div class="option-list">
+    `;
+    q.options.forEach((opt, idx) => {
+      html += `
+        <button class="option-btn" onclick="answer(${idx})">
+          <span class="opt-letter">${String.fromCharCode(65 + idx)}</span>
+          <span>${opt.t}</span>
+        </button>
+      `;
+    });
+    html += '</div></div>';
+    container.innerHTML = html;
+
+    // 重新动画进度条
+    setTimeout(() => {
+      document.getElementById('progress-fill').style.width = `${((current + 1) / questions.length) * 100}%`;
+    }, 50);
+  }
+
+  function answer(optIdx) {
+    answers[current] = questions[current].options[optIdx].s;
+    current++;
+    if (current < questions.length) {
+      renderQuestion();
+    } else {
+      showAnalyze();
+    }
+  }
+
+  function showAnalyze() {
+    document.getElementById('quiz-view').classList.add('hidden');
+    document.getElementById('analyze-view').classList.remove('hidden');
+    setTimeout(showResult, 1800);
+  }
+
+  function showResult() {
+    document.getElementById('analyze-view').classList.add('hidden');
+    document.getElementById('result-view').classList.remove('hidden');
+
+    const scores = { anxiety: 0, circadian: 0, neuro: 0, habit: 0 };
+    questions.forEach((q, idx) => {
+      scores[q.dim] += answers[idx];
+    });
+
+    const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+    const primary = sorted[0][0];
+    const secondary = sorted[1][0];
+    const t = types[primary];
+    const s = types[secondary];
+
+    document.getElementById('result-emoji').textContent = t.emoji;
+    document.getElementById('result-type').textContent = t.name;
+    document.getElementById('result-score').textContent = `你的「${t.name}」得分最高（${scores[primary]}/9 分）${scores[secondary] >= 5 ? '，同时带有「' + s.name + '」特征' : ''}`;
+    document.getElementById('result-desc').innerHTML = t.desc;
+
+    const breakdown = document.getElementById('score-breakdown');
+    breakdown.innerHTML = Object.entries(scores).map(([key, val]) => {
+      const tt = types[key];
+      return `<div class="score-item ${key === primary ? 'winner' : ''}">
+        <div class="label">${tt.emoji} ${tt.name}</div>
+        <div class="value">${val}/9</div>
+      </div>`;
+    }).join('');
+
+    const recList = document.getElementById('recommend-list');
+    recList.innerHTML = t.recs.map(r => `<li>${r}</li>`).join('');
+  }
+
+  function restartQuiz() {
+    current = 0;
+    answers = [];
+    document.getElementById('result-view').classList.add('hidden');
+    document.getElementById('start-view').classList.remove('hidden');
+  }
+</script>
+
+</body>
+</html>
