@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PSQI睡眠质量量表 — 高仰珍无忧睡眠</title>
+  <meta name="description" content="匹兹堡睡眠质量指数（PSQI）是国际通用睡眠质量自评量表。19道题，7个维度，测出你最近一个月的睡眠质量。">
+  <link rel="canonical" href="https://shuimian.xyz/psqi.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="高仰珍无忧睡眠">
+  <meta property="og:title" content="PSQI睡眠质量量表 — 测出你最近一个月的睡眠质量">
+  <meta property="og:description" content="匹兹堡睡眠质量指数（PSQI）是国际通用睡眠质量自评量表。19道题，7个维度。">
+  <meta property="og:url" content="https://shuimian.xyz/psqi.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .psqi-wrap { max-width: 760px; margin: 0 auto; padding: 32px 20px 64px; }
+    .psqi-hero { text-align: center; padding: 48px 0 24px; }
+    .psqi-hero h1 { font-family: "Noto Serif SC", serif; font-size: 28px; line-height: 1.45; margin-bottom: 12px; }
+    .psqi-hero p { color: var(--text-mid); font-size: 15px; max-width: 520px; margin: 0 auto 24px; }
+    .trust-pills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 28px; }
+    .trust-pill { background: var(--accent-light); color: var(--accent-dark); font-size: 12px; padding: 6px 14px; border-radius: 20px; font-weight: 600; }
+
+    .progress-bar { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; margin-bottom: 28px; max-width: 400px; margin-left: auto; margin-right: auto; }
+    .progress-fill { height: 100%; background: var(--accent); width: 0%; transition: width 0.4s ease; }
+    .progress-text { text-align: center; font-size: 13px; color: var(--text-light); margin-bottom: 8px; }
+
+    .question-card { background: var(--card); border-radius: var(--radius); padding: 28px 24px; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 20px; }
+    .question-card .q-num { color: var(--accent-dark); font-size: 14px; margin-bottom: 6px; }
+    .question-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: var(--text); line-height: 1.5; }
+    .question-card .q-tip { font-size: 13px; color: var(--text-light); margin-bottom: 22px; }
+
+    .option-list { display: flex; flex-direction: column; gap: 10px; }
+    .option-btn {
+      display: flex; align-items: center; gap: 12px; text-align: left;
+      padding: 14px 16px; border-radius: 12px; border: 2px solid var(--border);
+      background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.5;
+      cursor: pointer; transition: all 0.18s; font-weight: 500;
+    }
+    .option-btn:hover { border-color: var(--accent); background: var(--accent-light); }
+    .option-btn.selected { border-color: var(--accent); background: var(--accent-light); }
+
+    .text-input {
+      width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 12px;
+      font-size: 15px; background: var(--bg); color: var(--text); font-family: inherit;
+      box-sizing: border-box;
+    }
+    .text-input:focus { outline: none; border-color: var(--accent); }
+
+    .result-card { background: var(--card); border-radius: var(--radius); padding: 32px 28px; box-shadow: var(--shadow); border: 1px solid var(--border); text-align: center; display: none; }
+    .result-card .emoji { font-size: 56px; margin-bottom: 12px; }
+    .result-card h2 { font-family: "Noto Serif SC", serif; font-size: 26px; margin-bottom: 8px; }
+    .result-card .total-score { font-size: 48px; font-weight: 800; color: var(--accent-dark); margin: 12px 0; }
+    .result-card .level { display: inline-block; padding: 8px 20px; border-radius: 20px; font-weight: 700; font-size: 15px; margin-bottom: 20px; }
+    .level-good { background: #E8F5E9; color: #2E7D32; }
+    .level-mid { background: #FFF3E0; color: #E65100; }
+    .level-bad { background: #FFEBEE; color: #C62828; }
+    .result-desc { text-align: left; color: var(--text-mid); font-size: 15px; line-height: 1.85; margin-bottom: 24px; }
+
+    .dimension-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 28px; text-align: left; }
+    .dimension-item { background: var(--bg); border-radius: 12px; padding: 16px; border: 1px solid var(--border); }
+    .dimension-item .label { font-size: 13px; color: var(--text-light); margin-bottom: 6px; }
+    .dimension-item .value { font-size: 18px; font-weight: 700; color: var(--text); }
+    .dimension-item.high { background: #FFEBEE; border-color: #EF9A9A; }
+    .dimension-item.high .value { color: #C62828; }
+
+    .result-actions { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+
+    .notice { background: #E3F2FD; border-left: 4px solid #1565C0; padding: 16px 18px; border-radius: 0 12px 12px 0; color: #0D47A1; font-size: 14px; line-height: 1.7; margin-bottom: 24px; }
+
+    .btn { display: inline-block; padding: 14px 28px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 15px; transition: all 0.18s; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-outline { background: #fff; color: var(--accent-dark); border: 2px solid var(--accent); }
+    .btn-outline:hover { background: var(--accent-light); }
+
+    .step-nav { display: flex; justify-content: space-between; margin-top: 24px; }
+    .step-nav button { padding: 12px 24px; border-radius: 10px; border: none; font-size: 15px; font-weight: 600; cursor: pointer; }
+    .step-prev { background: var(--bg); color: var(--text-mid); border: 1px solid var(--border); }
+    .step-next { background: var(--accent); color: #fff; }
+    .step-next:disabled { background: #ccc; cursor: not-allowed; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">高仰珍<span>无忧睡眠</span><span class="dot"></span></a>
+    <nav class="nav-links">
+      <a href="/">首页</a>
+      <a href="/blog/">文章</a>
+      <a href="/assess/">测评</a>
+      <a href="/psqi.html" class="nav-cta">量表</a>
+      <a href="/consultation.html">预约</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="psqi-wrap">
+    <div class="psqi-hero">
+      <h1>PSQI 睡眠质量指数量表</h1>
+      <p>国际通用的睡眠质量自评工具，19 道题，7 个维度。测的是你<strong>最近一个月</strong>的睡眠情况。</p>
+      <div class="trust-pills">
+        <span class="trust-pill">匹兹堡大学编制</span>
+        <span class="trust-pill">全球通用</span>
+        <span class="trust-pill">7个维度评分</span>
+      </div>
+    </div>
+
+    <div class="notice">
+      ℹ️ PSQI 量表测的是「睡眠质量好不好」，和首页的「4种失眠类型测评」定位不同：前者是国际量表，后者是帮你找到改善方向。建议两个都做。
+    </div>
+
+    <div id="quizArea">
+      <div class="progress-text">进度 <span id="currentNum">1</span> / <span id="totalNum">19</span></div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <div id="questionBox"></div>
+
+      <div class="step-nav">
+        <button type="button" class="step-prev" id="prevBtn" onclick="prevQuestion()" style="visibility:hidden;">上一题</button>
+        <button type="button" class="step-next" id="nextBtn" onclick="nextQuestion()" disabled>下一题</button>
+      </div>
+    </div>
+
+    <div id="resultCard" class="result-card">
+      <div class="emoji" id="resultEmoji">🌙</div>
+      <h2>你的 PSQI 总分</h2>
+      <div class="total-score" id="totalScore">0</div>
+      <div class="level" id="resultLevel"></div>
+      <div class="dimension-grid" id="dimensionGrid"></div>
+      <div class="result-desc" id="resultDesc"></div>
+      <div class="result-actions">
+        <a href="/assess/" class="btn btn-primary">🎯 再做一个：我是哪种失眠类型</a>
+        <a href="/consultation.html" class="btn btn-outline">📅 预约 1 对 1 咨询</a>
+        <a href="/" class="btn btn-outline" style="margin-top:8px;">← 回首页</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer" style="padding: 32px 20px; text-align: center; color: var(--text-light); font-size: 13px; border-top: 1px solid var(--border);">
+  © 2026 高仰珍无忧睡眠 · 失眠不是病，是四种不同的状态
+</footer>
+
+<script>
+const questions = [
+  {
+    id: 'q1', dim: 'subjective', text: '过去一个月，你通常几点上床睡觉？',
+    type: 'text', placeholder: '例如：23:30'
+  },
+  {
+    id: 'q2', dim: 'latency', text: '过去一个月，你通常需要多久才能入睡？',
+    options: [
+      { text: '15分钟以内', score: 0 },
+      { text: '16-30分钟', score: 1 },
+      { text: '31-60分钟', score: 2 },
+      { text: '超过60分钟', score: 3 }
+    ]
+  },
+  {
+    id: 'q3', dim: 'latency', text: '过去一个月，你通常早上几点起床？',
+    type: 'text', placeholder: '例如：07:00'
+  },
+  {
+    id: 'q4', dim: 'duration', text: '过去一个月，你每夜实际睡眠的时间大约多久？',
+    options: [
+      { text: '超过7小时', score: 0 },
+      { text: '6-7小时', score: 1 },
+      { text: '5-6小时', score: 2 },
+      { text: '少于5小时', score: 3 }
+    ]
+  },
+  {
+    id: 'q5', dim: 'efficiency', text: '过去一个月，你有多长时间无法入睡？',
+    options: [
+      { text: '没有', score: 0 },
+      { text: '每周少于1次', score: 1 },
+      { text: '每周1-2次', score: 2 },
+      { text: '每周3次及以上', score: 3 }
+    ]
+  },
+  {
+    id: 'q6', dim: 'efficiency', text: '过去一个月，你有多长时间半夜或早醒后难以再入睡？',
+    options: [
+      { text: '没有', score: 0 },
+      { text: '每周少于1次', score: 1 },
+      { text: '每周1-2次', score: 2 },
+      { text: '每周3次及以上', score: 3 }
+    ]
+  },
+  {
+    id: 'q7', dim: 'efficiency', text: '过去一个月，你有多长时间需要上厕所而影响睡眠？',
+    options: [
+      { text: '没有', score: 0 },
+      { text: '每周少于1次', score: 1 },
+      { text: '每周1-2次', score: 2 },
+      { text: '每周3次及以上', score: 3 }
+    ]
+  },
+  {
+    id: 'q8', dim: 'disturbance', text: '过去一个月，你有多长时间因为呼吸不畅而影响睡眠？',
+    options: [
+      { text: '没有', score: 0 },
+      { text: '每周少于1次', score: 1 },
+      { text: '每周1-2次', score: 2 },
+      { text: '每周3次及以上', score: 3 }
+    ]
+  },
+  {
+    id: 'q9', dim: 'disturbance', text: '过去一个月，你有多长时间因为咳嗽或打鼾而影响睡眠？',
+    options: [
+      { text: '没有', score: 0 },
+      { text: '每周少于1次', score: 1 },
+      { text: '每周1-2次', score: 2 },
+      { text: '每周3次及以上', score: 3 }
+    ]
+  },
+  {
+    id: 'q10', dim: 'disturbance', text: '过去一个月，你有多长时间因为感觉太热或太冷而影响睡眠？',
+    options: [
+      { text: '没有', score: 0 },
+      { text: '每周少于1次', score: 1 },
+      { text: '每周1-2次', score: 2 },
+      { text: '每周3次及以上', score: 3 }
+    ]
+  },
+  {
+    id: 'q11', dim: 'disturbance', text: '过去一个月，你有多长时间因为做噩梦而影响睡眠？',
+    options: [
+      { text: '没有', score: 0 },
+      { text: '每周少于1次', score: 1 },
+      { text: '每周1-2次', score: 2 },
+      { text: '每周3次及以上', score: 3 }
+    ]
+  },
+  {
+    id: 'q12', dim: 'disturbance', text: '过去一个月，你有多长时间因为疼痛而影响睡眠？',
+    options: [
+      { text: '没有', score: 0 },
+      { text: '每周少于1次', score: 1 },
+      { text: '每周1-2次', score: 2 },
+      { text: '每周3次及以上', score: 3 }
+    ]
+  },
+  {
+    id: 'q13', dim: 'disturbance', text: '过去一个月，你是否因为其他原因导致睡眠不好？',
+    options: [
+      { text: '没有', score: 0 },
+      { text: '每周少于1次', score: 1 },
+      { text: '每周1-2次', score: 2 },
+      { text: '每周3次及以上', score: 3 }
+    ]
+  },
+  {
+    id: 'q14', dim: 'medication', text: '过去一个月，你有多长时间需要服用安眠药或助眠药物才能入睡？',
+    options: [
+      { text: '没有', score: 0 },
+      { text: '每周少于1次', score: 1 },
+      { text: '每周1-2次', score: 2 },
+      { text: '每周3次及以上', score: 3 }
+    ]
+  },
+  {
+    id: 'q15', dim: 'daytime', text: '过去一个月，你有多长时间在白天感到做事提不起精神？',
+    options: [
+      { text: '没有', score: 0 },
+      { text: '每周少于1次', score: 1 },
+      { text: '每周1-2次', score: 2 },
+      { text: '每周3次及以上', score: 3 }
+    ]
+  },
+  {
+    id: 'q16', dim: 'daytime', text: '过去一个月，你有多长时间在白天感到情绪不好？',
+    options: [
+      { text: '没有', score: 0 },
+      { text: '每周少于1次', score: 1 },
+      { text: '每周1-2次', score: 2 },
+      { text: '每周3次及以上', score: 3 }
+    ]
+  },
+  {
+    id: 'q17', dim: 'daytime', text: '过去一个月，你有多长时间在白天感到做事效率低？',
+    options: [
+      { text: '没有', score: 0 },
+      { text: '每周少于1次', score: 1 },
+      { text: '每周1-2次', score: 2 },
+      { text: '每周3次及以上', score: 3 }
+    ]
+  },
+  {
+    id: 'q18', dim: 'daytime', text: '过去一个月，你有多长时间在白天感到嗜睡或昏昏欲睡？',
+    options: [
+      { text: '没有', score: 0 },
+      { text: '每周少于1次', score: 1 },
+      { text: '每周1-2次', score: 2 },
+      { text: '每周3次及以上', score: 3 }
+    ]
+  },
+  {
+    id: 'q19', dim: 'subjective', text: '总体来看，过去一个月你的睡眠质量如何？',
+    options: [
+      { text: '很好', score: 0 },
+      { text: '还行', score: 1 },
+      { text: '不太好', score: 2 },
+      { text: '很差', score: 3 }
+    ]
+  }
+];
+
+let current = 0;
+const answers = {};
+const questionBox = document.getElementById('questionBox');
+const currentNum = document.getElementById('currentNum');
+const totalNum = document.getElementById('totalNum');
+const progressFill = document.getElementById('progressFill');
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+
+totalNum.textContent = questions.length;
+
+function renderQuestion() {
+  const q = questions[current];
+  currentNum.textContent = current + 1;
+  progressFill.style.width = ((current + 1) / questions.length * 100) + '%';
+  prevBtn.style.visibility = current === 0 ? 'hidden' : 'visible';
+  nextBtn.textContent = current === questions.length - 1 ? '查看结果' : '下一题';
+
+  let html = `<div class="question-card"><div class="q-num">第 ${current + 1} 题 / ${questions.length}</div><h3>${q.text}</h3>`;
+  if (q.type === 'text') {
+    html += `<input type="text" class="text-input" id="textAnswer" placeholder="${q.placeholder}" value="${answers[q.id] || ''}" oninput="saveText('${q.id}')">`;
+  } else {
+    html += `<div class="option-list">`;
+    q.options.forEach((opt, idx) => {
+      const selected = answers[q.id] === idx ? 'selected' : '';
+      html += `<button type="button" class="option-btn ${selected}" onclick="selectOption(${idx})">${opt.text}</button>`;
+    });
+    html += `</div>`;
+  }
+  html += `</div>`;
+  questionBox.innerHTML = html;
+  updateNextBtn();
+}
+
+function selectOption(idx) {
+  answers[questions[current].id] = idx;
+  renderQuestion();
+  if (current < questions.length - 1) {
+    setTimeout(nextQuestion, 250);
+  }
+}
+
+function saveText(id) {
+  const val = document.getElementById('textAnswer').value.trim();
+  answers[id] = val;
+  updateNextBtn();
+}
+
+function updateNextBtn() {
+  const q = questions[current];
+  let answered = false;
+  if (q.type === 'text') {
+    answered = !!answers[q.id];
+  } else {
+    answered = answers[q.id] !== undefined;
+  }
+  nextBtn.disabled = !answered;
+}
+
+function nextQuestion() {
+  if (current < questions.length - 1) {
+    current++;
+    renderQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function prevQuestion() {
+  if (current > 0) {
+    current--;
+    renderQuestion();
+  }
+}
+
+function showResult() {
+  const dims = {
+    subjective: { label: '主观睡眠质量', score: 0, count: 0 },
+    latency: { label: '入睡潜伏期', score: 0, count: 0 },
+    duration: { label: '睡眠时长', score: 0, count: 0 },
+    efficiency: { label: '睡眠效率', score: 0, count: 0 },
+    disturbance: { label: '睡眠障碍', score: 0, count: 0 },
+    medication: { label: '催眠药物', score: 0, count: 0 },
+    daytime: { label: '日间功能障碍', score: 0, count: 0 }
+  };
+
+  questions.forEach(q => {
+    if (q.type === 'text' || answers[q.id] === undefined) return;
+    const score = q.options[answers[q.id]].score;
+    dims[q.dim].score += score;
+    dims[q.dim].count++;
+  });
+
+  let total = 0;
+  Object.values(dims).forEach(d => { total += d.score; });
+
+  document.getElementById('quizArea').style.display = 'none';
+  const resultCard = document.getElementById('resultCard');
+  resultCard.style.display = 'block';
+  document.getElementById('totalScore').textContent = total;
+
+  const levelEl = document.getElementById('resultLevel');
+  const descEl = document.getElementById('resultDesc');
+  const emojiEl = document.getElementById('resultEmoji');
+
+  if (total <= 5) {
+    levelEl.textContent = '睡眠质量良好';
+    levelEl.className = 'level level-good';
+    emojiEl.textContent = '🌟';
+    descEl.innerHTML = '<p>你的睡眠质量还不错。保持规律作息即可，不用过度担心。如果偶尔失眠，可以看看首页的睡眠指南。</p>';
+  } else if (total <= 10) {
+    levelEl.textContent = '睡眠质量一般';
+    levelEl.className = 'level level-mid';
+    emojiEl.textContent = '🌙';
+    descEl.innerHTML = '<p>你的睡眠已经出现了一些问题，但还没到严重的程度。建议先做一个「4种失眠类型测评」，找到具体原因，再针对性调整。</p>';
+  } else {
+    levelEl.textContent = '睡眠质量较差';
+    levelEl.className = 'level level-bad';
+    emojiEl.textContent = '💤';
+    descEl.innerHTML = '<p>你的睡眠质量已经明显影响生活，建议认真对待。先做「4种失眠类型测评」找到分型，再考虑是否需要 1 对 1 咨询或 56 天训练营。</p>';
+  }
+
+  const grid = document.getElementById('dimensionGrid');
+  grid.innerHTML = Object.entries(dims).map(([key, d]) => {
+    const high = d.score >= 2 ? 'high' : '';
+    return `<div class="dimension-item ${high}"><div class="label">${d.label}</div><div class="value">${d.score}分</div></div>`;
+  }).join('');
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+renderQuestion();
+</script>
+
+</body>
+</html>

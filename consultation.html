@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>预约1对1睡眠咨询 — 高仰珍无忧睡眠</title>
+  <meta name="description" content="填写睡眠咨询预约表，高仰珍会在24小时内通过微信回复你。适合失眠超过2周、想系统改善睡眠的朋友。">
+  <link rel="canonical" href="https://shuimian.xyz/consultation.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="高仰珍无忧睡眠">
+  <meta property="og:title" content="预约1对1睡眠咨询 — 高仰珍无忧睡眠">
+  <meta property="og:description" content="填写睡眠咨询预约表，24小时内微信回复，适合失眠超过2周、想系统改善睡眠的朋友。">
+  <meta property="og:url" content="https://shuimian.xyz/consultation.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .consult-wrap { max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; }
+    .consult-hero { text-align: center; padding: 48px 0 24px; }
+    .consult-hero h1 { font-family: "Noto Serif SC", serif; font-size: 28px; line-height: 1.45; margin-bottom: 12px; }
+    .consult-hero p { color: var(--text-mid); font-size: 15px; max-width: 480px; margin: 0 auto 24px; }
+    .trust-pills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 28px; }
+    .trust-pill { background: var(--accent-light); color: var(--accent-dark); font-size: 12px; padding: 6px 14px; border-radius: 20px; font-weight: 600; }
+
+    .form-card { background: var(--card); border-radius: var(--radius); padding: 28px 24px; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 20px; }
+    .form-group { margin-bottom: 22px; }
+    .form-group label { display: block; font-weight: 700; font-size: 15px; margin-bottom: 8px; color: var(--text); }
+    .form-group .label-tip { font-size: 13px; color: var(--text-light); font-weight: 400; margin-left: 6px; }
+    .form-group input[type="text"],
+    .form-group input[type="tel"],
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 12px;
+      font-size: 15px; background: var(--bg); color: var(--text); font-family: inherit;
+      transition: border-color 0.18s;
+      box-sizing: border-box;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
+    .form-group textarea { min-height: 100px; resize: vertical; }
+    .radio-group, .checkbox-group { display: flex; flex-direction: column; gap: 10px; }
+    .radio-item, .checkbox-item {
+      display: flex; align-items: center; gap: 10px; padding: 12px 14px; border: 2px solid var(--border);
+      border-radius: 12px; cursor: pointer; transition: all 0.18s; font-size: 15px;
+    }
+    .radio-item:hover, .checkbox-item:hover { border-color: var(--accent); background: var(--accent-light); }
+    .radio-item input, .checkbox-item input { width: 18px; height: 18px; accent-color: var(--accent); }
+
+    .submit-btn {
+      display: block; width: 100%; padding: 16px; border-radius: 12px; border: none;
+      background: var(--accent); color: #fff; font-size: 17px; font-weight: 700; cursor: pointer;
+      transition: background 0.18s, transform 0.1s;
+    }
+    .submit-btn:hover { background: var(--accent-dark); }
+    .submit-btn:active { transform: scale(0.99); }
+
+    .success-card { background: var(--card); border-radius: var(--radius); padding: 32px 28px; box-shadow: var(--shadow); border: 1px solid var(--border); text-align: center; display: none; }
+    .success-card .emoji { font-size: 56px; margin-bottom: 12px; }
+    .success-card h2 { font-family: "Noto Serif SC", serif; font-size: 24px; margin-bottom: 12px; }
+    .success-card p { color: var(--text-mid); font-size: 15px; line-height: 1.8; margin-bottom: 18px; }
+    .summary-box { background: var(--bg); border-radius: 12px; padding: 18px; text-align: left; font-size: 14px; line-height: 1.8; color: var(--text-mid); border: 1px solid var(--border); margin-bottom: 18px; }
+    .summary-box strong { color: var(--text); }
+    .copy-btn { display: inline-block; padding: 12px 24px; border-radius: 10px; background: var(--accent-light); color: var(--accent-dark); font-weight: 700; font-size: 14px; cursor: pointer; border: none; margin-bottom: 16px; }
+    .wechat-tip { background: #E8F5E9; border-radius: 12px; padding: 16px; color: #2E7D32; font-size: 14px; line-height: 1.7; }
+
+    .notice { background: #FFF3E0; border-left: 4px solid #E65100; padding: 16px 18px; border-radius: 0 12px 12px 0; color: #BF360C; font-size: 14px; line-height: 1.7; margin-bottom: 24px; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">高仰珍<span>无忧睡眠</span><span class="dot"></span></a>
+    <nav class="nav-links">
+      <a href="/">首页</a>
+      <a href="/blog/">文章</a>
+      <a href="/assess/">测评</a>
+      <a href="/psqi.html">量表</a>
+      <a href="/consultation.html" class="nav-cta">预约</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="consult-wrap">
+    <div class="consult-hero">
+      <h1>预约 1 对 1 睡眠咨询</h1>
+      <p>填写下面这份表，我会在 24 小时内通过微信回复你。适合失眠超过 2 周、想认真解决的朋友。</p>
+      <div class="trust-pills">
+        <span class="trust-pill">中科院认证心理咨询师</span>
+        <span class="trust-pill">3年失眠亲历者</span>
+        <span class="trust-pill">CBT-I 循证方法</span>
+      </div>
+    </div>
+
+    <div class="notice">
+      ⚠️ 如果你正在服用安眠药或精神类药物，建议先咨询医生；我可以帮你调整认知和行为，但不替你做停药决定。
+    </div>
+
+    <form id="consultForm" class="form-card">
+      <div class="form-group">
+        <label>怎么称呼你？ <span class="label-tip">（可用昵称）</span></label>
+        <input type="text" name="name" placeholder="例如：小王" required>
+      </div>
+
+      <div class="form-group">
+        <label>微信号 / 手机号 <span class="label-tip">（我加你）</span></label>
+        <input type="text" name="contact" placeholder="微信号或手机号" required>
+      </div>
+
+      <div class="form-group">
+        <label>失眠大概多久了？</label>
+        <div class="radio-group">
+          <label class="radio-item"><input type="radio" name="duration" value="2周以内" required> 2周以内</label>
+          <label class="radio-item"><input type="radio" name="duration" value="2周-3个月"> 2周 - 3个月</label>
+          <label class="radio-item"><input type="radio" name="duration" value="3个月-1年"> 3个月 - 1年</label>
+          <label class="radio-item"><input type="radio" name="duration" value="1年以上"> 1年以上</label>
+          <label class="radio-item"><input type="radio" name="duration" value="记不清了，很多年"> 记不清了，很多年</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>目前最困扰你的是？ <span class="label-tip">（可多选）</span></label>
+        <div class="checkbox-group">
+          <label class="checkbox-item"><input type="checkbox" name="problems" value="入睡困难"> 入睡困难（躺很久睡不着）</label>
+          <label class="checkbox-item"><input type="checkbox" name="problems" value="半夜醒来"> 半夜醒来，再次入睡困难</label>
+          <label class="checkbox-item"><input type="checkbox" name="problems" value="早醒"> 早醒，比闹钟醒得早</label>
+          <label class="checkbox-item"><input type="checkbox" name="problems" value="睡眠浅"> 睡眠浅，似睡非睡</label>
+          <label class="checkbox-item"><input type="checkbox" name="problems" value="多梦"> 梦多、噩梦</label>
+          <label class="checkbox-item"><input type="checkbox" name="problems" value="白天疲惫"> 白天疲惫、注意力不集中</label>
+          <label class="checkbox-item"><input type="checkbox" name="problems" value="焦虑情绪"> 焦虑、担心睡不着</label>
+          <label class="checkbox-item"><input type="checkbox" name="problems" value="生物钟乱"> 生物钟乱，晚上不困白天困</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>你之前试过哪些方法？ <span class="label-tip">（药物、褪黑素、运动、冥想等，简单写）</span></label>
+        <textarea name="tried" placeholder="例如：吃过褪黑素，运动过，但效果不好"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>你最想解决的目标是？</label>
+        <div class="radio-group">
+          <label class="radio-item"><input type="radio" name="goal" value="先了解自己的失眠类型" required> 先了解自己的失眠类型</label>
+          <label class="radio-item"><input type="radio" name="goal" value="获得一对一改善方案"> 获得一对一改善方案</label>
+          <label class="radio-item"><input type="radio" name="goal" value="加入56天训练营"> 加入 56 天睡眠训练营</label>
+          <label class="radio-item"><input type="radio" name="goal" value="随便聊聊，看看适不适合"> 随便聊聊，看看适不适合</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>还有想补充的吗？ <span class="label-tip">（比如身体情况、作息、压力来源）</span></label>
+        <textarea name="extra" placeholder="越具体，我越能给到针对性的建议"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">提交预约申请</button>
+    </form>
+
+    <div id="successCard" class="success-card">
+      <div class="emoji">✅</div>
+      <h2>预约信息已生成</h2>
+      <p>请复制下面的内容，加微信<strong>【你的微信号】</strong>发送给我，我会在 24 小时内回复你。</p>
+      <div id="summaryText" class="summary-box"></div>
+      <button type="button" class="copy-btn" onclick="copySummary()">复制预约信息</button>
+      <div class="wechat-tip">
+        💡 小提示：如果暂时没有加好友，也可以先把手机截屏保存，微信搜索「高仰珍无忧睡眠」公众号找到我。
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer" style="padding: 32px 20px; text-align: center; color: var(--text-light); font-size: 13px; border-top: 1px solid var(--border);">
+  © 2026 高仰珍无忧睡眠 · 失眠不是病，是四种不同的状态
+</footer>
+
+<script>
+const WX_ID = '【你的微信号】';
+const form = document.getElementById('consultForm');
+const successCard = document.getElementById('successCard');
+const summaryText = document.getElementById('summaryText');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const fd = new FormData(form);
+  const data = Object.fromEntries(fd.entries());
+  const problems = fd.getAll('problems').join('、') || '未填写';
+  const tried = data.tried?.trim() || '无';
+  const extra = data.extra?.trim() || '无';
+
+  const summary = `【睡眠咨询预约】
+称呼：${data.name}
+联系方式：${data.contact}
+失眠时长：${data.duration}
+主要困扰：${problems}
+试过方法：${tried}
+目标：${data.goal}
+补充：${extra}`;
+
+  summaryText.innerHTML = summary.replace(/\n/g, '<br>');
+  form.style.display = 'none';
+  successCard.style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+function copySummary() {
+  const text = summaryText.innerText;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(() => alert('已复制，去微信粘贴发送吧'));
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    alert('已复制，去微信粘贴发送吧');
+  }
+}
+</script>
+
+</body>
+</html>
