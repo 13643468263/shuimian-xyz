@@ -148,11 +148,18 @@
         </div>
       </div>
 
-      <div class="wechat-card">
+      <div class="wechat-card" id="wechat-cta">
         <h4>想进一步聊聊你的结果？</h4>
-        <p>
-          加微信 <span class="wechat-id">【你的微信号】</span>，发送「测评」两字，我会给你发一份针对你类型的 7 天改善清单。名额有限，先加先得。
+        <p style="margin-bottom: 16px;">
+          加微信 <span class="wechat-id" id="wx-id">【你的微信号】</span>，发送「测评」两字，我会给你发一份针对你类型的 7 天改善清单。下一期训练营仅招 6 人，先加先占位。
         </p>
+        <div style="text-align: center; margin-bottom: 14px;">
+          <img src="/images/wechat-qr.jpg" alt="高仰珍微信二维码" style="width: 140px; height: 140px; border-radius: 10px; border: 3px solid #fff; box-shadow: 0 2px 10px rgba(0,0,0,.08);">
+        </div>
+        <div style="text-align: center;">
+          <button class="btn btn-primary" style="font-size: 14px; padding: 10px 22px;" onclick="copyWx()">复制微信号</button>
+          <p style="font-size: 12px; color: var(--text-light); margin: 8px 0 0;">长按识别二维码，或关注公众号「高仰珍无忧睡眠」</p>
+        </div>
       </div>
     </div>
   </div>
@@ -385,6 +392,21 @@
     answers = [];
     document.getElementById('result-view').classList.add('hidden');
     document.getElementById('start-view').classList.remove('hidden');
+  }
+
+  const WX_ID = '【你的微信号】';
+  function copyWx() {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(WX_ID).then(() => alert('微信号已复制，去微信添加吧'));
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = WX_ID;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      alert('微信号已复制，去微信添加吧');
+    }
   }
 </script>
 
