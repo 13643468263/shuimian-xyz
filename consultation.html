@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>预约1对1睡眠咨询 — 高仰珍无忧睡眠</title>
-  <meta name="description" content="填写睡眠咨询预约表，高仰珍会在24小时内通过微信回复你。适合失眠超过2周、想系统改善睡眠的朋友。">
+  <title>预约1对1睡眠心理咨询 — 高仰珍无忧睡眠</title>
+  <meta name="description" content="填写睡眠心理咨询预约表，高仰珍会在24小时内联系你，安排免费初次沟通。适合失眠超过1个月、想从情绪和认知根源改善睡眠的朋友。">
   <link rel="canonical" href="https://shuimian.xyz/consultation.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="高仰珍无忧睡眠">
-  <meta property="og:title" content="预约1对1睡眠咨询 — 高仰珍无忧睡眠">
-  <meta property="og:description" content="填写睡眠咨询预约表，24小时内微信回复，适合失眠超过2周、想系统改善睡眠的朋友。">
+  <meta property="og:title" content="预约1对1睡眠心理咨询 — 高仰珍无忧睡眠">
+  <meta property="og:description" content="填写睡眠心理咨询预约表，24小时内联系，安排免费初次沟通。">
   <meta property="og:url" content="https://shuimian.xyz/consultation.html">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="/css/style.css">
@@ -18,11 +18,21 @@
     .consult-wrap { max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; }
     .consult-hero { text-align: center; padding: 48px 0 24px; }
     .consult-hero h1 { font-family: "Noto Serif SC", serif; font-size: 28px; line-height: 1.45; margin-bottom: 12px; }
-    .consult-hero p { color: var(--text-mid); font-size: 15px; max-width: 480px; margin: 0 auto 24px; }
+    .consult-hero p { color: var(--text-mid); font-size: 15px; max-width: 520px; margin: 0 auto 24px; }
     .trust-pills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 28px; }
     .trust-pill { background: var(--accent-light); color: var(--accent-dark); font-size: 12px; padding: 6px 14px; border-radius: 20px; font-weight: 600; }
 
+    .notice { background: #FFF3E0; border-left: 4px solid #E65100; padding: 16px 18px; border-radius: 0 12px 12px 0; color: #BF360C; font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
+    .info-card { background: var(--card); border-radius: var(--radius); padding: 22px 22px; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 24px; }
+    .info-card h3 { font-size: 16px; color: var(--text); margin-bottom: 14px; }
+    .info-grid { display: grid; grid-template-columns: 1fr; gap: 10px; font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+    .info-grid b { color: var(--text); }
+    .info-card ul { margin: 0; padding-left: 18px; font-size: 14px; color: var(--text-mid); line-height: 1.8; }
+    .info-card li { margin-bottom: 6px; }
+
     .form-card { background: var(--card); border-radius: var(--radius); padding: 28px 24px; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 20px; }
+    .form-section-title { font-size: 17px; font-weight: 700; color: var(--accent-dark); margin: 28px 0 18px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-light); }
+    .form-section-title:first-child { margin-top: 0; }
     .form-group { margin-bottom: 22px; }
     .form-group label { display: block; font-weight: 700; font-size: 15px; margin-bottom: 8px; color: var(--text); }
     .form-group .label-tip { font-size: 13px; color: var(--text-light); font-weight: 400; margin-left: 6px; }
@@ -43,12 +53,17 @@
       border-radius: 12px; cursor: pointer; transition: all 0.18s; font-size: 15px;
     }
     .radio-item:hover, .checkbox-item:hover { border-color: var(--accent); background: var(--accent-light); }
-    .radio-item input, .checkbox-item input { width: 18px; height: 18px; accent-color: var(--accent); }
+    .radio-item input, .checkbox-item input { width: 18px; height: 18px; accent-color: var(--accent); flex-shrink: 0; }
+    .checkbox-item .other-input {
+      flex: 1; border: none; border-bottom: 1px solid var(--border); background: transparent;
+      padding: 4px 0; font-size: 14px; color: var(--text); font-family: inherit; margin-left: 4px;
+    }
+    .checkbox-item .other-input:focus { outline: none; border-bottom-color: var(--accent); }
 
     .submit-btn {
       display: block; width: 100%; padding: 16px; border-radius: 12px; border: none;
       background: var(--accent); color: #fff; font-size: 17px; font-weight: 700; cursor: pointer;
-      transition: background 0.18s, transform 0.1s;
+      transition: background 0.18s, transform 0.1s; margin-top: 10px;
     }
     .submit-btn:hover { background: var(--accent-dark); }
     .submit-btn:active { transform: scale(0.99); }
@@ -61,8 +76,6 @@
     .summary-box strong { color: var(--text); }
     .copy-btn { display: inline-block; padding: 12px 24px; border-radius: 10px; background: var(--accent-light); color: var(--accent-dark); font-weight: 700; font-size: 14px; cursor: pointer; border: none; margin-bottom: 16px; }
     .wechat-tip { background: #E8F5E9; border-radius: 12px; padding: 16px; color: #2E7D32; font-size: 14px; line-height: 1.7; }
-
-    .notice { background: #FFF3E0; border-left: 4px solid #E65100; padding: 16px 18px; border-radius: 0 12px 12px 0; color: #BF360C; font-size: 14px; line-height: 1.7; margin-bottom: 24px; }
   </style>
   <!-- 结构化数据 -->
   <script type="application/ld+json">
@@ -94,10 +107,9 @@
       <a href="/assess/">测评</a>
       <a href="/psqi.html">量表</a>
       <a href="/consultation.html" class="nav-cta">预约</a>
-      <a <a href="/faq.html">常见问题</a>
+      <a href="/faq.html">常见问题</a>
       <a href="/cases.html">案例</a>
       <a href="/about.html">关于</a>
-
     </nav>
   </div>
 </header>
@@ -105,8 +117,8 @@
 <main>
   <div class="consult-wrap">
     <div class="consult-hero">
-      <h1>预约 1 对 1 睡眠咨询</h1>
-      <p>填写下面这份表，我会在 24 小时内通过微信回复你。适合失眠超过 2 周、想认真解决的朋友。</p>
+      <h1>预约 1 对 1 睡眠心理咨询</h1>
+      <p>填写下面这份表，我会在 24 小时内联系你，安排一次免费的初次沟通（15–20 分钟）。适合失眠超过 1 个月、想从情绪和认知根源改善睡眠的朋友。</p>
       <div class="trust-pills">
         <span class="trust-pill">中科院认证心理咨询师</span>
         <span class="trust-pill">3年失眠亲历者</span>
@@ -115,63 +127,183 @@
     </div>
 
     <div class="notice">
-      ⚠️ 如果你正在服用安眠药或精神类药物，建议先咨询医生；我可以帮你调整认知和行为，但不替你做停药决定。
+      ⚠️ 如果你正在服用安眠药或精神类药物，建议先咨询医生；我可以帮你调整认知和行为，但不替你做停药决定。若失眠由明确身体疾病或严重心理疾病引起，建议先就医。
+    </div>
+
+    <div class="info-card">
+      <h3>🛋️ 咨询说明</h3>
+      <div class="info-grid">
+        <div><b>方式：</b>线上视频咨询（推荐）或语音咨询，不受地域限制</div>
+        <div><b>费用：</b>初次沟通免费；正式咨询 300 元/次，套餐 1500 元起（5 次）</div>
+        <div><b>流程：</b>填表 → 24 小时内联系 → 免费初次沟通 → 初步评估 → 确认是否开始</div>
+        <div><b>边界：</b>侧重 CBT-I 方向的睡眠改善与情绪调节，不替代医疗诊断、精神科治疗或临床心理治疗</div>
+      </div>
     </div>
 
     <form id="consultForm" class="form-card">
+      <div class="form-section-title">一、基本信息</div>
+
       <div class="form-group">
-        <label>怎么称呼你？ <span class="label-tip">（可用昵称）</span></label>
+        <label>您的称呼 <span class="label-tip">（怎么称呼您比较合适？）</span></label>
         <input type="text" name="name" placeholder="例如：小王" required>
       </div>
 
       <div class="form-group">
-        <label>微信号 / 手机号 <span class="label-tip">（我加你）</span></label>
+        <label>性别</label>
+        <div class="radio-group">
+          <label class="radio-item"><input type="radio" name="gender" value="男" required> 男</label>
+          <label class="radio-item"><input type="radio" name="gender" value="女"> 女</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>年龄</label>
+        <div class="radio-group">
+          <label class="radio-item"><input type="radio" name="age" value="18-25岁" required> 18-25岁</label>
+          <label class="radio-item"><input type="radio" name="age" value="26-35岁"> 26-35岁</label>
+          <label class="radio-item"><input type="radio" name="age" value="36-45岁"> 36-45岁</label>
+          <label class="radio-item"><input type="radio" name="age" value="46-55岁"> 46-55岁</label>
+          <label class="radio-item"><input type="radio" name="age" value="55岁以上"> 55岁以上</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>所在城市</label>
+        <input type="text" name="city" placeholder="例如：北京">
+      </div>
+
+      <div class="form-group">
+        <label>联系方式 <span class="label-tip">（微信号 / 手机号，我加你）</span></label>
         <input type="text" name="contact" placeholder="微信号或手机号" required>
       </div>
 
       <div class="form-group">
-        <label>失眠大概多久了？</label>
-        <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="duration" value="2周以内" required> 2周以内</label>
-          <label class="radio-item"><input type="radio" name="duration" value="2周-3个月"> 2周 - 3个月</label>
-          <label class="radio-item"><input type="radio" name="duration" value="3个月-1年"> 3个月 - 1年</label>
-          <label class="radio-item"><input type="radio" name="duration" value="1年以上"> 1年以上</label>
-          <label class="radio-item"><input type="radio" name="duration" value="记不清了，很多年"> 记不清了，很多年</label>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label>目前最困扰你的是？ <span class="label-tip">（可多选）</span></label>
+        <label>您是怎么知道我的？ <span class="label-tip">（可多选）</span></label>
         <div class="checkbox-group">
-          <label class="checkbox-item"><input type="checkbox" name="problems" value="入睡困难"> 入睡困难（躺很久睡不着）</label>
-          <label class="checkbox-item"><input type="checkbox" name="problems" value="半夜醒来"> 半夜醒来，再次入睡困难</label>
-          <label class="checkbox-item"><input type="checkbox" name="problems" value="早醒"> 早醒，比闹钟醒得早</label>
-          <label class="checkbox-item"><input type="checkbox" name="problems" value="睡眠浅"> 睡眠浅，似睡非睡</label>
-          <label class="checkbox-item"><input type="checkbox" name="problems" value="多梦"> 梦多、噩梦</label>
-          <label class="checkbox-item"><input type="checkbox" name="problems" value="白天疲惫"> 白天疲惫、注意力不集中</label>
-          <label class="checkbox-item"><input type="checkbox" name="problems" value="焦虑情绪"> 焦虑、担心睡不着</label>
-          <label class="checkbox-item"><input type="checkbox" name="problems" value="生物钟乱"> 生物钟乱，晚上不困白天困</label>
+          <label class="checkbox-item"><input type="checkbox" name="source" value="小红书"> 小红书</label>
+          <label class="checkbox-item"><input type="checkbox" name="source" value="视频号"> 视频号</label>
+          <label class="checkbox-item"><input type="checkbox" name="source" value="朋友推荐"> 朋友推荐</label>
+          <label class="checkbox-item"><input type="checkbox" name="source" value="公众号"> 公众号</label>
+          <label class="checkbox-item"><input type="checkbox" name="source" value="搜索"> 搜索</label>
+          <label class="checkbox-item" style="align-items: center;">
+            <input type="checkbox" name="source" value="其他">
+            <span>其他：</span>
+            <input type="text" name="source_other" class="other-input" placeholder="请说明">
+          </label>
         </div>
       </div>
 
-      <div class="form-group">
-        <label>你之前试过哪些方法？ <span class="label-tip">（药物、褪黑素、运动、冥想等，简单写）</span></label>
-        <textarea name="tried" placeholder="例如：吃过褪黑素，运动过，但效果不好"></textarea>
-      </div>
+      <div class="form-section-title">二、睡眠状况评估</div>
 
       <div class="form-group">
-        <label>你最想解决的目标是？</label>
+        <label>您失眠多长时间了？</label>
         <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="goal" value="先了解自己的失眠类型" required> 先了解自己的失眠类型</label>
-          <label class="radio-item"><input type="radio" name="goal" value="获得一对一改善方案"> 获得一对一改善方案</label>
-          <label class="radio-item"><input type="radio" name="goal" value="加入56天训练营"> 加入 56 天睡眠训练营</label>
-          <label class="radio-item"><input type="radio" name="goal" value="随便聊聊，看看适不适合"> 随便聊聊，看看适不适合</label>
+          <label class="radio-item"><input type="radio" name="duration" value="不到1个月" required> 不到1个月</label>
+          <label class="radio-item"><input type="radio" name="duration" value="1-3个月"> 1-3个月</label>
+          <label class="radio-item"><input type="radio" name="duration" value="3-6个月"> 3-6个月</label>
+          <label class="radio-item"><input type="radio" name="duration" value="6个月-1年"> 6个月-1年</label>
+          <label class="radio-item"><input type="radio" name="duration" value="1-3年"> 1-3年</label>
+          <label class="radio-item"><input type="radio" name="duration" value="3年以上"> 3年以上</label>
         </div>
       </div>
 
       <div class="form-group">
-        <label>还有想补充的吗？ <span class="label-tip">（比如身体情况、作息、压力来源）</span></label>
-        <textarea name="extra" placeholder="越具体，我越能给到针对性的建议"></textarea>
+        <label>您的主要睡眠问题是？ <span class="label-tip">（可多选）</span></label>
+        <div class="checkbox-group">
+          <label class="checkbox-item"><input type="checkbox" name="problems" value="入睡困难（躺下超过30分钟睡不着）"> 入睡困难（躺下超过30分钟睡不着）</label>
+          <label class="checkbox-item"><input type="checkbox" name="problems" value="睡眠浅（容易醒，醒了很难再睡）"> 睡眠浅（容易醒，醒了很难再睡）</label>
+          <label class="checkbox-item"><input type="checkbox" name="problems" value="早醒（比预期早醒1小时以上）"> 早醒（比预期早醒1小时以上）</label>
+          <label class="checkbox-item"><input type="checkbox" name="problems" value="做梦多、睡眠质量差"> 做梦多、睡眠质量差</label>
+          <label class="checkbox-item"><input type="checkbox" name="problems" value="整夜几乎睡不着"> 整夜几乎睡不着</label>
+          <label class="checkbox-item" style="align-items: center;">
+            <input type="checkbox" name="problems" value="其他">
+            <span>其他：</span>
+            <input type="text" name="problems_other" class="other-input" placeholder="请说明">
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>您目前平均每晚睡几个小时？</label>
+        <div class="radio-group">
+          <label class="radio-item"><input type="radio" name="sleep_hours" value="不到4小时" required> 不到4小时</label>
+          <label class="radio-item"><input type="radio" name="sleep_hours" value="4-5小时"> 4-5小时</label>
+          <label class="radio-item"><input type="radio" name="sleep_hours" value="5-6小时"> 5-6小时</label>
+          <label class="radio-item"><input type="radio" name="sleep_hours" value="6-7小时"> 6-7小时</label>
+          <label class="radio-item"><input type="radio" name="sleep_hours" value="7小时以上"> 7小时以上</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>您觉得失眠的主要原因是什么？ <span class="label-tip">（可多选）</span></label>
+        <div class="checkbox-group">
+          <label class="checkbox-item"><input type="checkbox" name="causes" value="工作压力"> 工作压力</label>
+          <label class="checkbox-item"><input type="checkbox" name="causes" value="家庭/感情问题"> 家庭/感情问题</label>
+          <label class="checkbox-item"><input type="checkbox" name="causes" value="焦虑、紧张"> 焦虑、紧张</label>
+          <label class="checkbox-item"><input type="checkbox" name="causes" value="情绪低落、抑郁"> 情绪低落、抑郁</label>
+          <label class="checkbox-item"><input type="checkbox" name="causes" value="对未来的担忧"> 对未来的担忧</label>
+          <label class="checkbox-item"><input type="checkbox" name="causes" value="习惯性失眠（一到晚上就紧张）"> 习惯性失眠（一到晚上就紧张）</label>
+          <label class="checkbox-item" style="align-items: center;">
+            <input type="checkbox" name="causes" value="其他">
+            <span>其他：</span>
+            <input type="text" name="causes_other" class="other-input" placeholder="请说明">
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>您之前尝试过什么方法改善睡眠？ <span class="label-tip">（可多选）</span></label>
+        <div class="checkbox-group">
+          <label class="checkbox-item"><input type="checkbox" name="tried" value="吃安眠药/褪黑素"> 吃安眠药/褪黑素</label>
+          <label class="checkbox-item"><input type="checkbox" name="tried" value="看过医生/医院"> 看过医生/医院</label>
+          <label class="checkbox-item"><input type="checkbox" name="tried" value="用过睡眠APP"> 用过睡眠APP</label>
+          <label class="checkbox-item"><input type="checkbox" name="tried" value="买过助眠产品（枕头、香薰等）"> 买过助眠产品（枕头、香薰等）</label>
+          <label class="checkbox-item"><input type="checkbox" name="tried" value="锻炼/冥想"> 锻炼/冥想</label>
+          <label class="checkbox-item"><input type="checkbox" name="tried" value="什么都没试过"> 什么都没试过</label>
+          <label class="checkbox-item" style="align-items: center;">
+            <input type="checkbox" name="tried" value="其他">
+            <span>其他：</span>
+            <input type="text" name="tried_other" class="other-input" placeholder="请说明">
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>之前的方法效果如何？</label>
+        <div class="radio-group">
+          <label class="radio-item"><input type="radio" name="effect" value="没有效果" required> 没有效果</label>
+          <label class="radio-item"><input type="radio" name="effect" value="短期有效，后来又失眠了"> 短期有效，后来又失眠了</label>
+          <label class="radio-item"><input type="radio" name="effect" value="有一些效果，但不彻底"> 有一些效果，但不彻底</label>
+          <label class="radio-item"><input type="radio" name="effect" value="没试过"> 没试过</label>
+        </div>
+      </div>
+
+      <div class="form-section-title">三、咨询意愿</div>
+
+      <div class="form-group">
+        <label>您希望通过睡眠心理咨询达到什么效果？ <span class="label-tip">（比如：能自然入睡、不再依赖药物、改善情绪等）</span></label>
+        <textarea name="goal" placeholder="越具体，我越能判断初次沟通时重点聊什么"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>您对心理咨询的了解程度？</label>
+        <div class="radio-group">
+          <label class="radio-item"><input type="radio" name="awareness" value="完全不了解" required> 完全不了解</label>
+          <label class="radio-item"><input type="radio" name="awareness" value="了解一点"> 了解一点</label>
+          <label class="radio-item"><input type="radio" name="awareness" value="比较了解"> 比较了解</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>您方便咨询的时间段？ <span class="label-tip">（可多选）</span></label>
+        <div class="checkbox-group">
+          <label class="checkbox-item"><input type="checkbox" name="time_slot" value="工作日上午"> 工作日上午</label>
+          <label class="checkbox-item"><input type="checkbox" name="time_slot" value="工作日下午"> 工作日下午</label>
+          <label class="checkbox-item"><input type="checkbox" name="time_slot" value="工作日晚间"> 工作日晚间</label>
+          <label class="checkbox-item"><input type="checkbox" name="time_slot" value="周末上午"> 周末上午</label>
+          <label class="checkbox-item"><input type="checkbox" name="time_slot" value="周日下午"> 周日下午</label>
+          <label class="checkbox-item"><input type="checkbox" name="time_slot" value="周末晚间"> 周末晚间</label>
+        </div>
       </div>
 
       <button type="submit" class="submit-btn">提交预约申请</button>
@@ -180,7 +312,7 @@
     <div id="successCard" class="success-card">
       <div class="emoji">✅</div>
       <h2>预约信息已生成</h2>
-      <p>请复制下面的内容，加微信 <strong id="wx-id">gao13621262967</strong> 发送给我，我会在 24 小时内回复你。</p>
+      <p>请复制下面的内容，加微信 <strong id="wx-id">gao13621262967</strong> 发送给我，我会在 24 小时内回复你，安排免费初次沟通。</p>
       <div style="text-align: center; margin-bottom: 16px;">
         <img src="/images/wechat-qr.jpg" alt="高仰珍微信二维码" style="width: 150px; height: 150px; border-radius: 10px; border: 3px solid #fff; box-shadow: 0 2px 10px rgba(0,0,0,.08);">
       </div>
@@ -206,22 +338,50 @@ const form = document.getElementById('consultForm');
 const successCard = document.getElementById('successCard');
 const summaryText = document.getElementById('summaryText');
 
+function joinWithOther(arr, otherVal, otherLabel) {
+  otherLabel = otherLabel || '其他';
+  const list = arr.slice();
+  const idx = list.indexOf(otherLabel);
+  if (idx > -1) {
+    const val = (otherVal || '').trim();
+    list[idx] = val ? `${otherLabel}（${val}）` : otherLabel;
+  }
+  return list.join('、') || '未填写';
+}
+
 form.addEventListener('submit', function(e) {
   e.preventDefault();
   const fd = new FormData(form);
   const data = Object.fromEntries(fd.entries());
-  const problems = fd.getAll('problems').join('、') || '未填写';
-  const tried = data.tried?.trim() || '无';
-  const extra = data.extra?.trim() || '无';
 
-  const summary = `【睡眠咨询预约】
-称呼：${data.name}
-联系方式：${data.contact}
-失眠时长：${data.duration}
-主要困扰：${problems}
-试过方法：${tried}
-目标：${data.goal}
-补充：${extra}`;
+  const source = joinWithOther(fd.getAll('source'), data.source_other);
+  const problems = joinWithOther(fd.getAll('problems'), data.problems_other);
+  const causes = joinWithOther(fd.getAll('causes'), data.causes_other);
+  const tried = joinWithOther(fd.getAll('tried'), data.tried_other);
+  const timeSlot = fd.getAll('time_slot').join('、') || '未填写';
+
+  const summary = `【睡眠心理咨询预约】
+
+一、基本信息
+称呼：${data.name || '未填写'}
+性别：${data.gender || '未填写'}
+年龄：${data.age || '未填写'}
+所在城市：${data.city?.trim() || '未填写'}
+联系方式：${data.contact || '未填写'}
+怎么知道我的：${source}
+
+二、睡眠状况评估
+失眠时长：${data.duration || '未填写'}
+主要睡眠问题：${problems}
+平均每晚睡眠：${data.sleep_hours || '未填写'}
+失眠主要原因：${causes}
+之前尝试方法：${tried}
+之前方法效果：${data.effect || '未填写'}
+
+三、咨询意愿
+希望达到效果：${data.goal?.trim() || '未填写'}
+对心理咨询了解程度：${data.awareness || '未填写'}
+方便咨询时间段：${timeSlot}`;
 
   summaryText.innerHTML = summary.replace(/\n/g, '<br>');
   form.style.display = 'none';
