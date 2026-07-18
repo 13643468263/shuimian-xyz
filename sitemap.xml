@@ -155,4 +155,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://shuimian.xyz/blog/%E5%9B%9B%E5%9E%8B%E5%A4%B1%E7%9C%A0%E4%BD%A0%E6%98%AF%E5%93%AA%E4%B8%80%E7%A7%8D.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
