@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>搜索睡眠问题 — 无忧睡眠</title>
+  <meta name="description" content="在无忧睡眠官网搜索失眠相关问题：半夜醒、焦虑型失眠、生物钟紊乱、睡前焦虑、CBT-I、睡眠训练等。先分型，再解决。">
+  <link rel="canonical" href="https://shuimian.xyz/search.html">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .search-hero { padding: 56px 0 32px; text-align: center; }
+    .search-hero h1 { font-size: 28px; margin-bottom: 10px; color: var(--text); }
+    .search-hero p { color: var(--text-mid); font-size: 15px; }
+
+    .search-box { max-width: 640px; margin: 0 auto 20px; position: relative; }
+    .search-box input {
+      width: 100%; padding: 16px 52px 16px 20px; font-size: 16px;
+      border: 1.5px solid var(--border); border-radius: var(--radius);
+      background: var(--card); color: var(--text); outline: none;
+      box-shadow: var(--shadow-sm); transition: border-color .2s, box-shadow .2s;
+    }
+    .search-box input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(122,158,126,0.12); }
+    .search-box button {
+      position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+      background: var(--accent); color: #fff; border: none; border-radius: var(--radius-sm);
+      width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    }
+    .search-box button:hover { background: var(--accent-dark); }
+
+    .hot-tags { text-align: center; margin-bottom: 28px; }
+    .hot-tags span { color: var(--text-light); font-size: 13px; margin-right: 8px; }
+    .hot-tags a {
+      display: inline-block; padding: 5px 12px; margin: 4px 4px 0 0;
+      background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+      font-size: 13px; color: var(--text-mid);
+    }
+    .hot-tags a:hover { border-color: var(--accent); color: var(--accent-dark); }
+
+    .search-stats { color: var(--text-light); font-size: 14px; margin: 0 0 16px; }
+
+    .result-list { max-width: var(--max-w); margin: 0 auto 80px; padding: 0 24px; }
+    .result-item {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 20px 22px; margin-bottom: 14px; box-shadow: var(--shadow-sm);
+      transition: transform .15s, box-shadow .15s;
+    }
+    .result-item:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    .result-item a { color: var(--text); display: block; }
+    .result-item a:hover { color: var(--text); }
+    .result-title { font-size: 17px; font-weight: 600; margin-bottom: 6px; color: var(--accent-dark); }
+    .result-desc { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 10px; }
+    .result-meta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .result-tag {
+      font-size: 12px; padding: 2px 8px; border-radius: 12px; font-weight: 500;
+    }
+    .tag-article { background: var(--accent-light); color: var(--accent-dark); }
+    .tag-page { background: var(--warm-light); color: var(--warm-dark); }
+    .tag-tool { background: var(--night-light); color: var(--night); }
+    .result-url { font-size: 12px; color: var(--text-light); word-break: break-all; }
+
+    .mark { background: #fff3cd; padding: 0 2px; border-radius: 3px; color: var(--text); }
+
+    .empty-state { text-align: center; padding: 48px 20px; color: var(--text-mid); }
+    .empty-state p { margin-bottom: 16px; }
+    .empty-state a { color: var(--accent-dark); font-weight: 600; }
+
+    .search-cta {
+      background: var(--warm-light); border: 1px dashed var(--warm); border-radius: var(--radius);
+      padding: 18px 22px; text-align: center; margin-top: 28px;
+    }
+    .search-cta p { margin: 0 0 10px; color: var(--text-mid); font-size: 14px; }
+    .search-cta a {
+      display: inline-block; background: var(--accent); color: #fff;
+      padding: 10px 22px; border-radius: 24px; font-weight: 600; font-size: 14px;
+    }
+    .search-cta a:hover { background: var(--accent-dark); color: #fff; }
+
+    @media (max-width: 480px) {
+      .search-hero h1 { font-size: 24px; }
+      .search-hero { padding-top: 36px; }
+      .nav-links { gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">无忧<span>睡眠</span><span class="dot"></span></a>
+    <nav class="nav-links">
+      <a href="/">首页</a>
+      <a href="/blog/">文章</a>
+      <a href="/search.html">搜索</a>
+      <a href="/assess/" class="nav-cta">免费测评</a>
+      <a href="/faq.html">常见问题</a>
+      <a href="/cases.html">案例</a>
+      <a href="/about.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="search-hero container">
+    <h1>搜一搜你的睡眠问题</h1>
+    <p>输入关键词，比如“半夜醒”“焦虑型”“咖啡因”“生物钟”</p>
+  </section>
+
+  <div class="search-box container">
+    <input type="text" id="searchInput" placeholder="例如：半夜2点醒来 / 睡前焦虑 / 睡眠浅" autocomplete="off">
+    <button id="searchBtn" aria-label="搜索">🔍</button>
+  </div>
+
+  <div class="hot-tags container">
+    <span>热门：</span>
+    <a href="?q=半夜醒">半夜醒</a>
+    <a href="?q=焦虑型">焦虑型</a>
+    <a href="?q=生物钟">生物钟</a>
+    <a href="?q=咖啡因">咖啡因</a>
+    <a href="?q=睡眠浅">睡眠浅</a>
+    <a href="?q=睡不着">睡不着</a>
+    <a href="?q=CBT-I">CBT-I</a>
+  </div>
+
+  <section class="result-list" id="resultList">
+    <p class="search-stats" id="searchStats">正在加载内容索引…</p>
+  </section>
+</main>
+
+<script>
+(function() {
+  let docs = [];
+  const input = document.getElementById('searchInput');
+  const btn = document.getElementById('searchBtn');
+  const list = document.getElementById('resultList');
+  const stats = document.getElementById('searchStats');
+
+  function getQuery() {
+    return new URLSearchParams(location.search).get('q') || '';
+  }
+
+  function setQuery(q) {
+    const url = new URL(location.href);
+    if (q) url.searchParams.set('q', q);
+    else url.searchParams.delete('q');
+    history.replaceState(null, '', url);
+  }
+
+  function tokenize(text) {
+    if (!text) return [];
+    return text.toLowerCase()
+      .replace(/[^\u4e00-\u9fa5a-z0-9]/g, ' ')
+      .split(/\s+/)
+      .filter(t => t.length >= 2 || /^\d+$/.test(t));
+  }
+
+  function highlight(text, terms) {
+    if (!text || !terms.length) return text;
+    let html = text;
+    terms.forEach(t => {
+      const re = new RegExp('(' + t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+      html = html.replace(re, '<span class="mark">$1</span>');
+    });
+    return html;
+  }
+
+  function score(doc, terms) {
+    let s = 0;
+    const title = (doc.title || '').toLowerCase();
+    const desc = (doc.description || '').toLowerCase();
+    const keywords = (doc.keywords || []).join(' ').toLowerCase();
+    terms.forEach(t => {
+      if (title.includes(t)) s += 10;
+      if (keywords.includes(t)) s += 6;
+      if (desc.includes(t)) s += 3;
+      // 部分匹配
+      if (title.split(/\s+/).some(w => w.includes(t))) s += 2;
+    });
+    if (doc.category === '工具') s += 0.5;
+    return s;
+  }
+
+  function render(results, terms) {
+    if (!results.length) {
+      list.innerHTML = `
+        <div class="empty-state">
+          <p>没找到和“<strong>${escapeHtml(terms.join(' '))}</strong>”直接相关的内容。</p>
+          <p>你可以换几个词试试，或者直接做免费测评，2 分钟定位你的失眠类型。</p>
+          <div class="search-cta">
+            <p>不确定自己属于哪种？先做分型测评</p>
+            <a href="/assess/">免费测评 →</a>
+          </div>
+        </div>`;
+      stats.textContent = '';
+      return;
+    }
+
+    stats.textContent = `找到 ${results.length} 个结果`;
+    const html = results.map(doc => {
+      const tagClass = doc.category === '文章' ? 'tag-article' : (doc.category === '工具' ? 'tag-tool' : 'tag-page');
+      const title = highlight(escapeHtml(doc.title), terms);
+      const desc = highlight(escapeHtml(doc.description || ''), terms);
+      return `
+        <article class="result-item">
+          <a href="${doc.url}">
+            <h3 class="result-title">${title}</h3>
+            <p class="result-desc">${desc}</p>
+            <div class="result-meta">
+              <span class="result-tag ${tagClass}">${escapeHtml(doc.category)}</span>
+              <span class="result-url">${doc.url.replace(/^https:\/\//, '')}</span>
+            </div>
+          </a>
+        </article>
+      `;
+    }).join('') + `
+      <div class="search-cta">
+        <p>搜索结果没能解决你的问题？先花 2 分钟做个免费分型测评，比泛泛看文更准。</p>
+        <a href="/assess/">免费测评 →</a>
+      </div>
+    `;
+    list.innerHTML = html;
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  }
+
+  function doSearch(q) {
+    q = (q || '').trim();
+    input.value = q;
+    if (!q) {
+      stats.textContent = `已收录 ${docs.length} 篇内容，输入关键词开始搜索`;
+      list.innerHTML = `
+        <div class="search-cta">
+          <p>不确定怎么描述自己的问题？先花 2 分钟做个免费分型测评</p>
+          <a href="/assess/">免费测评 →</a>
+        </div>
+      `;
+      return;
+    }
+    const terms = tokenize(q);
+    if (!terms.length) {
+      render([], [q]);
+      return;
+    }
+    const results = docs
+      .map(doc => ({ doc, s: score(doc, terms) }))
+      .filter(x => x.s > 0)
+      .sort((a, b) => b.s - a.s)
+      .map(x => x.doc);
+    render(results, terms);
+  }
+
+  fetch('/search.json')
+    .then(r => r.json())
+    .then(data => {
+      docs = data || [];
+      const q = getQuery();
+      doSearch(q);
+    })
+    .catch(err => {
+      stats.textContent = '索引加载失败，请刷新页面重试';
+      console.error(err);
+    });
+
+  function searchNow() {
+    const q = input.value.trim();
+    setQuery(q);
+    doSearch(q);
+  }
+
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') searchNow(); });
+  btn.addEventListener('click', searchNow);
+
+  // 热门标签点击直接跳转
+  document.querySelectorAll('.hot-tags a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const q = new URL(a.href).searchParams.get('q') || '';
+      input.value = q;
+      setQuery(q);
+      doSearch(q);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
