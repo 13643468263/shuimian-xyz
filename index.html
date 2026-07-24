@@ -9,7 +9,7 @@
   <!-- Open Graph / 微信&社交分享卡片 -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="zh_CN">
-  <meta property="og:site_name" content="高仰珍无忧睡眠">
+  <meta property="og:site_name" content="无忧睡眠科技">
   <meta property="og:title" content="无忧睡眠 — 先分型再解决 | 4种失眠类型测评">
   <meta property="og:description" content="焦虑型/生物钟紊乱型/神经疲劳型/习惯熬夜型——先搞清楚你是哪种失眠，再对症改善。56天陪伴式训练。">
   <meta property="og:url" content="https://shuimian.xyz/">
@@ -62,7 +62,7 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <a href="/" class="logo">高仰珍<span>无忧睡眠</span><span class="dot"></span></a>
+    <a href="/" class="logo">无忧睡眠<span>科技</span><span class="dot"></span></a>
     <nav class="nav-links">
       <a href="/">首页</a>
       <a href="/blog/">文章</a>
@@ -91,6 +91,13 @@
     <p class="sub">
       不靠药物，不走弯路。CBT-I 国际循证方法 + <strong>先分型再解决</strong> + 56天陪伴式训练。
     </p>
+
+    <!-- 首页搜索框 -->
+    <form class="hero-search" action="/search.html" method="GET" onsubmit="var q=this.q.value.trim(); if(!q){return false;} this.action='/search.html?q='+encodeURIComponent(q); return true;">
+      <input type="text" name="q" placeholder="搜睡眠问题，如：半夜醒、焦虑型、咖啡因…" autocomplete="off">
+      <button type="submit">🔍 搜索</button>
+    </form>
+
     <div class="hero-actions">
       <a href="#fenxing" class="btn btn-primary">🎯 看看我是哪种失眠</a>
       <a href="/blog/" class="btn btn-outline">📖 阅读睡眠指南</a>
