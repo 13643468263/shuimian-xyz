@@ -74,6 +74,8 @@ a:hover { color: var(--accent); }
   display: flex;
   align-items: center;
   gap: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .logo .dot {
   width: 8px; height: 8px;
@@ -81,26 +83,35 @@ a:hover { color: var(--accent); }
   border-radius: 50%;
   display: inline-block;
   margin: 0 2px;
+  flex-shrink: 0;
 }
 .logo span { color: var(--accent-dark); }
-.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links { display: flex; gap: 22px; align-items: center; }
 .nav-links a {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--text-mid);
   letter-spacing: 0.3px;
   transition: color 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .nav-links a:hover { color: var(--accent-dark); }
 .nav-links .nav-cta {
   background: var(--accent);
   color: #fff;
-  padding: 6px 16px;
+  padding: 6px 14px;
   border-radius: 20px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
 }
 .nav-links .nav-cta:hover { background: var(--accent-dark); color: #fff; }
+@media (max-width: 900px) {
+  .header-inner { height: auto; min-height: 56px; padding: 8px 0; flex-wrap: wrap; }
+  .nav-links { gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
+  .nav-links a { font-size: 12px; }
+  .nav-links .nav-cta { padding: 5px 10px; }
+}
 
 /* === Hero === */
 .hero {
