@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>失眠自救手册 · 无忧睡眠</title>
+<style>
+  :root{
+    --bg:#0f1b3d; --card:#1a2b54; --ink:#e8eefc; --muted:#9fb0d6;
+    --gold:#ffd27a; --link:#7ab8ff; --line:#2c3f6e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.75;
+    padding:0 0 48px; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:0 20px}
+  header{
+    background:linear-gradient(160deg,#16264f,#0f1b3d);
+    text-align:center; padding:48px 20px 36px; border-bottom:1px solid var(--line);
+  }
+  header h1{font-size:26px;letter-spacing:1px}
+  header .sub{color:var(--gold);margin-top:10px;font-size:15px}
+  header .tag{color:var(--muted);margin-top:14px;font-size:13px}
+  h2{
+    font-size:19px; margin:38px 0 16px; padding-left:12px;
+    border-left:4px solid var(--gold);
+  }
+  p{margin:12px 0;color:var(--ink)}
+  .lead{color:var(--muted);font-size:15px}
+  .types{display:grid;gap:12px;margin:18px 0}
+  .type{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:16px 18px;
+  }
+  .type b{color:var(--gold);font-size:16px}
+  .type p{margin:6px 0 0;color:var(--muted);font-size:14px}
+  .cta-box{
+    background:rgba(255,210,122,.08); border:1px solid var(--gold);
+    border-radius:14px; padding:16px 18px; margin:18px 0; text-align:center;
+  }
+  .cta-box a{
+    color:var(--link); font-weight:700; text-decoration:none;
+    border-bottom:1px solid var(--link);
+  }
+  .cta-box .small{display:block;color:var(--muted);font-size:13px;margin-top:8px;font-weight:400}
+  ol.actions{counter-reset:a;list-style:none;padding:0;margin:18px 0}
+  ol.actions li{
+    counter-increment:a; position:relative; background:var(--card);
+    border:1px solid var(--line); border-radius:14px; padding:16px 18px 16px 58px;
+    margin-bottom:12px;
+  }
+  ol.actions li::before{
+    content:counter(a); position:absolute; left:16px; top:16px;
+    width:28px;height:28px;border-radius:50%;
+    background:var(--gold);color:#0f1b3d;font-weight:700;
+    display:flex;align-items:center;justify-content:center;font-size:15px;
+  }
+  ol.actions li b{color:var(--gold);font-size:15px}
+  .key{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:18px;margin:18px 0;color:var(--muted);font-size:15px;
+  }
+  .key b{color:var(--ink)}
+  .next{background:rgba(122,184,255,.08);border:1px solid var(--link);border-radius:14px;padding:18px;margin:18px 0}
+  .next ol{padding-left:20px;margin:10px 0 0}
+  .next li{margin:8px 0}
+  .next a{color:var(--link);font-weight:700;text-decoration:none;border-bottom:1px solid var(--link)}
+  footer{
+    text-align:center;color:var(--muted);font-size:12px;
+    padding:28px 20px 0;border-top:1px solid var(--line);margin-top:36px;
+  }
+  .sig{text-align:right;color:var(--gold);margin-top:24px;font-size:15px}
+</style>
+</head>
+<body>
+<header>
+  <h1>失眠自救手册</h1>
+  <div class="sub">不靠药，先把睡眠能力长回来</div>
+  <div class="tag">写给 30+ 职场女性 ｜ 基于国际认证 CBT-I（失眠认知行为疗法）</div>
+</header>
+
+<div class="wrap">
+  <p class="lead">我是高仰珍，曾经失眠整整 3 年。那种躺在床上翻来覆去、天快亮了才迷糊一会儿的感觉，我太懂了。我也试过各种办法，最后靠"不靠药"的方式，把睡眠能力一点点长回来，到现在已经帮 200+ 职场女性改善睡眠。</p>
+  <p class="lead">这份手册不卖课，只给你 <b style="color:var(--gold)">10 个今天就能做的动作</b>。先动起来，比什么都重要。</p>
+
+  <h2>先搞清楚：你是哪一种失眠？</h2>
+  <p>失眠不是一个样子。先对号入座，动作才有针对性。</p>
+  <div class="types">
+    <div class="type"><b>焦虑型</b><p>睡前脑子停不下来，越躺越清醒，想的都是明天的事、没做好的事。身体累，脑子不累。</p></div>
+    <div class="type"><b>生物钟紊乱型</b><p>日夜颠倒、周末猛补觉、经常倒班。不是不想睡，是身体不知道"现在该睡了"。</p></div>
+    <div class="type"><b>神经疲劳型</b><p>明明很累，却怎么也睡不着；肩颈紧、心跳快、对咖啡因特别敏感。神经系统一直绷着。</p></div>
+    <div class="type"><b>习惯熬夜型</b><p>不是睡不着，是不舍得睡。手机放不下，总觉得白天不属于自己，晚上才属于自己。</p></div>
+  </div>
+  <div class="cta-box">
+    拿不准自己是哪一种？去做一个免费分型测评 👉
+    <a href="https://shuimian.xyz/assess">https://shuimian.xyz/assess</a>
+    <span class="small">测完会告诉你属于哪种，以及第一周该从哪下手。</span>
+  </div>
+
+  <h2>10 个不靠药的改善动作</h2>
+  <ol class="actions">
+    <li><b>把闹钟藏起来</b><br>半夜醒来第一反应看时间，一看"才 3 点"，焦虑立刻上来。把闹钟转过去、塞进抽屉，或者直接挪出卧室。看不见时间，大脑就少一个恐慌来源。</li>
+    <li><b>固定起床时间</b><br>比"几点睡"更重要的是"几点起"。每天同一时间起床（包括周末），生物钟才有锚点。睡得晚也照常起，白天稍微累一点，晚上更容易困。</li>
+    <li><b>床只用来睡觉</b><br>不在床上刷手机、看剧、回消息、想事情。让大脑把"床"和"睡觉"画等号。醒了超过 20 分钟还睡不着，就下床。</li>
+    <li><b>20 分钟睡不着就下床</b><br>躺床上翻来覆去只会越躺越焦虑。下床去暗一点的房间，做点无聊的事（叠衣服、发呆），有困意再回床。目的是不让"床 = 清醒焦虑"被强化。</li>
+    <li><b>睡前 1 小时降蓝光</b><br>手机、平板、电脑的蓝光会骗大脑"现在还是白天"。睡前 1 小时把手机移出卧室，开一盏暖光小夜灯。实在要用，就开护眼模式+调最暗。</li>
+    <li><b>把"我必须睡着"换成"闭眼休息也 OK"</b><br>越逼自己睡，越清醒。"必须睡着"是失眠最大的敌人。换成"闭眼躺着也是在休息"，紧绷感会松下来，反而更容易睡着。</li>
+    <li><b>早上晒 15 分钟晨光</b><br>起床后到户外晒会儿太阳（哪怕阴天也行）。晨光会告诉大脑"新的一天开始了"，帮它重新排好褪黑素节奏，晚上更容易困。</li>
+    <li><b>睡前写"担忧清单"</b><br>脑子停不下来，是因为怕忘了。拿张纸，把明天要操心的事、今天情绪全写下来，告诉自己"已经记下了，明天再处理"。写完大脑就肯下班了。</li>
+    <li><b>咖啡因 14 点前截止</b><br>咖啡、浓茶、奶茶、可乐，下午 2 点后一律停。咖啡因在身体里能待 6—8 小时，神经疲劳型的人尤其要管住。</li>
+    <li><b>不补觉、不提前上床</b><br>白天再困也别长时间补觉（最多眯 20 分钟）。晚上也别为了"多睡会儿"提前躺床——在床上清醒越久，睡眠效率越低。困了再上床。</li>
+  </ol>
+
+  <h2>一个关键认知</h2>
+  <div class="key">失眠不是"缺觉"，是"睡眠能力"暂时掉线了。<br><br>药物能帮你救急，但把能力长回来，靠的是方法、节奏和一点点耐心。CBT-I（失眠认知行为疗法）是目前国际指南里的一线方法，大量研究显示约 80% 的人用它能改善睡眠——它不靠药，而是把"躺下就清醒"的恶性循环，重新调回"躺下就放松"。</div>
+
+  <h2>下一步，从这一件开始</h2>
+  <div class="next">
+    <ol>
+      <li>做免费分型测评：<a href="https://shuimian.xyz/assess">https://shuimian.xyz/assess</a>（3 分钟，知道自己是哪一种）</li>
+      <li>测完照着上面 10 个动作，先挑 2—3 个做一周</li>
+      <li>想有人陪着一起练、卡住了有人接住，可以了解我们的 56 天睡眠力陪伴</li>
+    </ol>
+    <p style="margin-top:14px;color:var(--muted);font-size:14px">不靠药，不硬扛。先把睡眠能力，一点点长回来。</p>
+  </div>
+  <div class="sig">—— 高仰珍 · 无忧睡眠</div>
+
+  <footer>
+    内容基于 CBT-I 原理编写，不构成医疗诊断；长期失眠或正在用药者，请咨询医生。<br>
+    © 无忧睡眠科技
+  </footer>
+</div>
+</body>
+</html>
