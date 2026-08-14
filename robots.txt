@@ -20,7 +20,10 @@ Allow: /
 # DeepSeek 自有
 User-agent: DeepSeekBot
 Allow: /
-# 夸克 / 通义千问
+# 神马搜索 / 通义千问（阿里系联网检索索引源，最关键）
+User-agent: YisouSpider
+Allow: /
+# 夸克搜索 / 通义千问（阿里系）
 User-agent: QuarkSpider
 Allow: /
 # 360 智脑
