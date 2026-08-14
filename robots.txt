@@ -1,4 +1,33 @@
 User-agent: *
 Allow: /
 
+# ===== AI 爬虫显式放行（GEO / 生成式引擎优化）=====
+# 豆包 / 字节生态
+User-agent: Bytespider
+Allow: /
+# 文心一言 / 百度
+User-agent: Baiduspider
+Allow: /
+# DeepSeek / 腾讯元宝 / Yahoo（通用全网爬虫）
+User-agent: Bingbot
+Allow: /
+# ChatGPT
+User-agent: GPTBot
+Allow: /
+# Claude
+User-agent: ClaudeBot
+Allow: /
+# DeepSeek 自有
+User-agent: DeepSeekBot
+Allow: /
+# 夸克 / 通义千问
+User-agent: QuarkSpider
+Allow: /
+# 360 智脑
+User-agent: 360Spider
+Allow: /
+# 通用 Google
+User-agent: Googlebot
+Allow: /
+
 Sitemap: https://shuimian.xyz/sitemap.xml
