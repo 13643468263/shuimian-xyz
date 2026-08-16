@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>免费资料库 · 无忧睡眠</title>
+  <meta name="description" content="无忧睡眠免费资料库：失眠自救手册、创业女性压力管理实操指南等可下载、可在线阅读的实用资料，先分型再解决，不靠药改善睡眠与状态。">
+  <link rel="canonical" href="https://shuimian.xyz/resources.html">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .get-page { background: var(--bg); min-height: 100vh; }
+    .get-header {
+      text-align: center; padding: 28px 20px; border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.8); backdrop-filter: blur(10px);
+    }
+    .get-header a.logo { font-size: 20px; font-weight: 700; color: var(--text); text-decoration: none; }
+    .get-header a.logo span { color: var(--accent); font-weight: 500; }
+    .get-wrap { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; text-align: center; }
+    .get-badge {
+      display: inline-block; background: var(--warm-light); color: var(--warm-dark);
+      padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 500; margin-bottom: 18px;
+    }
+    .get-title { font-size: 30px; color: var(--text); margin-bottom: 12px; line-height: 1.3; }
+    .get-sub { color: var(--text-mid); font-size: 16px; margin-bottom: 44px; line-height: 1.75; max-width: 620px; margin-left: auto; margin-right: auto; }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      text-align: left;
+      margin-bottom: 40px;
+    }
+    .resource-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform .2s, box-shadow .2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .resource-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .resource-cover {
+      width: 100%; height: 180px; object-fit: cover;
+      background: var(--bg); border-bottom: 1px solid var(--border);
+    }
+    .resource-body { padding: 26px 24px 28px; display: flex; flex-direction: column; flex: 1; }
+    .resource-tag {
+      display: inline-block; font-size: 12px; font-weight: 500;
+      color: var(--accent-dark); background: var(--accent-light);
+      padding: 4px 10px; border-radius: 12px; margin-bottom: 12px; width: fit-content;
+    }
+    .resource-card h3 { font-size: 19px; margin: 0 0 10px; color: var(--text); line-height: 1.4; }
+    .resource-card p { font-size: 14px; color: var(--text-light); margin: 0 0 22px; line-height: 1.7; flex: 1; }
+    .resource-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .resource-actions .btn { width: 100%; justify-content: center; font-size: 14px; padding: 10px 12px; }
+
+    .resource-more {
+      background: rgba(255,255,255,0.5);
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 42px 24px;
+      text-align: center;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+    .resource-more .icon { font-size: 36px; margin-bottom: 12px; opacity: .7; }
+
+    .get-note {
+      margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--border);
+      font-size: 12px; color: var(--text-light); line-height: 1.7;
+    }
+    @media (max-width: 560px) {
+      .get-title { font-size: 24px; }
+      .get-wrap { padding: 36px 20px 64px; }
+      .resource-grid { grid-template-columns: 1fr; }
+      .resource-actions { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="get-page">
+
+<header class="get-header">
+  <a href="/" class="logo">无忧睡眠<span>科技</span></a>
+</header>
+
+<main class="get-wrap">
+  <div class="get-badge">🎁 免费领取</div>
+  <h1 class="get-title">无忧睡眠资料库</h1>
+  <p class="get-sub">
+    失眠改善、情绪压力、状态管理——这里是一份份能直接用的实操资料。<br>
+    可在线阅读，也可下载 Word 版收藏或转发。
+  </p>
+
+  <div class="resource-grid">
+    <!-- 失眠自救手册 -->
+    <article class="resource-card">
+      <img src="/images/manual-cover.png" alt="失眠自救手册封面" class="resource-cover" loading="lazy">
+      <div class="resource-body">
+        <span class="resource-tag">失眠改善</span>
+        <h3>《失眠自救手册》</h3>
+        <p>10 个今晚就能做的不靠药动作，附带免费失眠分型测评链接。先分型、再动手，适合想马上改善睡眠的人。</p>
+        <div class="resource-actions">
+          <a href="/manual.html" class="btn btn-outline">📖 在线阅读</a>
+          <a href="/manual-download.docx" class="btn btn-warm" download="失眠自救手册_Word可点击版.docx">📥 下载 Word</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 创业女性压力指南 -->
+    <article class="resource-card">
+      <img src="/images/stress-guide-cover.png" alt="创业女性压力管理实操指南封面" class="resource-cover" loading="lazy">
+      <div class="resource-body">
+        <span class="resource-tag">压力管理</span>
+        <h3>《创业女性压力管理实操指南》</h3>
+        <p>认知篇 + 行为训练篇，写给在创业里咬牙前行的女性。今天就能照做的压力缓解工具，保护状态就是保护战斗力。</p>
+        <div class="resource-actions">
+          <a href="/stress-guide.html" class="btn btn-outline">📖 在线阅读</a>
+          <a href="/stress-guide-download.docx" class="btn btn-warm" download="创业女性压力管理实操指南.docx">📥 下载 Word</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 预留：更多资料 -->
+    <div class="resource-card resource-more">
+      <div class="icon">🌱</div>
+      <div>更多资料正在整理中<br>敬请期待</div>
+    </div>
+  </div>
+
+  <p class="get-note">
+    资料内容基于 CBT-I（失眠认知行为疗法）与压力管理科学方法编写，不构成医疗诊断；长期失眠、情绪困扰或正在用药者，请咨询专业人士。<br>
+    © 2026 太原无忧睡眠科技有限公司 · 晋ICP备2025055518号-1
+  </p>
+</main>
+
+</body>
+</html>
