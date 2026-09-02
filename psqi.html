@@ -157,6 +157,7 @@
       <div class="result-actions">
         <a href="/assess/" class="btn btn-primary">🎯 再做一个：我是哪种失眠类型</a>
         <a href="/consultation.html" class="btn btn-outline">📅 预约 1 对 1 咨询</a>
+        <button type="button" class="btn btn-outline" onclick="restartQuiz()">🔄 重新测一次</button>
         <a href="/" class="btn btn-outline" style="margin-top:8px;">← 回首页</a>
       </div>
     </div>
@@ -408,6 +409,16 @@ function prevQuestion() {
     current--;
     renderQuestion();
   }
+}
+
+// 重新测评：清空答案回到第 1 题（answers 是 const，只能逐个 delete 属性）
+function restartQuiz() {
+  Object.keys(answers).forEach(k => delete answers[k]);
+  current = 0;
+  document.getElementById('resultCard').style.display = 'none';
+  document.getElementById('quizArea').style.display = 'block';
+  renderQuestion();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function showResult() {
