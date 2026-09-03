@@ -2,35 +2,86 @@ User-agent: *
 Allow: /
 
 # ===== AI 爬虫显式放行（GEO / 生成式引擎优化）=====
-# 豆包 / 字节生态
+# 说明：以下全部 Allow。GEO 的目标就是让生成式引擎能抓到并引用本站内容。
+
+# —— 国内 AI 生态（最高优先级：国内用户提问主要走这几家） ——
+# 豆包 / 字节系
 User-agent: Bytespider
 Allow: /
-# 文心一言 / 百度
+# 百度搜索 / 文心一言
 User-agent: Baiduspider
 Allow: /
-# DeepSeek / 腾讯元宝 / Yahoo（通用全网爬虫）
-User-agent: Bingbot
-Allow: /
-# ChatGPT
-User-agent: GPTBot
-Allow: /
-# Claude
-User-agent: ClaudeBot
-Allow: /
-# DeepSeek 自有
-User-agent: DeepSeekBot
-Allow: /
-# 神马搜索 / 通义千问（阿里系联网检索索引源，最关键）
+# 神马搜索 / 夸克 / 阿里系（通义千问联网检索的主要索引源）
 User-agent: YisouSpider
 Allow: /
-# 夸克搜索 / 通义千问（阿里系）
+# 夸克搜索
 User-agent: QuarkSpider
 Allow: /
 # 360 智脑
 User-agent: 360Spider
 Allow: /
-# 通用 Google
+# DeepSeek 自有爬虫
+User-agent: DeepSeekBot
+Allow: /
+# 搜狗 / 腾讯系
+User-agent: Sogou web spider
+Allow: /
+
+# —— 国际 AI 搜索与助手 ——
+# ChatGPT 训练抓取
+User-agent: GPTBot
+Allow: /
+# ChatGPT 搜索索引（最容易被漏，但对"被引用"极关键）
+User-agent: OAI-SearchBot
+Allow: /
+# ChatGPT 用户触发的实时抓取
+User-agent: ChatGPT-User
+Allow: /
+# Claude 训练抓取
+User-agent: ClaudeBot
+Allow: /
+# Anthropic
+User-agent: anthropic-ai
+Allow: /
+# Claude 实时检索
+User-agent: Claude-User
+Allow: /
+# Perplexity（AI 搜索，引用率最高的引擎之一）
+User-agent: PerplexityBot
+Allow: /
+# Apple Intelligence / Siri
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+# Google Gemini 训练与使用控制
+User-agent: Google-Extended
+Allow: /
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+# Amazon Alexa / Rufus
+User-agent: Amazonbot
+Allow: /
+# You.com
+User-agent: YouBot
+Allow: /
+
+# —— 通用检索 ——
 User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+
+# —— 训练语料源（多数大模型的底层语料来源） ——
+# Common Crawl
+User-agent: CCBot
+Allow: /
+# Timpi 去中心化搜索
+User-agent: Timpibot
+Allow: /
+# Diffbot 知识图谱
+User-agent: Diffbot
 Allow: /
 
 Sitemap: https://shuimian.xyz/sitemap.xml

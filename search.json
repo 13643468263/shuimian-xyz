@@ -1,467 +1,854 @@
 [
- {
-  "title": "免费失眠类型测评 - 高仰珍无忧睡眠",
-  "url": "https://shuimian.xyz/assess/",
-  "description": "2分钟12题，判断你是焦虑型、生物钟紊乱型、神经疲劳型还是习惯熬夜型失眠。先分型，再解决，比看100篇文章更管用。",
-  "keywords": [
-   "测评",
-   "失眠分型",
-   "焦虑型",
-   "生物钟紊乱型",
-   "神经疲劳型",
-   "习惯熬夜型"
-  ],
-  "category": "工具"
- },
- {
-  "title": "PSQI睡眠质量量表 - 高仰珍无忧睡眠",
-  "url": "https://shuimian.xyz/psqi.html",
-  "description": "匹兹堡睡眠质量指数（PSQI）是国际通用睡眠质量自评量表。19道题，7个维度，测出你最近一个月的睡眠质量。",
-  "keywords": [],
-  "category": "页面"
- },
- {
-  "title": "关于我们 - 太原无忧睡眠科技有限公司",
-  "url": "https://shuimian.xyz/about.html",
-  "description": "太原无忧睡眠科技有限公司官方网站。专注用国际认证CBT-I非药物方式，帮职场女性把睡眠能力长回来。创始人高仰珍：失眠3年亲历者，中科院认证心理咨询师。",
-  "keywords": [],
-  "category": "页面"
- },
- {
-  "title": "失眠自救手册 · 无忧睡眠",
-  "url": "https://shuimian.xyz/manual.html",
-  "description": "失眠自救手册",
-  "keywords": [],
-  "category": "页面"
- },
- {
-  "title": "免费资料库 · 无忧睡眠",
-  "url": "https://shuimian.xyz/resources.html",
-  "description": "无忧睡眠免费资料库：失眠自救手册、创业女性压力管理实操指南等可下载、可在线阅读的实用资料。",
-  "keywords": ["资料库", "免费资料", "失眠自救手册", "压力管理", "创业女性"],
-  "category": "页面"
- },
- {
-  "title": "创业女性压力管理实操指南 · 无忧睡眠",
-  "url": "https://shuimian.xyz/stress-guide.html",
-  "description": "认知篇 + 行为训练篇，写给在创业里咬牙前行的女性。今天就能照做的压力缓解工具。",
-  "keywords": ["创业女性", "压力管理", "焦虑", "情绪", "CBT-I"],
-  "category": "页面"
- },
- {
-  "title": "个人情绪能量管理系统 · 无忧睡眠",
-  "url": "https://shuimian.xyz/energy-system.html",
-  "description": "一套管理情绪能量的实操系统：觉察能量状态、识别消耗源、分四层补给、建立日常节律。",
-  "keywords": ["情绪能量", "情绪管理", "能量管理", "职场女性", "状态管理"],
-  "category": "页面"
- },
- {
-  "title": "领取《创业女性压力管理实操指南》· 无忧睡眠",
-  "url": "https://shuimian.xyz/stress-guide-get.html",
-  "description": "免费领取《创业女性压力管理实操指南》：认知篇+行为训练篇，可在线阅读，可下载Word版。",
-  "keywords": ["创业女性", "压力管理", "免费资料", "下载"],
-  "category": "页面"
- },
- {
-  "title": "常见问题 - 失眠到底怎么办？|无忧睡眠",
-  "url": "https://shuimian.xyz/faq.html",
-  "description": "失眠分4种：焦虑型/生物钟紊乱型/神经疲劳型/习惯熬夜型。换环境睡不着、躺下脑子停不下来、作息飘忽、习惯性熬夜怎么办？先分型再解决，附免费测评。",
-  "keywords": [],
-  "category": "页面"
- },
- {
-  "title": "无忧睡眠 - 先分型再解决 | 4种失眠类型测评与56天改善方案",
-  "url": "https://shuimian.xyz/index.html",
-  "description": "我也失眠了3年，用CBT-I方法走出来。焦虑型/生物钟紊乱型/神经疲劳型/习惯熬夜型——先搞清楚你是哪种失眠，再对症改善。56天陪伴式训练，不靠药物睡好觉。",
-  "keywords": [],
-  "category": "页面"
- },
- {
-  "title": "案例故事 - 当「失眠」变成一个让人紧张的词|无忧睡眠",
-  "url": "https://shuimian.xyz/cases.html",
-  "description": "一位40+职场女性，甲亢恢复后仍对「失眠」一词高度敏感。这不是典型入睡困难，而是焦虑型失眠里更深层的一种心理敏感。我们用认知重构与渐进脱敏帮她逐步重建安全感。",
-  "keywords": [],
-  "category": "页面"
- },
- {
-  "title": "睡眠力训练营服务协议（v2.2）- 高仰珍无忧睡眠",
-  "url": "https://shuimian.xyz/contract.html",
-  "description": "无忧睡眠·睡眠力训练营服务协议全文（v2.2）：服务内容、费用与支付、退款政策、效果说明与责任、知识产权、隐私保密及电子签署方式。",
-  "keywords": [
-   "睡眠训练营",
-   "服务协议",
-   "CBT-I",
-   "高仰珍",
-   "无忧睡眠",
-   "退款政策"
-  ],
-  "category": "页面"
- },
- {
-  "title": "睡眠力训练营（56天）- 高仰珍无忧睡眠",
-  "url": "https://shuimian.xyz/camp.html",
-  "description": "高仰珍：失眠3年亲历者，CBT-I睡眠辅导师。56天陪伴式训练营，仅招6人，下一期报名中。先分型，再解决，不靠药物睡好觉。",
-  "keywords": [
-   "睡眠训练营",
-   "CBT-I",
-   "失眠改善",
-   "高仰珍",
-   "睡眠辅导",
-   "56天训练营"
-  ],
-  "category": "页面"
- },
- {
-  "title": "预约1对1睡眠心理咨询 - 高仰珍无忧睡眠",
-  "url": "https://shuimian.xyz/consultation.html",
-  "description": "填写睡眠心理咨询预约表，高仰珍会在24小时内联系你，安排免费初次沟通。适合失眠超过1个月、想从情绪和认知根源改善睡眠的朋友。",
-  "keywords": [],
-  "category": "页面"
- },
- {
-  "title": "4种失眠类型，你是哪一种？ - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/四型失眠你是哪一种.html",
-  "description": "失眠不是一种问题，是四种不同的问题。焦虑型、生物钟紊乱型、神经疲劳型、习惯熬夜型，每种解决方向完全不同。先搞清楚你是哪一种，方法才管用。",
-  "keywords": [
-   "失眠有哪些类型",
-   "焦虑型",
-   "生物钟紊乱型",
-   "神经疲劳型",
-   "习惯熬夜型",
-   "睡眠测评"
-  ],
-  "category": "文章"
- },
- {
-  "title": "为什么总是半夜2点3点醒来 - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/为什么总是半夜2点3点醒来.html",
-  "description": "很多人有一个困惑：我每天都是同一个时间醒来。",
-  "keywords": [
-   "半夜醒来睡不着",
-   "固定时间醒来",
-   "凌晨2点3点醒来"
-  ],
-  "category": "文章"
- },
- {
-  "title": "为什么我睡觉总是似睡非睡 - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/为什么我睡觉总是似睡非睡.html",
-  "description": "躺在床上，眼睛是闭着的，但脑子一直在转。迷迷糊糊的，好像睡着了，又好像没睡着。",
-  "keywords": [
-   "似睡非睡",
-   "似醒非醒",
-   "睡眠质量差"
-  ],
-  "category": "文章"
- },
- {
-  "title": "习惯性熬夜型失眠：不是睡不着，是不想睡 - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/习惯性熬夜型失眠-不是睡不着-是不想睡.html",
-  "description": "有一种失眠，特别奇怪。",
-  "keywords": [
-   "习惯性熬夜",
-   "不想睡但想睡着",
-   "熬夜睡不着怎么办"
-  ],
-  "category": "文章"
- },
- {
-  "title": "产后失眠怎么办？ - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/产后失眠怎么办.html",
-  "description": "产后失眠怎么办？",
-  "keywords": [],
-  "category": "文章"
- },
- {
-  "title": "凌晨醒来睡不着怎么回事 - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/凌晨醒来睡不着怎么回事.html",
-  "description": "晚上11点睡着，凌晨3点准时醒来。睁开眼，脑子清醒得很，翻来覆去到5点才勉强睡着。",
-  "keywords": [
-   "凌晨醒来睡不着",
-   "半夜醒来睡不着",
-   "凌晨3点醒来睡不着"
-  ],
-  "category": "文章"
- },
- {
-  "title": "午睡多久合适？ - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/午睡多久合适.html",
-  "description": "午睡多久合适？",
-  "keywords": [],
-  "category": "文章"
- },
- {
-  "title": "压力大失眠怎么办？ - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/压力大失眠怎么办.html",
-  "description": "压力大失眠怎么办？",
-  "keywords": [],
-  "category": "文章"
- },
- {
-  "title": "失眠3年康复的真实路径：我做了什么，做对了什么 - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/失眠3年康复的真实路径-我做了什么-做对了什么.html",
-  "description": "我失眠3年，试过的方法比你想象的多得多。",
-  "keywords": [
-   "失眠康复",
-   "失眠3年",
-   "失眠好了"
-  ],
-  "category": "文章"
- },
- {
-  "title": "失眠会遗传吗？ - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/失眠会遗传吗.html",
-  "description": "失眠会遗传吗？",
-  "keywords": [],
-  "category": "文章"
- },
- {
-  "title": "失眠和抑郁有关系吗？ - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/失眠和抑郁有关系吗.html",
-  "description": "失眠和抑郁有关系吗？",
-  "keywords": [],
-  "category": "文章"
- },
- {
-  "title": "失眠多久需要看医生？ - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/失眠多久需要看医生.html",
-  "description": "失眠多久需要看医生？",
-  "keywords": [],
-  "category": "文章"
- },
- {
-  "title": "失眠看什么科？失眠3年我跑了6个科室，总结的经验 - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/失眠看什么科-失眠3年我跑了6个科室-总结的经验.html",
-  "description": "失眠3年，我跑了无数趟医院。",
-  "keywords": [
-   "失眠看什么科",
-   "失眠去医院挂什么科",
-   "失眠科"
-  ],
-  "category": "文章"
- },
- {
-  "title": "如何缓解失眠和焦虑症状？ - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/如何缓解失眠和焦虑症状.html",
-  "description": "如何缓解失眠和焦虑症状？",
-  "keywords": [
-   "失眠焦虑怎么缓解",
-   "焦虑型失眠怎么办",
-   "失眠和焦虑的恶性循环怎么打破",
-   "CBT-I怎么调理焦虑失眠",
-   "不靠药物缓解失眠焦虑"
-  ],
-  "category": "文章"
- },
- {
-  "title": "怎么判断自己睡眠质量好不好？ - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/怎么判断自己睡眠质量好不好.html",
-  "description": "怎么判断自己睡眠质量好不好？",
-  "keywords": [],
-  "category": "文章"
- },
- {
-  "title": "怎么培养好的睡眠习惯？ - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/怎么培养好的睡眠习惯.html",
-  "description": "怎么培养好的睡眠习惯？",
-  "keywords": [],
-  "category": "文章"
- },
- {
-  "title": "总是凌晨醒来睡不着怎么办 - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/总是凌晨醒来睡不着怎么办.html",
-  "description": "凌晨醒来，是失眠人群最常见的症状之一。",
-  "keywords": [
-   "凌晨醒来睡不着怎么办",
-   "凌晨醒来睡不着",
-   "总是凌晨醒来"
-  ],
-  "category": "文章"
- },
- {
-  "title": "总是失眠怎么办？别再试方法了，先搞清楚这个 - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/总是失眠怎么办-别再试方法了-先搞清楚这个.html",
-  "description": "每天晚上躺在床上，你在想什么？",
-  "keywords": [
-   "总是失眠怎么办",
-   "经常失眠怎么办",
-   "失眠怎么办"
-  ],
-  "category": "文章"
- },
- {
-  "title": "晚上睡不着白天困怎么办？ - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/晚上睡不着白天困怎么办.html",
-  "description": "晚上睡不着白天困怎么办？",
-  "keywords": [],
-  "category": "文章"
- },
- {
-  "title": "深度睡眠怎么获得？ - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/深度睡眠怎么获得.html",
-  "description": "深度睡眠怎么获得？",
-  "keywords": [],
-  "category": "文章"
- },
- {
-  "title": "生物钟乱了怎么调整最有效 - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/生物钟乱了怎么调整最有效.html",
-  "description": "很多人问我：作息不规律是不是很难改？",
-  "keywords": [
-   "生物钟紊乱怎么调整",
-   "生物钟乱了怎么调回来",
-   "睡眠生物钟"
-  ],
-  "category": "文章"
- },
- {
-  "title": "睡眠浅怎么改善？先搞清楚你为什么睡不深 - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/睡眠浅怎么改善-先搞清楚你为什么睡不深.html",
-  "description": "睡了一晚上，但早上醒来还是很累。",
-  "keywords": [
-   "睡眠浅怎么改善",
-   "睡得太浅",
-   "深度睡眠"
-  ],
-  "category": "文章"
- },
- {
-  "title": "睡眠质量差怎么改善？这4个指标比睡够8小时更重要 - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/睡眠质量差怎么改善-这4个指标比睡够8小时更重要.html",
-  "description": "很多人问我：你睡几个小时？",
-  "keywords": [
-   "睡眠质量差怎么改善",
-   "睡眠质量差",
-   "睡眠质量"
-  ],
-  "category": "文章"
- },
- {
-  "title": "睡眠问题心理咨询真的有用吗 - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/睡眠问题心理咨询真的有用吗.html",
-  "description": "我失眠3年，身边人问我：你看过心理咨询师吗？",
-  "keywords": [
-   "睡眠问题心理咨询",
-   "失眠看心理医生",
-   "失眠心理咨询"
-  ],
-  "category": "文章"
- },
- {
-  "title": "睡眠障碍怎么治？别再乱试方法了，先看完这篇 - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/睡眠障碍怎么治-别再乱试方法了-先看完这篇.html",
-  "description": "我见过太多失眠的人，在错误的路上越走越远。",
-  "keywords": [
-   "睡眠障碍怎么治",
-   "睡眠障碍",
-   "失眠治疗"
-  ],
-  "category": "文章"
- },
- {
-  "title": "神经性疲劳型失眠：你不是睡不着，是大脑和身体\"失联\"了 - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/神经性疲劳型失眠-你不是睡不着-是大脑和身体-失联-了.html",
-  "description": "有一种失眠，特别折磨人。",
-  "keywords": [
-   "神经性疲劳失眠",
-   "身体累但睡不着",
-   "脑子停不下来"
-  ],
-  "category": "文章"
- },
- {
-  "title": "经常失眠怎么调理？我把3年的经验，总结成这一篇 - 无忧睡眠",
-  "url": "https://shuimian.xyz/blog/经常失眠怎么调理-我把3年的经验-总结成这一篇.html",
-  "description": "经常有人问我：失眠怎么调理？",
-  "keywords": [
-   "经常失眠怎么调理",
-   "失眠怎么调理",
-   "失眠调理"
-  ],
-  "category": "文章"
- },
- {
-  "title": "睡眠浅易醒怎么改善？先搞清楚你是“睡得浅”还是“醒得多”",
-  "url": "/blog/睡眠浅易醒怎么改善.html",
-  "description": "睡眠浅、易醒分两种：频繁夜醒和睡眠感缺失。先判断自己是哪一种，再对应调整。",
-  "keywords": [
-   "睡眠浅",
-   "易醒",
-   "睡眠感缺失",
-   "半夜醒",
-   "失眠类型",
-   "CBT-I"
-  ],
-  "category": "文章"
- },
- {
-  "title": "职场女性失眠的3个隐藏诱因：不是你想太多，是白天在偷偷耗你",
-  "url": "/blog/职场女性失眠3个隐藏诱因.html",
-  "description": "情绪劳动超载、屏幕绑定+消息焦虑、周末补觉陷阱，是职场女性失眠最常见的3个白天漏洞。",
-  "keywords": [
-   "职场女性失眠",
-   "情绪劳动",
-   "屏幕绑定",
-   "周末补觉",
-   "生物钟紊乱",
-   "焦虑型失眠"
-  ],
-  "category": "文章"
- },
- {
-  "title": "CBT-I里最管用的一个动作：刺激控制——躺下睡不着，就别赖在床上",
-  "url": "/blog/CBT-I刺激控制实操.html",
-  "description": "刺激控制是CBT-I里证据最足的动作：把床重新只和睡觉绑定。5条铁律+常见踩坑，今晚就能试。",
-  "keywords": [
-   "CBT-I",
-   "刺激控制",
-   "失眠",
-   "睡眠卫生",
-   "不靠药",
-   "职场女性"
-  ],
-  "category": "文章"
- },
- {
-  "title": "PSQI自测表怎么看？7个问题算出你的失眠等级",
-  "url": "/blog/PSQI量表怎么看.html",
-  "description": "PSQI匹兹堡睡眠质量指数用7个维度打分，总分0-21。教你给自己估等级、判断该不该重视。",
-  "keywords": [
-   "PSQI",
-   "匹兹堡",
-   "睡眠质量",
-   "失眠等级",
-   "自评量表",
-   "职场女性"
-  ],
-  "category": "文章"
- },
- {
-  "title": "职场女性为什么总是失眠？不是你想太多，是3个隐形开关没关",
-  "url": "/blog/职场女性为什么总是失眠.html",
-  "description": "职场女性失眠不是想太多，是焦虑型+生物钟紊乱型叠加。3个信号帮你判断，3个坑别踩。",
-  "keywords": [
-   "职场女性失眠",
-   "焦虑型失眠",
-   "生物钟紊乱型",
-   "情绪劳动",
-   "屏幕绑定",
-   "周末补觉"
-  ],
-  "category": "文章"
- },
- {
-  "title": "失眠不吃药怎么调理？先分清你能不能\"不靠药\"",
-  "url": "/blog/失眠不吃药怎么调理.html",
-  "description": "失眠能不能不吃药，先看类型和阶段。CBT-I是国际一线非药物方法，但不是所有人都适合硬扛。",
-  "keywords": [
-   "失眠不吃药",
-   "不靠药",
-   "CBT-I",
-   "失眠类型",
-   "焦虑型",
-   "生物钟紊乱型"
-  ],
-  "category": "文章"
- }
+  {
+    "title": "免费失眠类型测评 - 高仰珍无忧睡眠",
+    "url": "https://shuimian.xyz/assess/",
+    "description": "2分钟12题，判断你是焦虑型、生物钟紊乱型、神经疲劳型还是习惯熬夜型失眠。先分型，再解决，比看100篇文章更管用。",
+    "keywords": [
+      "测评",
+      "失眠分型",
+      "焦虑型",
+      "生物钟紊乱型",
+      "神经疲劳型",
+      "习惯熬夜型"
+    ],
+    "category": "工具"
+  },
+  {
+    "title": "PSQI睡眠质量量表 - 高仰珍无忧睡眠",
+    "url": "https://shuimian.xyz/psqi.html",
+    "description": "匹兹堡睡眠质量指数（PSQI）是国际通用睡眠质量自评量表。19道题，7个维度，测出你最近一个月的睡眠质量。",
+    "keywords": [],
+    "category": "页面"
+  },
+  {
+    "title": "关于我们 - 太原无忧睡眠科技有限公司",
+    "url": "https://shuimian.xyz/about.html",
+    "description": "太原无忧睡眠科技有限公司官方网站。专注用国际认证CBT-I非药物方式，帮职场女性把睡眠能力长回来。创始人高仰珍：失眠3年亲历者，中科院认证心理咨询师。",
+    "keywords": [],
+    "category": "页面"
+  },
+  {
+    "title": "失眠自救手册 · 无忧睡眠",
+    "url": "https://shuimian.xyz/manual.html",
+    "description": "失眠自救手册",
+    "keywords": [],
+    "category": "页面"
+  },
+  {
+    "title": "免费资料库 · 无忧睡眠",
+    "url": "https://shuimian.xyz/resources.html",
+    "description": "无忧睡眠免费资料库：失眠自救手册、创业女性压力管理实操指南等可下载、可在线阅读的实用资料。",
+    "keywords": [
+      "资料库",
+      "免费资料",
+      "失眠自救手册",
+      "压力管理",
+      "创业女性"
+    ],
+    "category": "页面"
+  },
+  {
+    "title": "创业女性压力管理实操指南 · 无忧睡眠",
+    "url": "https://shuimian.xyz/stress-guide.html",
+    "description": "认知篇 + 行为训练篇，写给在创业里咬牙前行的女性。今天就能照做的压力缓解工具。",
+    "keywords": [
+      "创业女性",
+      "压力管理",
+      "焦虑",
+      "情绪",
+      "CBT-I"
+    ],
+    "category": "页面"
+  },
+  {
+    "title": "个人情绪能量管理系统 · 无忧睡眠",
+    "url": "https://shuimian.xyz/energy-system.html",
+    "description": "一套管理情绪能量的实操系统：觉察能量状态、识别消耗源、分四层补给、建立日常节律。",
+    "keywords": [
+      "情绪能量",
+      "情绪管理",
+      "能量管理",
+      "职场女性",
+      "状态管理"
+    ],
+    "category": "页面"
+  },
+  {
+    "title": "领取《创业女性压力管理实操指南》· 无忧睡眠",
+    "url": "https://shuimian.xyz/stress-guide-get.html",
+    "description": "免费领取《创业女性压力管理实操指南》：认知篇+行为训练篇，可在线阅读，可下载Word版。",
+    "keywords": [
+      "创业女性",
+      "压力管理",
+      "免费资料",
+      "下载"
+    ],
+    "category": "页面"
+  },
+  {
+    "title": "常见问题 - 失眠到底怎么办？|无忧睡眠",
+    "url": "https://shuimian.xyz/faq.html",
+    "description": "失眠分4种：焦虑型/生物钟紊乱型/神经疲劳型/习惯熬夜型。换环境睡不着、躺下脑子停不下来、作息飘忽、习惯性熬夜怎么办？先分型再解决，附免费测评。",
+    "keywords": [],
+    "category": "页面"
+  },
+  {
+    "title": "无忧睡眠 - 先分型再解决 | 4种失眠类型测评与56天改善方案",
+    "url": "https://shuimian.xyz/index.html",
+    "description": "我也失眠了3年，用CBT-I方法走出来。焦虑型/生物钟紊乱型/神经疲劳型/习惯熬夜型——先搞清楚你是哪种失眠，再对症改善。56天陪伴式训练，不靠药物睡好觉。",
+    "keywords": [],
+    "category": "页面"
+  },
+  {
+    "title": "案例故事 - 当「失眠」变成一个让人紧张的词|无忧睡眠",
+    "url": "https://shuimian.xyz/cases.html",
+    "description": "一位40+职场女性，甲亢恢复后仍对「失眠」一词高度敏感。这不是典型入睡困难，而是焦虑型失眠里更深层的一种心理敏感。我们用认知重构与渐进脱敏帮她逐步重建安全感。",
+    "keywords": [],
+    "category": "页面"
+  },
+  {
+    "title": "睡眠力训练营服务协议（v2.2）- 高仰珍无忧睡眠",
+    "url": "https://shuimian.xyz/contract.html",
+    "description": "无忧睡眠·睡眠力训练营服务协议全文（v2.2）：服务内容、费用与支付、退款政策、效果说明与责任、知识产权、隐私保密及电子签署方式。",
+    "keywords": [
+      "睡眠训练营",
+      "服务协议",
+      "CBT-I",
+      "高仰珍",
+      "无忧睡眠",
+      "退款政策"
+    ],
+    "category": "页面"
+  },
+  {
+    "title": "睡眠力训练营（56天）- 高仰珍无忧睡眠",
+    "url": "https://shuimian.xyz/camp.html",
+    "description": "高仰珍：失眠3年亲历者，CBT-I睡眠辅导师。56天陪伴式训练营，仅招6人，下一期报名中。先分型，再解决，不靠药物睡好觉。",
+    "keywords": [
+      "睡眠训练营",
+      "CBT-I",
+      "失眠改善",
+      "高仰珍",
+      "睡眠辅导",
+      "56天训练营"
+    ],
+    "category": "页面"
+  },
+  {
+    "title": "预约1对1睡眠心理咨询 - 高仰珍无忧睡眠",
+    "url": "https://shuimian.xyz/consultation.html",
+    "description": "填写睡眠心理咨询预约表，高仰珍会在24小时内联系你，安排免费初次沟通。适合失眠超过1个月、想从情绪和认知根源改善睡眠的朋友。",
+    "keywords": [],
+    "category": "页面"
+  },
+  {
+    "title": "4种失眠类型，你是哪一种？ - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/四型失眠你是哪一种.html",
+    "description": "失眠不是一种问题，是四种不同的问题。焦虑型、生物钟紊乱型、神经疲劳型、习惯熬夜型，每种解决方向完全不同。先搞清楚你是哪一种，方法才管用。",
+    "keywords": [
+      "失眠有哪些类型",
+      "焦虑型",
+      "生物钟紊乱型",
+      "神经疲劳型",
+      "习惯熬夜型",
+      "睡眠测评"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "为什么总是半夜2点3点醒来 - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/为什么总是半夜2点3点醒来.html",
+    "description": "很多人有一个困惑：我每天都是同一个时间醒来。",
+    "keywords": [
+      "半夜醒来睡不着",
+      "固定时间醒来",
+      "凌晨2点3点醒来"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "为什么我睡觉总是似睡非睡 - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/为什么我睡觉总是似睡非睡.html",
+    "description": "躺在床上，眼睛是闭着的，但脑子一直在转。迷迷糊糊的，好像睡着了，又好像没睡着。",
+    "keywords": [
+      "似睡非睡",
+      "似醒非醒",
+      "睡眠质量差"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "习惯性熬夜型失眠：不是睡不着，是不想睡 - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/习惯性熬夜型失眠-不是睡不着-是不想睡.html",
+    "description": "有一种失眠，特别奇怪。",
+    "keywords": [
+      "习惯性熬夜",
+      "不想睡但想睡着",
+      "熬夜睡不着怎么办"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "产后失眠怎么办？ - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/产后失眠怎么办.html",
+    "description": "产后失眠怎么办？",
+    "keywords": [],
+    "category": "文章"
+  },
+  {
+    "title": "凌晨醒来睡不着怎么回事 - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/凌晨醒来睡不着怎么回事.html",
+    "description": "晚上11点睡着，凌晨3点准时醒来。睁开眼，脑子清醒得很，翻来覆去到5点才勉强睡着。",
+    "keywords": [
+      "凌晨醒来睡不着",
+      "半夜醒来睡不着",
+      "凌晨3点醒来睡不着"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "午睡多久合适？ - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/午睡多久合适.html",
+    "description": "午睡多久合适？",
+    "keywords": [],
+    "category": "文章"
+  },
+  {
+    "title": "压力大失眠怎么办？ - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/压力大失眠怎么办.html",
+    "description": "压力大失眠怎么办？",
+    "keywords": [],
+    "category": "文章"
+  },
+  {
+    "title": "失眠3年康复的真实路径：我做了什么，做对了什么 - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/失眠3年康复的真实路径-我做了什么-做对了什么.html",
+    "description": "我失眠3年，试过的方法比你想象的多得多。",
+    "keywords": [
+      "失眠康复",
+      "失眠3年",
+      "失眠好了"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "失眠会遗传吗？ - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/失眠会遗传吗.html",
+    "description": "失眠会遗传吗？",
+    "keywords": [],
+    "category": "文章"
+  },
+  {
+    "title": "失眠和抑郁有关系吗？ - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/失眠和抑郁有关系吗.html",
+    "description": "失眠和抑郁有关系吗？",
+    "keywords": [],
+    "category": "文章"
+  },
+  {
+    "title": "失眠多久需要看医生？ - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/失眠多久需要看医生.html",
+    "description": "失眠多久需要看医生？",
+    "keywords": [],
+    "category": "文章"
+  },
+  {
+    "title": "失眠看什么科？失眠3年我跑了6个科室，总结的经验 - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/失眠看什么科-失眠3年我跑了6个科室-总结的经验.html",
+    "description": "失眠3年，我跑了无数趟医院。",
+    "keywords": [
+      "失眠看什么科",
+      "失眠去医院挂什么科",
+      "失眠科"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "如何缓解失眠和焦虑症状？ - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/如何缓解失眠和焦虑症状.html",
+    "description": "如何缓解失眠和焦虑症状？",
+    "keywords": [
+      "失眠焦虑怎么缓解",
+      "焦虑型失眠怎么办",
+      "失眠和焦虑的恶性循环怎么打破",
+      "CBT-I怎么调理焦虑失眠",
+      "不靠药物缓解失眠焦虑"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "怎么判断自己睡眠质量好不好？ - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/怎么判断自己睡眠质量好不好.html",
+    "description": "怎么判断自己睡眠质量好不好？",
+    "keywords": [],
+    "category": "文章"
+  },
+  {
+    "title": "怎么培养好的睡眠习惯？ - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/怎么培养好的睡眠习惯.html",
+    "description": "怎么培养好的睡眠习惯？",
+    "keywords": [],
+    "category": "文章"
+  },
+  {
+    "title": "总是凌晨醒来睡不着怎么办 - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/总是凌晨醒来睡不着怎么办.html",
+    "description": "凌晨醒来，是失眠人群最常见的症状之一。",
+    "keywords": [
+      "凌晨醒来睡不着怎么办",
+      "凌晨醒来睡不着",
+      "总是凌晨醒来"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "总是失眠怎么办？别再试方法了，先搞清楚这个 - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/总是失眠怎么办-别再试方法了-先搞清楚这个.html",
+    "description": "每天晚上躺在床上，你在想什么？",
+    "keywords": [
+      "总是失眠怎么办",
+      "经常失眠怎么办",
+      "失眠怎么办"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "晚上睡不着白天困怎么办？ - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/晚上睡不着白天困怎么办.html",
+    "description": "晚上睡不着白天困怎么办？",
+    "keywords": [],
+    "category": "文章"
+  },
+  {
+    "title": "深度睡眠怎么获得？ - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/深度睡眠怎么获得.html",
+    "description": "深度睡眠怎么获得？",
+    "keywords": [],
+    "category": "文章"
+  },
+  {
+    "title": "生物钟乱了怎么调整最有效 - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/生物钟乱了怎么调整最有效.html",
+    "description": "很多人问我：作息不规律是不是很难改？",
+    "keywords": [
+      "生物钟紊乱怎么调整",
+      "生物钟乱了怎么调回来",
+      "睡眠生物钟"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "睡眠浅怎么改善？先搞清楚你为什么睡不深 - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/睡眠浅怎么改善-先搞清楚你为什么睡不深.html",
+    "description": "睡了一晚上，但早上醒来还是很累。",
+    "keywords": [
+      "睡眠浅怎么改善",
+      "睡得太浅",
+      "深度睡眠"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "睡眠质量差怎么改善？这4个指标比睡够8小时更重要 - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/睡眠质量差怎么改善-这4个指标比睡够8小时更重要.html",
+    "description": "很多人问我：你睡几个小时？",
+    "keywords": [
+      "睡眠质量差怎么改善",
+      "睡眠质量差",
+      "睡眠质量"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "睡眠问题心理咨询真的有用吗 - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/睡眠问题心理咨询真的有用吗.html",
+    "description": "我失眠3年，身边人问我：你看过心理咨询师吗？",
+    "keywords": [
+      "睡眠问题心理咨询",
+      "失眠看心理医生",
+      "失眠心理咨询"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "睡眠障碍怎么治？别再乱试方法了，先看完这篇 - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/睡眠障碍怎么治-别再乱试方法了-先看完这篇.html",
+    "description": "我见过太多失眠的人，在错误的路上越走越远。",
+    "keywords": [
+      "睡眠障碍怎么治",
+      "睡眠障碍",
+      "失眠治疗"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "神经性疲劳型失眠：你不是睡不着，是大脑和身体\"失联\"了 - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/神经性疲劳型失眠-你不是睡不着-是大脑和身体-失联-了.html",
+    "description": "有一种失眠，特别折磨人。",
+    "keywords": [
+      "神经性疲劳失眠",
+      "身体累但睡不着",
+      "脑子停不下来"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "经常失眠怎么调理？我把3年的经验，总结成这一篇 - 无忧睡眠",
+    "url": "https://shuimian.xyz/blog/经常失眠怎么调理-我把3年的经验-总结成这一篇.html",
+    "description": "经常有人问我：失眠怎么调理？",
+    "keywords": [
+      "经常失眠怎么调理",
+      "失眠怎么调理",
+      "失眠调理"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "睡眠浅易醒怎么改善？先搞清楚你是“睡得浅”还是“醒得多”",
+    "url": "https://shuimian.xyz/blog/睡眠浅易醒怎么改善.html",
+    "description": "睡眠浅、易醒分两种：频繁夜醒和睡眠感缺失。先判断自己是哪一种，再对应调整。",
+    "keywords": [
+      "睡眠浅",
+      "易醒",
+      "睡眠感缺失",
+      "半夜醒",
+      "失眠类型",
+      "CBT-I"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "职场女性失眠的3个隐藏诱因：不是你想太多，是白天在偷偷耗你",
+    "url": "https://shuimian.xyz/blog/职场女性失眠3个隐藏诱因.html",
+    "description": "情绪劳动超载、屏幕绑定+消息焦虑、周末补觉陷阱，是职场女性失眠最常见的3个白天漏洞。",
+    "keywords": [
+      "职场女性失眠",
+      "情绪劳动",
+      "屏幕绑定",
+      "周末补觉",
+      "生物钟紊乱",
+      "焦虑型失眠"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "CBT-I里最管用的一个动作：刺激控制——躺下睡不着，就别赖在床上",
+    "url": "https://shuimian.xyz/blog/CBT-I刺激控制实操.html",
+    "description": "刺激控制是CBT-I里证据最足的动作：把床重新只和睡觉绑定。5条铁律+常见踩坑，今晚就能试。",
+    "keywords": [
+      "CBT-I",
+      "刺激控制",
+      "失眠",
+      "睡眠卫生",
+      "不靠药",
+      "职场女性"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "PSQI自测表怎么看？7个问题算出你的失眠等级",
+    "url": "https://shuimian.xyz/blog/PSQI量表怎么看.html",
+    "description": "PSQI匹兹堡睡眠质量指数用7个维度打分，总分0-21。教你给自己估等级、判断该不该重视。",
+    "keywords": [
+      "PSQI",
+      "匹兹堡",
+      "睡眠质量",
+      "失眠等级",
+      "自评量表",
+      "职场女性"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "职场女性为什么总是失眠？不是你想太多，是3个隐形开关没关",
+    "url": "https://shuimian.xyz/blog/职场女性为什么总是失眠.html",
+    "description": "职场女性失眠不是想太多，是焦虑型+生物钟紊乱型叠加。3个信号帮你判断，3个坑别踩。",
+    "keywords": [
+      "职场女性失眠",
+      "焦虑型失眠",
+      "生物钟紊乱型",
+      "情绪劳动",
+      "屏幕绑定",
+      "周末补觉"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "失眠不吃药怎么调理？先分清你能不能\"不靠药\"",
+    "url": "https://shuimian.xyz/blog/失眠不吃药怎么调理.html",
+    "description": "失眠能不能不吃药，先看类型和阶段。CBT-I是国际一线非药物方法，但不是所有人都适合硬扛。",
+    "keywords": [
+      "失眠不吃药",
+      "不靠药",
+      "CBT-I",
+      "失眠类型",
+      "焦虑型",
+      "生物钟紊乱型"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "免费领取《失眠自救手册》· 无忧睡眠",
+    "url": "https://shuimian.xyz/manual-get.html",
+    "description": "免费领取《失眠自救手册》：10个今晚就能做的不靠药动作，附免费失眠分型测评链接。可在线阅读，也可下载Word/PDF版。",
+    "keywords": [
+      "manual",
+      "get"
+    ],
+    "category": "页面"
+  },
+  {
+    "title": "搜索睡眠问题",
+    "url": "https://shuimian.xyz/search.html",
+    "description": "在无忧睡眠官网搜索失眠相关问题：半夜醒、焦虑型失眠、生物钟紊乱、睡前焦虑、CBT-I、睡眠训练等。先分型，再解决。",
+    "keywords": [
+      "search"
+    ],
+    "category": "页面"
+  },
+  {
+    "title": "免费领取《一周安稳睡眠调整指南》· 无忧睡眠",
+    "url": "https://shuimian.xyz/weekly-guide-get.html",
+    "description": "免费领取《一周安稳睡眠调整指南》：7天不靠药，把睡不好的方向先调对。可在线阅读，也可下载Word版。",
+    "keywords": [
+      "weekly",
+      "guide",
+      "get"
+    ],
+    "category": "页面"
+  },
+  {
+    "title": "一周安稳睡眠调整指南",
+    "url": "https://shuimian.xyz/weekly-guide.html",
+    "description": "一周安稳睡眠调整指南：7天不靠药，把睡不好的方向先调对。固定起床、起床见光、咖啡因截止、睡前清空、刺激控制、白天抢时间、每周复盘。",
+    "keywords": [
+      "weekly",
+      "guide"
+    ],
+    "category": "页面"
+  },
+  {
+    "title": "睡眠方法论 · 系统资产库",
+    "url": "https://shuimian.xyz/blog/index.html",
+    "description": "无忧睡眠内容系统资产库：从认知觉醒、分型诊断到方法行动。每一篇都来自亲历者经验与国际循证方法（CBT-I），是官网自有的睡眠知识中枢。",
+    "keywords": [
+      "index"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "中年人睡眠差，不是老了，是你扛了太多",
+    "url": "https://shuimian.xyz/blog/中年人睡眠差.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，搞清楚自己的失眠类型。",
+    "keywords": [
+      "中年人睡眠差"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "产后失眠不是\"当妈都这样\"，是你的身体在还债",
+    "url": "https://shuimian.xyz/blog/产后失眠.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，搞清楚自己的失眠类型。",
+    "keywords": [
+      "产后失眠"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "不是你睡不好，是班表逼你醒着",
+    "url": "https://shuimian.xyz/blog/倒班轮班工作者失眠.html",
+    "description": "👉 点这里做免费失眠测评，2分钟搞清楚你是哪种失眠。",
+    "keywords": [
+      "倒班轮班工作者失眠"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "午睡醒来更累？不是你懒，是睡错了阶段",
+    "url": "https://shuimian.xyz/blog/午睡睡不醒.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，搞清楚自己的失眠类型。",
+    "keywords": [
+      "午睡睡不醒"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "下午那杯咖啡，正在偷走你今晚的睡眠",
+    "url": "https://shuimian.xyz/blog/咖啡因敏感失眠.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，搞清楚自己的失眠类型。",
+    "keywords": [
+      "咖啡因敏感失眠"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "一点声音就醒：你的神经系统太警觉了",
+    "url": "https://shuimian.xyz/blog/声音敏感.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，搞清楚自己的失眠类型。",
+    "keywords": [
+      "声音敏感"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "失眠久了情绪低落，是该看睡眠还是看心理",
+    "url": "https://shuimian.xyz/blog/失眠伴随焦虑抑郁区分.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，2分钟搞清楚自己的失眠类型；情绪那条线拿不准，一定去正规医院评估。",
+    "keywords": [
+      "失眠伴随焦虑抑郁区分"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "失眠分型标准对照表：医学分类（ICD-11/ICSD-3）与通俗说法",
+    "url": "https://shuimian.xyz/blog/失眠分型标准对照.html",
+    "description": "失眠在医学上有三种官方分型方法：按临床特征分入睡困难型(DIS)、睡眠维持困难型(DMS)、早醒型(EMA)、混合型；按客观睡眠时长分生理性过度觉醒型与非生理性过度觉醒型（矛盾性失眠）。本页给出医学标准术语与通俗说法的完整对照，附7个…",
+    "keywords": [
+      "失眠分型标准对照"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "安眠药有几种，怎么判断自己吃\"依赖\"了",
+    "url": "https://shuimian.xyz/blog/安眠药种类与依赖判断.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，搞清楚自己的失眠类型。",
+    "keywords": [
+      "安眠药种类与依赖判断"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "宝妈已经够累了，再碰上倒班，睡眠是被双重打碎的",
+    "url": "https://shuimian.xyz/blog/宝妈加倒班双重失眠.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，搞清楚自己的失眠类型。",
+    "keywords": [
+      "宝妈加倒班双重失眠"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "报复性熬夜：不是不想睡，是白天不属于自己",
+    "url": "https://shuimian.xyz/blog/报复性熬夜.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，搞清楚自己的失眠类型。",
+    "keywords": [
+      "报复性熬夜"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "别人以为老师最规律，结果老师是失眠重灾区",
+    "url": "https://shuimian.xyz/blog/教师老师失眠.html",
+    "description": "👉 点这里做免费失眠测评，2分钟搞清楚你是哪种失眠。",
+    "keywords": [
+      "教师老师失眠"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "晚上健身后反而睡不着？运动时机错了",
+    "url": "https://shuimian.xyz/blog/晚上运动失眠.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，搞清楚自己的失眠类型。",
+    "keywords": [
+      "晚上运动失眠"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "到了更年期，睡眠像被偷走，不是你矫情",
+    "url": "https://shuimian.xyz/blog/更年期失眠.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，2分钟搞清楚自己的失眠类型。",
+    "keywords": [
+      "更年期失眠"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "测出失眠分型后，第一周怎么动手？",
+    "url": "https://shuimian.xyz/blog/测出失眠分型后第一周怎么动手.html",
+    "description": "本文承接「免费睡眠分型测评」。测完不是终点，是起点——很多人测完把结果一关，该咋睡还咋睡。这篇告诉你：测出分型后，第一周先做对哪几件事，比急着",
+    "keywords": [
+      "测出失眠分型后第一周怎么动手"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "睡眠日记到底怎么记？别只写\"又没睡好\"",
+    "url": "https://shuimian.xyz/blog/睡眠日记怎么记.html",
+    "description": "判断标准：这 5 项记全，7 天后你就能画出自己的睡眠曲线；少一项，规律就断了。",
+    "keywords": [
+      "睡眠日记怎么记"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "睡不够怎么办？不是硬扛，是把有限睡眠用出最高质量",
+    "url": "https://shuimian.xyz/blog/睡眠时间短.html",
+    "description": "睡不够怎么办？不是硬扛，是把有限睡眠用出最高质量：固定起床时间+白天微休息+睡前断舍离，把有限睡眠用出最高质量。识别求救信号，及时寻求支持。",
+    "keywords": [
+      "睡眠时间短"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "睡眠限制不是让你少睡，是让你\"睡对了\"",
+    "url": "https://shuimian.xyz/blog/睡眠限制算睡眠窗口.html",
+    "description": "**睡眠效率 = 实际睡着时间 ÷ 卧床时间 × 100%**",
+    "keywords": [
+      "睡眠限制算睡眠窗口"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "程序员为什么越改bug越清醒",
+    "url": "https://shuimian.xyz/blog/程序员互联网人失眠.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，搞清楚自己的失眠类型。",
+    "keywords": [
+      "程序员互联网人失眠"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "考前翻来覆去睡不着，不是你紧张，是身体在替你扛",
+    "url": "https://shuimian.xyz/blog/考前失眠.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，2分钟搞清楚自己的失眠类型。",
+    "keywords": [
+      "考前失眠"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "职场女性和宝妈都失眠，但差得不是一星半点",
+    "url": "https://shuimian.xyz/blog/职场女性vs宝妈失眠差异.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，搞清楚自己的失眠类型。",
+    "keywords": [
+      "职场女性vs宝妈失眠差异"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "新人失眠不是矫情，是系统过载",
+    "url": "https://shuimian.xyz/blog/职场新人试用期失眠.html",
+    "description": "👉 点这里做免费失眠测评，2分钟搞清楚你是哪种失眠。",
+    "keywords": [
+      "职场新人试用期失眠"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "不用打卡的人，为什么反而睡最差",
+    "url": "https://shuimian.xyz/blog/自由职业居家办公失眠.html",
+    "description": "👉 点这里做免费失眠测评，2分钟搞清楚你是哪种失眠。",
+    "keywords": [
+      "自由职业居家办公失眠"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "认床：换个地方就睡不着，不是矫情",
+    "url": "https://shuimian.xyz/blog/认床.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，搞清楚自己的失眠类型。",
+    "keywords": [
+      "认床"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "睡不着时脑子里那些话，正在让你更清醒",
+    "url": "https://shuimian.xyz/blog/认知重构话术.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，2分钟搞清楚自己是哪一型失眠。",
+    "keywords": [
+      "认知重构话术"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "落地就失眠？不是不想睡，是你的生物钟还在国内",
+    "url": "https://shuimian.xyz/blog/跨时区出差时差.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，搞清楚自己的失眠类型。",
+    "keywords": [
+      "跨时区出差时差"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "身体很累但脑子清醒？这种失眠最冤（附自测）",
+    "url": "https://shuimian.xyz/blog/身体很累脑子清醒最冤的失眠.html",
+    "description": "先花 2 分钟做免费测评，搞清楚自己是哪类失眠，比看 100 篇文章更准。",
+    "keywords": [
+      "身体很累脑子清醒最冤的失眠"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "退休后反而睡不着？不是老了，是角色空了",
+    "url": "https://shuimian.xyz/blog/退休老年人失眠.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，搞清楚自己的失眠类型。",
+    "keywords": [
+      "退休老年人失眠"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "天天跑客户的人，为什么回家倒头也睡不着",
+    "url": "https://shuimian.xyz/blog/销售业务高压失眠.html",
+    "description": "👉 点这里做免费失眠测评，2分钟搞清楚你是哪种失眠。",
+    "keywords": [
+      "销售业务高压失眠"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "假期越放松，开工越清醒——你的生物钟被假期绑架了",
+    "url": "https://shuimian.xyz/blog/长假后失眠.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，搞清楚自己的失眠类型。",
+    "keywords": [
+      "长假后失眠"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "长期吃安眠药，怎么判断该不该减？",
+    "url": "https://shuimian.xyz/blog/长期吃安眠药怎么判断该不该减.html",
+    "description": "判断标准：中 1 条，建议找开方医生聊；中 2 条以上，别自己扛，尽快复诊。",
+    "keywords": [
+      "长期吃安眠药怎么判断该不该减"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "陪睡妈妈：孩子睡着了，你却失眠了",
+    "url": "https://shuimian.xyz/blog/陪睡妈妈.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，搞清楚自己的失眠类型。",
+    "keywords": [
+      "陪睡妈妈"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "孩子写作业到半夜，不是不困，是脑子停不下来",
+    "url": "https://shuimian.xyz/blog/高中生日常失眠.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，搞清楚自己的失眠类型。",
+    "keywords": [
+      "高中生日常失眠"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "创业越拼越睡不着，不是你不行，是大脑在踩刹车",
+    "url": "https://shuimian.xyz/blog/高压创业者失眠.html",
+    "description": "进官网免费测评：shuimian.xyz/assess，2分钟搞清楚自己的失眠类型。",
+    "keywords": [
+      "高压创业者失眠"
+    ],
+    "category": "文章"
+  },
+  {
+    "title": "高压创业者，为什么更该把觉睡好？",
+    "url": "https://shuimian.xyz/blog/高压创业者怎么保睡眠.html",
+    "description": "判断标准：如果你",
+    "keywords": [
+      "高压创业者怎么保睡眠"
+    ],
+    "category": "文章"
+  }
 ]
