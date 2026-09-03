@@ -573,6 +573,46 @@ a:hover { color: var(--accent); }
   white-space: nowrap;
 }
 
+/* === 创始人署名条（首页 hero） === */
+.founder-line {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 40px;
+  padding: 8px 24px 8px 8px;
+  margin: 0 auto 32px;
+  box-shadow: var(--shadow-sm);
+  max-width: 100%;
+}
+.founder-line .fl-avatar {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--warm), var(--warm-dark));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: 600;
+}
+.founder-line .fl-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+}
+.founder-line .fl-meta {
+  display: block;
+  font-size: 12.5px;
+  color: var(--text-light);
+  margin-top: 2px;
+}
+
 /* === Responsive === */
 @media (max-width: 640px) {
   .hero { padding: 48px 0 40px; }
@@ -591,6 +631,15 @@ a:hover { color: var(--accent); }
   .article-page h1 { font-size: 24px; }
   .blog-list li { flex-direction: column; gap: 4px; }
 
+  .founder-line {
+    flex-direction: column;
+    text-align: center;
+    padding: 16px 20px;
+    border-radius: var(--radius);
+    gap: 8px;
+    margin-bottom: 26px;
+  }
+  .founder-line .fl-text { font-size: 13.5px; }
   .cta-box { padding: 28px 20px; }
   .cta-box h3 { font-size: 18px; }
   .section-title { font-size: 20px; }
