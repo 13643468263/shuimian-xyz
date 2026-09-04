@@ -31,6 +31,12 @@
     .question-card .q-num { color: var(--accent-dark); font-size: 14px; margin-bottom: 6px; }
 
     .option-list { display: flex; flex-direction: column; gap: 12px; }
+    /* 12题预览样式 — 让用户先看到题长啥样 */
+    .quiz-preview { display: flex; flex-direction: column; gap: 8px; margin: 0 0 20px; text-align: left; }
+    .preview-dim { display: flex; flex-direction: column; gap: 4px; padding: 10px 14px; background: var(--bg, #f7f6f2); border-radius: 10px; border-left: 3px solid var(--accent, #5c7a52); }
+    .preview-tag { font-size: 12px; color: var(--accent-dark, #3d5a35); font-weight: 700; }
+    .preview-q { font-size: 13px; color: var(--text-light, #8a8780); }
+    .start-tip { font-size: 12px; color: var(--text-light, #8a8780); margin: 12px 0 0; }
     .option-btn {
       display: flex; align-items: center; gap: 14px; text-align: left;
       padding: 16px 18px; border-radius: 12px; border: 2px solid var(--border);
@@ -118,11 +124,23 @@
     <!-- 开始页 -->
     <div id="start-view" class="question-card" style="text-align: center;">
       <h3>做这个测评之前，先了解一件事</h3>
-      <p style="text-align: left; color: var(--text-mid); font-size: 15px; line-height: 1.85; margin-bottom: 24px;">
-        失眠不是一种病，是<strong>四种不同的状态</strong>。焦虑型的人越想睡越清醒；生物钟紊乱的人是「身体时间在另一个时区」；神经疲劳型的人大脑和身体都过度透支；习惯熬夜型的人则是昼夜节律被手机/工作硬生生拖偏了。<br><br>
-        用错方法 = 白忙活。花 2 分钟做完，你会拿到：你的主失眠类型 + 3 条针对性改善建议 + 是否适合训练营的判断。
+      <p style="text-align: left; color: var(--text-mid); font-size: 15px; line-height: 1.85; margin-bottom: 16px;">
+        失眠不是一种病，是<strong>四种不同的状态</strong>。焦虑型的人越想睡越清醒；生物钟紊乱的人是「身体时间在另一个时区」;神经疲劳型的人大脑和身体都过度透支；习惯熬夜型的人则是昼夜节律被手机/工作硬生生拖偏了。
       </p>
-      <button class="btn btn-primary btn-full" onclick="startQuiz()">开始测评</button>
+      <p style="text-align: left; color: var(--text-mid); font-size: 15px; line-height: 1.85; margin-bottom: 24px;">
+        用错方法 = 白忙活。花 2 分钟做完 12 道题，你会拿到:你的主失眠类型 + 3 条针对性改善建议 + 是否适合训练营的判断。
+      </p>
+
+      <!-- 12 题预览(让用户先看到题长啥样,对齐预期) -->
+      <div class="quiz-preview">
+        <div class="preview-dim"><span class="preview-tag">焦虑型 · 3题</span><span class="preview-q">躺下后,脑子里是不是停不下来?</span></div>
+        <div class="preview-dim"><span class="preview-tag">生物钟型 · 3题</span><span class="preview-q">是不是经常凌晨 2~4 点才能睡着,白天特别困?</span></div>
+        <div class="preview-dim"><span class="preview-tag">神经疲劳型 · 3题</span><span class="preview-q">睡眠是不是浅、容易醒、多梦,醒来像没睡?</span></div>
+        <div class="preview-dim"><span class="preview-tag">习惯熬夜型 · 3题</span><span class="preview-q">睡前是不是离不开手机/平板/电视?</span></div>
+      </div>
+
+      <button class="btn btn-primary btn-full" onclick="startQuiz()">开始 12 道题(约 1 分钟) →</button>
+      <p class="start-tip">每题 4 个选项,选最贴近你最近 1 个月的真实状态</p>
     </div>
 
     <!-- 题目区 -->
