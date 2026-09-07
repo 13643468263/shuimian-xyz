@@ -166,6 +166,8 @@
         <div class="result-desc" id="result-desc"></div>
         <ul class="recommend-list" id="recommend-list"></ul>
         <div class="result-actions">
+          <button type="button" class="btn btn-primary btn-full" id="submitBtn" onclick="submitResult()">📤 把结果发给我的教练</button>
+          <p id="submitTip" style="font-size:13px;color:var(--text-light);margin:0;line-height:1.6;"></p>
           <a href="/camp.html" class="btn btn-warm btn-full">了解 56 天训练营 →</a>
           <button class="btn btn-restart btn-full" onclick="restartQuiz()">重新测评</button>
           <a href="/psqi.html" class="btn btn-restart btn-full">知道分型后，再看看你的睡眠质量如何 →</a>
@@ -412,6 +414,92 @@
 
     const recList = document.getElementById('recommend-list');
     recList.innerHTML = t.recs.map(r => `<li>${r}</li>`).join('');
+
+    // 存到全局，供「发给教练」使用
+    window.__type = {
+      pName: t.name, pScore: scores[primary], pKey: primary,
+      sName: s.name, sScore: scores[secondary], sKey: secondary,
+      scores: scores
+    };
+  }
+
+  /* ========== 结果回传 ==========
+     SUBMIT_API 留空 = 复制结果码（学员发给教练，零后端）
+     填上接口地址 = 测完自动上报到数据库
+  */
+  const SUBMIT_API = '';   // 例：'https://xxx.ap-shanghai.app.tcloudbase.com/assess'
+
+  function getSid() {
+    const m = location.search.match(/[?&]sid=([^&]+)/);
+    return m ? decodeURIComponent(m[1]) : '';
+  }
+
+  function buildResultCode() {
+    const d = window.__type;
+    if (!d) return '';
+    const today = new Date().toISOString().slice(0, 10);
+    return `SM1|TYPE|${getSid()}|P=${d.pName}|PS=${d.pScore}|S=${d.sName}|SS=${d.sScore}`
+         + `|A=${d.scores.anxiety}|C=${d.scores.circadian}|N=${d.scores.neuro}|H=${d.scores.habit}`
+         + `|D=${today}`;
+  }
+
+  function buildReadable() {
+    const d = window.__type;
+    if (!d) return '';
+    const today = new Date().toISOString().slice(0, 10);
+    const sid = getSid();
+    return [
+      `【无忧睡眠 · 失眠类型测评】${today}`,
+      `主型：${d.pName} ${d.pScore}/9`,
+      `次型：${d.sName} ${d.sScore}/9${d.sScore >= 5 ? '（叠加型）' : ''}`,
+      `四项得分：焦虑${d.scores.anxiety} 节律${d.scores.circadian} 神经疲劳${d.scores.neuro} 习惯${d.scores.habit}`,
+      sid ? `学员码 ${sid}` : '',
+      '---',
+      buildResultCode()
+    ].filter(Boolean).join('\n');
+  }
+
+  function fallbackCopy(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  function copyAndTip(tip) {
+    const text = buildReadable();
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(() => {
+        tip.textContent = '✅ 结果已复制，粘贴发给教练即可。';
+      }).catch(() => {
+        fallbackCopy(text);
+        tip.textContent = '✅ 结果已复制，粘贴发给教练即可。';
+      });
+    } else {
+      fallbackCopy(text);
+      tip.textContent = '✅ 结果已复制，粘贴发给教练即可。';
+    }
+  }
+
+  function submitResult() {
+    const code = buildResultCode();
+    if (!code) return;
+    const tip = document.getElementById('submitTip');
+    if (SUBMIT_API) {
+      fetch(SUBMIT_API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ code: code, sid: getSid(), source: 'web', page: 'assess', ua: navigator.userAgent, at: new Date().toISOString() })
+      }).then(() => {
+        tip.textContent = '✅ 结果已提交，教练会尽快看你的报告。';
+      }).catch(() => copyAndTip(tip));
+    } else {
+      copyAndTip(tip);
+    }
   }
 
   function restartQuiz() {
