@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>免费失眠类型测评 — 高仰珍无忧睡眠</title>
-  <meta name="description" content="2分钟12题，判断你是焦虑型、生物钟紊乱型、神经疲劳型还是习惯熬夜型失眠。先分型，再解决，比看100篇文章更管用。">
+  <meta name="description" content="2分钟12题，判断你是焦虑型、生物钟紊乱型、神经疲劳型还是习惯熬夜型。先分型，再解决，比看100篇文章更管用。">
   <meta name="keywords" content="失眠测评,失眠类型测试,焦虑型失眠,生物钟紊乱,神经疲劳,习惯熬夜">
   <link rel="canonical" href="https://shuimian.xyz/assess/">
   <meta property="og:type" content="website">
@@ -54,6 +54,9 @@
     .result-desc { text-align: left; color: var(--text-mid); font-size: 15px; line-height: 1.85; margin-bottom: 24px; }
     .result-desc strong { color: var(--text); }
     .result-actions { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+
+    .ai-badge { display: inline-block; font-size: 11px; color: var(--text-light); border: 1px solid var(--border); border-radius: 10px; padding: 2px 10px; margin-bottom: 14px; }
+    .key-finding { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 8px; padding: 14px 16px; margin-bottom: 20px; text-align: left; font-size: 14px; color: var(--accent-dark); line-height: 1.7; font-weight: 600; }
 
     .score-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px; text-align: left; }
     .score-item { background: var(--bg); border-radius: 12px; padding: 16px; border: 1px solid var(--border); }
@@ -114,7 +117,7 @@
     <h1>2分钟，搞清楚你是哪种失眠</h1>
     <p>焦虑型、生物钟紊乱型、神经疲劳型、习惯熬夜型——<br>先分型，再解决。你的失眠，原因可能跟你想的不一样。</p>
     <div class="trust-pills">
-      <span class="trust-pill">✓ 12题，4种维度</span>
+      <span class="trust-pill">✓ 12题，4种类型</span>
       <span class="trust-pill">✓ 免费即时出结果</span>
       <span class="trust-pill">✓ 基于 CBT-I 与睡眠医学</span>
     </div>
@@ -128,19 +131,19 @@
         失眠不是一种病，是<strong>四种不同的状态</strong>。焦虑型的人越想睡越清醒；生物钟紊乱的人是「身体时间在另一个时区」;神经疲劳型的人大脑和身体都过度透支；习惯熬夜型的人则是昼夜节律被手机/工作硬生生拖偏了。
       </p>
       <p style="text-align: left; color: var(--text-mid); font-size: 15px; line-height: 1.85; margin-bottom: 24px;">
-        用错方法 = 白忙活。花 2 分钟做完 12 道题，你会拿到:你的主失眠类型 + 3 条针对性改善建议 + 是否适合训练营的判断。
+        用错方法 = 白忙活。花 2 分钟做完 12 道题，你会拿到:你的主要失眠类型 + 3 条针对性改善建议 + 是否适合训练营的判断。
       </p>
 
       <!-- 12 题预览(让用户先看到题长啥样,对齐预期) -->
       <div class="quiz-preview">
-        <div class="preview-dim"><span class="preview-tag">焦虑型 · 3题</span><span class="preview-q">躺下后,脑子里是不是停不下来?</span></div>
-        <div class="preview-dim"><span class="preview-tag">生物钟型 · 3题</span><span class="preview-q">是不是经常凌晨 2~4 点才能睡着,白天特别困?</span></div>
-        <div class="preview-dim"><span class="preview-tag">神经疲劳型 · 3题</span><span class="preview-q">睡眠是不是浅、容易醒、多梦,醒来像没睡?</span></div>
-        <div class="preview-dim"><span class="preview-tag">习惯熬夜型 · 3题</span><span class="preview-q">睡前是不是离不开手机/平板/电视?</span></div>
+        <div class="preview-dim"><span class="preview-tag">生物钟</span><span class="preview-q">你通常几点上床？</span></div>
+        <div class="preview-dim"><span class="preview-tag">入睡潜伏期</span><span class="preview-q">躺下后多久能睡着？</span></div>
+        <div class="preview-dim"><span class="preview-tag">分型锚点</span><span class="preview-q">睡不着的时候脑子里在想什么？</span></div>
+        <div class="preview-dim"><span class="preview-tag">日间功能</span><span class="preview-q">白天精神状态？</span></div>
       </div>
 
       <button class="btn btn-primary btn-full" onclick="startQuiz()">开始 12 道题(约 1 分钟) →</button>
-      <p class="start-tip">每题 4 个选项,选最贴近你最近 1 个月的真实状态</p>
+      <p class="start-tip">选最贴近你最近 1 个月的真实状态</p>
     </div>
 
     <!-- 题目区 -->
@@ -153,15 +156,17 @@
     <!-- 分析动画 -->
     <div id="analyze-view" class="analyze-anim hidden">
       <div class="spinner"></div>
-      <p>正在分析你的睡眠类型…</p>
+      <p id="analyze-text">正在分析你的睡眠类型…</p>
     </div>
 
     <!-- 结果页 -->
     <div id="result-view" class="hidden">
       <div class="result-card">
+        <div class="ai-badge" id="ai-badge">本机规则分析</div>
         <div class="result-emoji" id="result-emoji">🌙</div>
         <h2 class="result-type" id="result-type">你的失眠类型</h2>
         <div class="result-score" id="result-score">得分详情</div>
+        <div class="key-finding hidden" id="key-finding"></div>
         <div class="score-breakdown" id="score-breakdown"></div>
         <div class="result-desc" id="result-desc"></div>
         <ul class="recommend-list" id="recommend-list"></ul>
@@ -206,130 +211,99 @@
 </footer>
 
 <script>
+  /* ── 12 题（逐字对齐小程序 utils/brand.js；基准见 SOP/失眠分型测评_标准题库_v2.md）──
+     每题 s 数组顺序：焦虑 / 生物钟 / 神经疲劳 / 习惯熬夜                            */
   const questions = [
-    // 焦虑型
-    { q: "躺下后，脑子里是不是停不下来？", tip: "比如反复想工作、明天的事、为什么还没睡着…", dim: "anxiety", options: [
-      { t: "完全不会，躺下基本放空", s: 0 },
-      { t: "偶尔，但一会儿就过去了", s: 1 },
-      { t: "经常，越想睡想得越多", s: 2 },
-      { t: "几乎每晚，越想越清醒", s: 3 }
-    ]},
-    { q: "睡不着时，你会不会焦虑或担心明天状态？", tip: "比如担心黑眼圈、身体垮掉、工作做不好", dim: "anxiety", options: [
-      { t: "不会，我心态比较放松", s: 0 },
-      { t: "偶尔有点担心", s: 1 },
-      { t: "经常担心，会烦躁", s: 2 },
-      { t: "非常焦虑，甚至害怕睡觉这件事", s: 3 }
-    ]},
-    { q: "白天出现心慌、胸闷、肌肉紧张的情况多吗？", tip: "这些身体信号常伴随焦虑型失眠", dim: "anxiety", options: [
-      { t: "基本没有", s: 0 },
-      { t: "偶尔，压力大时才有", s: 1 },
-      { t: "一周有 2~3 天", s: 2 },
-      { t: "几乎每天都有", s: 3 }
-    ]},
-    // 生物钟紊乱型
-    { q: "你通常几点自然犯困？", tip: "不看闹钟，看身体真实的睡意", dim: "circadian", options: [
-      { t: "22:00 前", s: 0 },
-      { t: "23:00~24:00", s: 1 },
-      { t: "凌晨 1:00~2:00", s: 2 },
-      { t: "凌晨 3:00 以后或更晚", s: 3 }
-    ]},
-    { q: "周末不上班时，你会睡到几点？", tip: "周末补觉是生物钟紊乱的典型信号", dim: "circadian", options: [
-      { t: "和平时差不多", s: 0 },
-      { t: "晚 1 小时左右", s: 1 },
-      { t: "晚 2~3 小时", s: 2 },
-      { t: "直接睡到中午甚至下午", s: 3 }
-    ]},
-    { q: "是不是经常凌晨 2~4 点才能睡着，然后白天特别困？", tip: "这是典型的「睡眠相位后移」", dim: "circadian", options: [
-      { t: "从不", s: 0 },
-      { t: "偶尔熬夜会这样", s: 1 },
-      { t: "一个月里多次", s: 2 },
-      { t: "长期如此，像活在另一个时区", s: 3 }
-    ]},
-    // 神经疲劳型
-    { q: "白天感觉身体很沉、脑子转不动，但晚上反而有点兴奋？", tip: "身体累但神经停不下来", dim: "neuro", options: [
-      { t: "没有这种情况", s: 0 },
-      { t: "偶尔累了会这样", s: 1 },
-      { t: "经常，很累也睡不着", s: 2 },
-      { t: "几乎每天，白天透支晚上亢奋", s: 3 }
-    ]},
-    { q: "是不是长期高强度用脑、照顾家庭、或工作压力大？", tip: "长期高负荷会让神经系统过度敏感", dim: "neuro", options: [
-      { t: "生活节奏比较轻松", s: 0 },
-      { t: "偶尔有高强度阶段", s: 1 },
-      { t: "经常处于高压状态", s: 2 },
-      { t: "长期处于高压，没有真正放松过", s: 3 }
-    ]},
-    { q: "睡眠是不是浅、容易醒、多梦，醒来像没睡？", tip: "神经疲劳常导致睡眠质量差", dim: "neuro", options: [
-      { t: "睡得挺沉，醒来有精神", s: 0 },
-      { t: "偶尔睡得浅", s: 1 },
-      { t: "经常睡不踏实", s: 2 },
-      { t: "几乎每天，醒来比睡前还累", s: 3 }
-    ]},
-    // 习惯熬夜型
-    { q: "睡前是不是离不开手机/平板/电视？", tip: "屏幕蓝光和即时刺激会拖偏入睡时间", dim: "habit", options: [
-      { t: "睡前不看电子设备", s: 0 },
-      { t: "看一会儿，但能按时放下", s: 1 },
-      { t: "经常刷到很晚，明知该睡却停不下来", s: 2 },
-      { t: "几乎每晚都这样，报复性熬夜", s: 3 }
-    ]},
-    { q: "有没有「明知该睡了，但不想结束这一天」的感觉？", tip: "这是心理层面的「睡前拖延」", dim: "habit", options: [
-      { t: "没有，到点就睡", s: 0 },
-      { t: "偶尔", s: 1 },
-      { t: "经常", s: 2 },
-      { t: "几乎每天，这是我不睡的主要原因", s: 3 }
-    ]},
-    { q: "你的作息是不是长期不规律？", tip: "比如每天入睡时间差 2 小时以上", dim: "habit", options: [
-      { t: "非常规律，固定时间睡固定时间起", s: 0 },
-      { t: "大体规律，偶尔波动", s: 1 },
-      { t: "不太规律，经常变化", s: 2 },
-      { t: "很乱，没有固定作息", s: 3 }
-    ]}
+    { key: 'bedtime', dim: '生物钟', q: '你通常几点上床？', options: [
+      { t: '22点前',  s: [0,0,0,0] }, { t: '22-23点', s: [0,0,0,1] },
+      { t: '23-24点', s: [0,1,0,2] }, { t: '24点后',  s: [0,3,0,3] } ]},
+    { key: 'fallAsleep', dim: '入睡潜伏期', q: '躺下后多久能睡着？', options: [
+      { t: '15分钟以内', s: [0,0,0,0] }, { t: '15-30分钟', s: [1,0,1,0] },
+      { t: '30-60分钟',  s: [2,1,2,1] }, { t: '1小时以上', s: [3,2,3,2] } ]},
+    { key: 'midNightWake', dim: '睡眠维持', q: '半夜会醒几次？', options: [
+      { t: '基本不醒', s: [0,0,0,0] }, { t: '1次',   s: [0,0,1,0] },
+      { t: '2-3次',   s: [1,0,2,0] }, { t: '3次以上', s: [2,1,3,0] } ]},
+    { key: 'wakeTime', dim: '觉醒时间', q: '早上一般几点醒？', options: [
+      { t: '自然醒 7-8点', s: [0,0,0,0] }, { t: '提前醒 6点前', s: [3,0,0,0] },
+      { t: '被闹钟叫醒',   s: [0,1,0,2] }, { t: '睡到中午',     s: [0,3,0,1] } ]},
+    { key: 'mindContent', dim: '分型锚点', q: '睡不着的时候脑子里在想什么？', options: [
+      { t: '明天的事/工作压力', s: [3,0,0,0] }, { t: '身体哪里不舒服', s: [0,0,3,0] },
+      { t: '手机停不下来',      s: [0,0,0,3] }, { t: '都不想，就是睡不着', s: [0,1,3,0] } ]},
+    { key: 'weekend', dim: '生物钟紊乱特征', q: '周末你会睡懒觉吗？', options: [
+      { t: '睡到自然醒(多2h+)', s: [0,3,0,1] }, { t: '和平时差不多', s: [0,0,0,0] },
+      { t: '比平时还早醒',      s: [2,0,1,0] }, { t: '通宵不睡',     s: [0,1,0,3] } ]},
+    { key: 'mood', dim: '焦虑/神经疲劳', q: '最近情绪状态怎么样？', options: [
+      { t: '焦虑紧张', s: [3,0,1,0] }, { t: '低落没劲', s: [1,0,3,0] },
+      { t: '烦躁易怒', s: [2,0,2,0] }, { t: '还算正常', s: [0,0,0,0] } ]},
+    { key: 'dayState', dim: '日间功能', q: '白天精神状态？', options: [
+      { t: '困得不行',  s: [0,0,3,0] }, { t: '还行但注意力差', s: [0,0,2,0] },
+      { t: '精力旺但晚上又睡不着', s: [0,3,1,1] }, { t: '精神饱满', s: [0,0,0,0] } ]},
+    { key: 'tried', dim: '行为模式', q: '试过什么助眠方法？', options: [
+      { t: '褪黑素/药物', s: [0,0,0,0] }, { t: '冥想/放松', s: [0,0,0,0] },
+      { t: '白噪音/ASMR', s: [0,0,0,0] }, { t: '运动', s: [0,0,0,0] },
+      { t: '都没试过',    s: [0,0,0,0] } ]},
+    { key: 'duration', dim: '慢性化程度', q: '失眠多久了？', options: [
+      { t: '不到1周', s: [0,0,0,0] }, { t: '1-4周', s: [0,0,0,0] },
+      { t: '1-3个月', s: [0,0,0,0] }, { t: '3个月以上', s: [0,0,0,0] } ]},
+    { key: 'impact', dim: '影响评估', q: '影响最大的是什么？', options: [
+      { t: '工作效率下降', s: [0,0,0,0] }, { t: '身体变差', s: [0,0,0,0] },
+      { t: '情绪崩溃',     s: [0,0,0,0] }, { t: '人际关系', s: [0,0,0,0] } ]},
+    { key: 'goal', dim: '期望方向', q: '你最想解决的是？', options: [
+      { t: '快速入睡', s: [0,0,0,0] }, { t: '半夜不醒', s: [0,0,0,0] },
+      { t: '早起不困', s: [0,0,0,0] }, { t: '全都要',   s: [0,0,0,0] } ]}
   ];
 
+  /* 四型名称与小程序 INSOMNIA_TYPES 一致（不带「失眠」后缀） */
+  const ORDER = ['焦虑型', '生物钟紊乱型', '神经疲劳型', '习惯熬夜型'];
+  const KEYS  = ['anxiety', 'circadian', 'neuro', 'habit'];
+
   const types = {
-    anxiety: {
-      name: "焦虑型失眠",
-      emoji: "😰",
-      desc: "你的失眠主要跟「大脑安静不下来」有关。一躺下就开始想事、担心、反刍，身体累了但神经系统还在高速运转。这不是你意志力不够，而是<strong>情绪唤醒系统没有关闭</strong>。对付焦虑型失眠，核心是降低睡前的认知唤醒，而不是逼自己睡。",
+    '焦虑型': {
+      emoji: '😰',
+      desc: '躺下脑子停不下来、越想睡越清醒，工作/生活压力是主因，身体其实很累但精神亢奋。你的失眠主要跟「大脑安静不下来」有关——不是意志力不够，是<strong>情绪唤醒系统没有关闭</strong>。',
       recs: [
-        "睡前 1 小时做「焦虑外化」：把脑子里的担心写到纸上，告诉自己明天再处理",
-        "练习 4-7-8 呼吸法或身体扫描，把注意力从念头转移到呼吸和身体",
-        "如果躺 20 分钟还睡不着，离开床，去 dim 的地方做点无聊的事，有睡意再回床"
+        '睡前 1 小时做「念头外化」：把脑子里的担心写到纸上，告诉自己明天再处理',
+        '练习 4-7-8 呼吸或身体扫描，把注意力从念头拉回身体',
+        '躺 20 分钟还睡不着就离开床，去暗的地方做点无聊的事，有睡意再回床'
       ]
     },
-    circadian: {
-      name: "生物钟紊乱型失眠",
-      emoji: "🌙",
-      desc: "你的生物钟已经偏离了正常的昼夜节律。不是你不困，是你的身体觉得现在还是「白天」。这种情况常见于长期晚睡晚起、轮班、跨时区、或周末过度补觉。解决的关键是<strong>用光照和行为把生物钟慢慢拨回来</strong>，而不是吃助眠药。",
+    '生物钟紊乱型': {
+      emoji: '🌙',
+      desc: '熬夜党、周末疯狂补觉、凌晨才困、早上起不来，作息完全混乱。不是你不困，是你的身体觉得现在还是「白天」——<strong>昼夜节律已经漂移了</strong>。',
       recs: [
-        "每天固定起床时间（误差不超过 30 分钟），即使周末也一样",
-        "起床后 30 分钟内接触自然光或明亮灯光 15~30 分钟",
-        "晚上 22:00 后调暗灯光，减少屏幕亮度；必要时戴防蓝光眼镜"
+        '每天固定起床时间（误差不超过 30 分钟），周末也一样',
+        '起床后 30 分钟内晒 15~30 分钟自然光或亮光',
+        '晚上 22:00 后调暗灯光、降低屏幕亮度，睡前 1 小时别开大灯'
       ]
     },
-    neuro: {
-      name: "神经疲劳型失眠",
-      emoji: "🔋",
-      desc: "你不是不想睡，是大脑和身体长期处于「高耗」状态，自主神经系统平衡被打破了。特征是：白天没精神、晚上睡不着、睡眠浅、多梦、易醒。这种失眠需要<strong>先修复神经系统，而不是逼自己早睡</strong>。",
+    '神经疲劳型': {
+      emoji: '🔋',
+      desc: '明明很困但就是睡不着、白天昏沉沉、感觉身体被掏空，可能伴随头痛/心慌。你不是不想睡，是大脑和身体长期「高耗」，<strong>需要先修复神经系统，而不是逼自己早睡</strong>。',
       recs: [
-        "白天安排 10~20 分钟「主动休息」（闭眼、冥想、散步），而不是一直硬撑",
-        "减少咖啡因和酒精，下午 14:00 后不再喝咖啡/浓茶",
-        "睡前 2 小时做温和拉伸或热水澡，帮助副交感神经接管身体"
+        '白天安排 10~20 分钟「主动休息」（闭眼、冥想、散步），别一直硬撑',
+        '下午 14:00 后不喝咖啡/浓茶，减少酒精',
+        '睡前 2 小时温和拉伸或热水澡，帮副交感神经接管身体'
       ]
     },
-    habit: {
-      name: "习惯熬夜型失眠",
-      emoji: "📱",
-      desc: "你的失眠主要跟作息习惯和行为奖励有关。屏幕、即时信息、报复性熬夜让大脑把「晚睡」和「爽」连在了一起。你不是真的不困，是<strong>睡前的行为模式在主导你</strong>。",
+    '习惯熬夜型': {
+      emoji: '📱',
+      desc: '不是睡不着是不想睡、报复性熬夜、手机停不下来，知道该睡了但控制不住。屏幕和即时信息把「晚睡」和「爽」连在了一起——<strong>是睡前行为模式在主导你</strong>。',
       recs: [
-        "设定一个「睡前 1 小时仪式」：洗漱→调暗灯光→看书/听轻音乐→上床",
-        "手机 22:30 后放到卧室外，或用 App 锁住娱乐软件",
-        "用「早起倒逼晚睡」：先把起床时间固定，白天不补觉，晚上自然困"
+        '设一个「睡前 1 小时仪式」：洗漱→调暗灯→看书/轻音乐→上床',
+        '手机 22:30 后放到卧室外，或用 App 锁住娱乐软件',
+        '用「早起倒逼晚睡」：先固定起床时间，白天不补觉，晚上自然困'
       ]
     }
   };
 
+  /* ── AI 接口（小程序 assess 云函数的 HTTP 访问服务）──
+     未开启 / 超时 / 报错 → 自动降级为本机规则算分，页面不会白屏 */
+  const AI_ENDPOINT = 'https://cloudbase-d8gato5vr0bbb153d.service.tcloudbase.com/assess';
+  const AI_TIMEOUT_MS = 8000;
+
   let current = 0;
-  let answers = [];
+  let answers = {};    // { key: '选项原文' }，与小程序提交格式一致
+  let scoreArr = {};   // { key: [焦虑,生物钟,神经,习惯] }
 
   function startQuiz() {
     document.getElementById('start-view').classList.add('hidden');
@@ -345,9 +319,8 @@
 
     let html = `
       <div class="question-card">
-        <div class="q-num">Q${current + 1}</div>
+        <div class="q-num">Q${current + 1} · ${q.dim}</div>
         <h3>${q.q}</h3>
-        <p class="q-tip">${q.tip}</p>
         <div class="option-list">
     `;
     q.options.forEach((opt, idx) => {
@@ -361,14 +334,15 @@
     html += '</div></div>';
     container.innerHTML = html;
 
-    // 重新动画进度条
     setTimeout(() => {
       document.getElementById('progress-fill').style.width = `${((current + 1) / questions.length) * 100}%`;
     }, 50);
   }
 
   function answer(optIdx) {
-    answers[current] = questions[current].options[optIdx].s;
+    const q = questions[current];
+    answers[q.key] = q.options[optIdx].t;
+    scoreArr[q.key] = q.options[optIdx].s;
     current++;
     if (current < questions.length) {
       renderQuestion();
@@ -377,49 +351,110 @@
     }
   }
 
+  function localScore() {
+    const totals = [0, 0, 0, 0];
+    Object.keys(scoreArr).forEach(k => {
+      scoreArr[k].forEach((v, i) => { totals[i] += v; });
+    });
+    const ranked = totals.map((v, i) => ({ name: ORDER[i], v: v })).sort((a, b) => b.v - a.v);
+    return {
+      totals: totals,
+      primary: ranked[0].name, primaryScore: ranked[0].v,
+      secondary: ranked[1].name, secondaryScore: ranked[1].v
+    };
+  }
+
+  function askAI() {
+    return new Promise((resolve, reject) => {
+      if (!window.fetch || !AI_ENDPOINT) { reject(new Error('no fetch')); return; }
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), AI_TIMEOUT_MS);
+      fetch(AI_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ answers: answers }),
+        signal: ctrl.signal
+      }).then(r => {
+        clearTimeout(timer);
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      }).then(j => {
+        const d = (j && j.data) ? j.data : j;   // 兼容 HTTP 访问服务的包装
+        if (!d || d.error || !d.primary_type) throw new Error((d && d.error) || 'bad payload');
+        resolve(d);
+      }).catch(e => { clearTimeout(timer); reject(e); });
+    });
+  }
+
   function showAnalyze() {
     document.getElementById('quiz-view').classList.add('hidden');
     document.getElementById('analyze-view').classList.remove('hidden');
-    setTimeout(showResult, 1800);
+    const texts = ['正在用 AI 分析你的睡眠密码…', '读取你的失眠画像…', '比对 4 种失眠类型中…', '马上就好，别着急刷手机~'];
+    let i = 0;
+    const t = setInterval(() => {
+      i = (i + 1) % texts.length;
+      document.getElementById('analyze-text').textContent = texts[i];
+    }, 850);
+    const guard = setTimeout(() => { clearInterval(t); showResult(null); }, AI_TIMEOUT_MS + 400);
+    askAI().then(ai => {
+      clearInterval(t); clearTimeout(guard); showResult(ai);
+    }).catch(() => {
+      clearInterval(t); clearTimeout(guard); showResult(null);
+    });
   }
 
-  function showResult() {
+  function showResult(ai) {
     document.getElementById('analyze-view').classList.add('hidden');
     document.getElementById('result-view').classList.remove('hidden');
 
-    const scores = { anxiety: 0, circadian: 0, neuro: 0, habit: 0 };
-    questions.forEach((q, idx) => {
-      scores[q.dim] += answers[idx];
-    });
+    const ls = localScore();
+    let primary, secondary, pScore, sScore, desc, recs, finding;
 
-    const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
-    const primary = sorted[0][0];
-    const secondary = sorted[1][0];
+    if (ai) {
+      primary = types[ai.primary_type] ? ai.primary_type : ls.primary;
+      secondary = (ai.secondary_type && types[ai.secondary_type]) ? ai.secondary_type : ls.secondary;
+      pScore = ls.totals[ORDER.indexOf(primary)];
+      sScore = ls.totals[ORDER.indexOf(secondary)];
+      desc = ai.analysis ? ai.analysis : types[primary].desc;
+      recs = (ai.recommendations && ai.recommendations.length) ? ai.recommendations : types[primary].recs;
+      finding = ai.key_finding || '';
+      document.getElementById('ai-badge').textContent =
+        'AI 分析 · 置信度 ' + Math.round((ai.confidence || 0) * 100) + '%';
+    } else {
+      primary = ls.primary; secondary = ls.secondary;
+      pScore = ls.primaryScore; sScore = ls.secondaryScore;
+      desc = types[primary].desc;
+      recs = types[primary].recs;
+      finding = '';
+      document.getElementById('ai-badge').textContent = '本机规则分析';
+    }
+
     const t = types[primary];
-    const s = types[secondary];
-
     document.getElementById('result-emoji').textContent = t.emoji;
-    document.getElementById('result-type').textContent = t.name;
-    document.getElementById('result-score').textContent = `你的「${t.name}」得分最高（${scores[primary]}/9 分）${scores[secondary] >= 5 ? '，同时带有「' + s.name + '」特征' : ''}`;
-    document.getElementById('result-desc').innerHTML = t.desc;
+    document.getElementById('result-type').textContent = primary;
+    document.getElementById('result-score').textContent =
+      `你的「${primary}」得分最高（${pScore} 分）` + (sScore >= 5 ? `，同时带有「${secondary}」特征` : '');
+    document.getElementById('result-desc').innerHTML = desc;
 
-    const breakdown = document.getElementById('score-breakdown');
-    breakdown.innerHTML = Object.entries(scores).map(([key, val]) => {
-      const tt = types[key];
-      return `<div class="score-item ${key === primary ? 'winner' : ''}">
-        <div class="label">${tt.emoji} ${tt.name}</div>
-        <div class="value">${val}/9</div>
-      </div>`;
-    }).join('');
+    const kf = document.getElementById('key-finding');
+    if (finding) { kf.textContent = '最关键的一点：' + finding; kf.classList.remove('hidden'); }
+    else { kf.classList.add('hidden'); }
 
-    const recList = document.getElementById('recommend-list');
-    recList.innerHTML = t.recs.map(r => `<li>${r}</li>`).join('');
+    document.getElementById('score-breakdown').innerHTML = ORDER.map((name, i) =>
+      `<div class="score-item ${name === primary ? 'winner' : ''}">
+        <div class="label">${types[name].emoji} ${name}</div>
+        <div class="value">${ls.totals[i]}</div>
+      </div>`).join('');
 
-    // 存到全局，供「发给教练」使用
+    document.getElementById('recommend-list').innerHTML = recs.map(r => `<li>${r}</li>`).join('');
+
+    // 存到全局，供「发给教练」使用（结果码格式保持 SM1|TYPE|... 不变）
+    const scores = { anxiety: ls.totals[0], circadian: ls.totals[1], neuro: ls.totals[2], habit: ls.totals[3] };
     window.__type = {
-      pName: t.name, pScore: scores[primary], pKey: primary,
-      sName: s.name, sScore: scores[secondary], sKey: secondary,
-      scores: scores
+      pName: primary, pScore: pScore, pKey: KEYS[ORDER.indexOf(primary)],
+      sName: secondary, sScore: sScore, sKey: KEYS[ORDER.indexOf(secondary)],
+      scores: scores,
+      ai: ai ? { confidence: ai.confidence, analysis: ai.analysis, warning: ai.warning || '' } : null
     };
   }
 
@@ -450,9 +485,10 @@
     const sid = getSid();
     return [
       `【无忧睡眠 · 失眠类型测评】${today}`,
-      `主型：${d.pName} ${d.pScore}/9`,
-      `次型：${d.sName} ${d.sScore}/9${d.sScore >= 5 ? '（叠加型）' : ''}`,
-      `四项得分：焦虑${d.scores.anxiety} 节律${d.scores.circadian} 神经疲劳${d.scores.neuro} 习惯${d.scores.habit}`,
+      `主型：${d.pName} ${d.pScore} 分`,
+      `次型：${d.sName} ${d.sScore} 分${d.sScore >= 5 ? '（叠加型）' : ''}`,
+      `四项得分：焦虑${d.scores.anxiety} 生物钟${d.scores.circadian} 神经疲劳${d.scores.neuro} 习惯熬夜${d.scores.habit}`,
+      d.ai && d.ai.analysis ? `AI 解读：${d.ai.analysis}` : '',
       sid ? `学员码 ${sid}` : '',
       '---',
       buildResultCode()
@@ -504,7 +540,8 @@
 
   function restartQuiz() {
     current = 0;
-    answers = [];
+    answers = {};
+    scoreArr = {};
     document.getElementById('result-view').classList.add('hidden');
     document.getElementById('start-view').classList.remove('hidden');
   }
