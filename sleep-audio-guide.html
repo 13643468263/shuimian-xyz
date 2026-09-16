@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>助眠呼吸引导图 + 舒缓解压音频指南 — 无忧睡眠</title>
-  <meta name="description" content="一张能贴床头的助眠呼吸引导图（吸4秒·停2秒·呼6秒），加一份助眠音频怎么选、怎么听的判断清单：5类音频对照、4条使用纪律、7天判断标准。可免费下载高清图。">
+  <meta name="description" content="一张能贴床头的助眠呼吸引导图（吸4秒·停2秒·呼6秒），加一份助眠音频怎么选、怎么听的判断清单：5类音频对照、4条使用纪律、7天判断标准。微信扫小程序码可直接听助眠音频，高清图免费下载。">
   <link rel="canonical" href="https://shuimian.xyz/sleep-audio-guide.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="无忧睡眠">
   <meta property="og:title" content="助眠呼吸引导图 + 舒缓解压音频指南 — 无忧睡眠">
-  <meta property="og:description" content="吸4秒·停2秒·呼6秒：一张能贴床头的呼吸引导图，加一份助眠音频怎么选、怎么听的判断清单。">
+  <meta property="og:description" content="吸4秒·停2秒·呼6秒：一张能贴床头的呼吸引导图，加一份助眠音频怎么选、怎么听的判断清单。微信扫码进小程序直接听。">
   <meta property="og:url" content="https://shuimian.xyz/sleep-audio-guide.html">
   <meta property="og:image" content="https://shuimian.xyz/images/breathing-guide-cover.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -29,6 +29,19 @@
   .dl-box .t span{font-size:13px;color:var(--text-light);}
   .dl-box .btns{display:flex;gap:10px;flex-wrap:wrap;}
   .fc{font-size:15px;color:var(--text-mid);line-height:1.9;}
+  .qr-box{
+    display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+    background:#fff;border:1px solid var(--border);border-radius:var(--radius);
+    padding:20px 24px;margin:22px 0 26px;box-shadow:var(--shadow);
+  }
+  .qr-box img{width:150px;height:150px;display:block;flex:0 0 auto;}
+  .qr-box .qr-txt{flex:1;min-width:230px;}
+  .qr-box .qr-txt b{display:block;font-size:16px;color:var(--accent-dark);margin-bottom:7px;line-height:1.6;}
+  .qr-box .qr-txt span{font-size:13.5px;color:var(--text-light);line-height:1.8;}
+  @media(max-width:560px){
+    .qr-box{flex-direction:column;text-align:center;}
+    .qr-box img{width:190px;height:190px;}
+  }
   </style>
 </head>
 <body><header class="site-header">
@@ -142,16 +155,25 @@
 </ol>
 <hr>
 
-<h2>四、去哪找：搜这几个词就行</h2>
-<p><strong>不给你固定链接</strong>，因为平台的歌单会下架、会改名，链接失效比没有更糟。给你搜索词，永远能用：</p>
+<h2>四、去哪听：先看小程序，搜不到再自己找</h2>
+
+<div class="qr-box">
+  <img src="/images/miniapp-qr.png" alt="无忧睡眠小程序码，微信扫码进入" loading="lazy">
+  <div class="qr-txt">
+    <b>微信扫码 → 进「无忧睡眠」小程序 → 底部「冥想」。</b>
+    <span>不用下载 App、不用注册，进去选分类，点开就放。<br>小程序里现在 <strong>12 首</strong>，分四类：助眠呼吸 · 身体扫描 · 睡前放松 · 白噪音。</span>
+  </div>
+</div>
+
+<p>如果你要的那一类小程序里暂时没有，就用下面这列词去别的平台自己搜——<strong>不给你固定链接</strong>，因为平台的歌单会下架、会改名，链接失效比没有更糟；给你搜索词，永远能用：</p>
 <table>
-<thead><tr><th>你要的</th><th>搜什么</th></tr></thead>
+<thead><tr><th>你要的类型</th><th>小程序里点哪个（推荐）</th><th>或者去平台搜</th></tr></thead>
 <tbody>
-<tr><td>白噪音</td><td>雨声 · 风扇白噪音 · 海浪声 睡前</td></tr>
-<tr><td>自然音</td><td>森林 环境音 · 篝火 木柴声 · 雷雨 助眠</td></tr>
-<tr><td>钵 / 钟声</td><td>颂钵 疗愈 · 铜磬 · 木鱼 静心</td></tr>
-<tr><td>引导冥想</td><td>身体扫描 引导 · 正念呼吸 引导 · 睡前冥想 女声</td></tr>
-<tr><td>渐进放松</td><td>渐进式肌肉放松 引导</td></tr>
+<tr><td>白噪音</td><td>白噪音 → 海边听浪 · 深山雷雨 · 静夜篝火 · 古寺钟鸣</td><td>雨声 · 风扇白噪音 · 海浪声 睡前</td></tr>
+<tr><td>自然音 / 环境音</td><td>白噪音 → 静夜篝火 · 深山雷雨</td><td>森林 环境音 · 篝火 木柴声 · 雷雨 助眠</td></tr>
+<tr><td>钵 / 钟声</td><td>白噪音 → 古寺钟鸣</td><td>颂钵 疗愈 · 铜磬 · 木鱼 静心</td></tr>
+<tr><td>引导冥想</td><td>睡前放松 → 睡前缓解焦虑 · 轻松入睡 · 放下评判</td><td>身体扫描 引导 · 正念呼吸 引导 · 睡前冥想 女声</td></tr>
+<tr><td>身体扫描 / 渐进放松</td><td>身体扫描 → 睡前身体扫描；助眠呼吸 → 6 分钟正念呼吸</td><td>渐进式肌肉放松 引导</td></tr>
 </tbody>
 </table>
 <p><strong>筛的时候只卡三条</strong>：① 时长 ≥20 分钟（太短会被结尾的声音「惊醒」）② 全程无人声、无歌词 ③ 没有突然的响动、没有广告插播。</p>
@@ -186,6 +208,7 @@
 </ul>
 <blockquote>方法不难，难的是<strong>做够 7 天里 5 天</strong>。今天先做一次，比看完十份资料强。</blockquote>
 <p style="font-size:13px;color:var(--text-light);line-height:1.8;">本资料基于 CBT-I（失眠认知行为疗法）的放松训练与睡眠卫生原理编写，属非药物自助方法，不构成医疗诊断或治疗建议。练习中出现头晕、胸闷请立即停止、回到自然呼吸。长期失眠、情绪困扰或正在服药者，请先咨询专业人士。</p>
+<p style="font-size:13px;color:var(--text-light);line-height:1.8;">无忧睡眠 · 不靠药睡好觉 · shuimian.xyz</p>
   </div>
   <div class="cta-box">
     <h3>呼吸能把警戒档降下来，但「为什么总是你」得另外找</h3>
