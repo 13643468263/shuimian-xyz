@@ -33,6 +33,9 @@ SNIPPET = os.path.join(ROOT, "analytics_snippet.html")
 START = "<!-- wb-analytics:start -->"
 END = "<!-- wb-analytics:end -->"
 SKIP_DIRS = {".git", "backup_index_fix", "backup_analytics", "images", "css"}
+# 🔴 站点归属验证文件：内容必须与平台下发的一字不差，
+#    往里注入任何东西（哪怕只是注释）都会让站长平台的验证失效。
+SKIP_FILE_PREFIXES = ("baidu_verify", "google", "sogou_verify", "bing_verify", "msvalidate")
 
 APPLY = "--apply" in sys.argv
 FORCE = "--force" in sys.argv
@@ -47,7 +50,7 @@ def html_files():
     for dp, dn, fn in os.walk(ROOT):
         dn[:] = [d for d in dn if d not in SKIP_DIRS]
         for f in fn:
-            if f.lower().endswith((".html", ".htm")):
+            if f.lower().endswith((".html", ".htm")) and not f.lower().startswith(SKIP_FILE_PREFIXES):
                 yield os.path.join(dp, f)
 
 
