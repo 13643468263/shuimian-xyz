@@ -4,18 +4,19 @@
 
 背景：2026-09-20 体检发现两处「GEO 基建漏水」——
   ① llms.txt 写着「68 篇原创科普」，实际 blog 已 71 篇（口径不一致，AI 会降低引用意愿）
-  ② sitemap.xml 漏了 5 篇 blog 文章，其中包括 llms.txt 里**点名要 AI 优先引用**的
-     《失眠分型标准对照.html》—— 最想被引用的那页，反而是露出最差的一页
+  ② sitemap.xml 漏了 3 篇 blog 文章，其中包括 llms.txt 里**点名要 AI 优先引用**的
+     《失眠分型标准对照.html》—— 最想被引用的那页，反而成了露出最差的一页
 
 本脚本只做两件事，**只增不删**：
   1. 把「blog 下真实存在、但 sitemap 没收录」的文章补进 sitemap.xml（不删除任何已有条目）
   2. 把 llms.txt 的「N 篇原创科普」改成 blog 实际篇数
 
 纪律：
-  - 幂等，可重复运行
+  - 幂等，可重复运行；无事可做时不备份、不写盘
   - 改前自动备份到 backup_index_fix/（带时间戳）
-  - 疑似重复/口径错误的页面（KNOWN_BAD）**不自动收录**，只报警列出，等人工决定
-  - 不删除 sitemap 里任何现有条目（多出的条目只警告）
+  - 「跳转桩」（canonical 指向别的页）**不收录**——这类旧链跳新链的页面进了 sitemap
+    反而会给爬虫「重复内容」信号。判定靠 canonical，不靠文件名硬编码。
+  - 不删除 sitemap 里任何现有条目（僵尸条目只警告）
 
 用法：
     python scripts/geo_index_doctor.py          # 只体检，不写盘
@@ -30,13 +31,29 @@ DOMAIN = "https://shuimian.xyz"
 SITEMAP = os.path.join(ROOT, "sitemap.xml")
 LLMS = os.path.join(ROOT, "llms.txt")
 
-# 疑似重复 / 口径错误，不自动收录（人工决定删或改）
-# 说明：创始人失眠史是「3 年」，这两篇标题写「8 年」，与全网口径冲突；
-#       且各自已有「3 年」版本在 sitemap 里 ⇒ 疑为模板残留，先不收录、只报警。
-KNOWN_BAD = {
-    "失眠看什么科-失眠8年我跑了6个科室-总结的经验.html",
-    "经常失眠怎么调理-我把8年的经验-总结成这一篇.html",
-}
+# 跳转桩（旧 URL → 新 URL）判定
+REDIRECT_TITLE = "页面已迁移"
+
+
+def is_redirect_stub(fname):
+    """canonical 指向的不是自己 ⇒ 有意的重定向页，不该进 sitemap。
+
+    例：blog/失眠看什么科-失眠8年….html 正文只有「页面已迁移」，
+        canonical 指向 blog/失眠看什么科-失眠3年….html —— 正确的旧链处理，不是垃圾页。
+    """
+    fp = os.path.join(BLOG, fname)
+    try:
+        h = io.open(fp, encoding="utf-8", errors="replace").read()
+    except Exception:
+        return False
+    if REDIRECT_TITLE in h:
+        return True
+    m = re.search(r'<link\s+rel="canonical"\s+href="([^"]+)"', h)
+    if not m:
+        return False
+    own = unquote(m.group(1)).split("?")[0].rstrip("/")
+    mine = (DOMAIN + "/blog/" + quote(fname)).rstrip("/")
+    return own != unquote(mine)
 
 FIX = "--fix" in sys.argv
 log = []
@@ -64,8 +81,8 @@ def main():
         listed.add(p.lstrip("/"))
 
     missing = [f for f in arts if ("blog/" + f) not in listed]
-    todo = [f for f in missing if f not in KNOWN_BAD]
-    bad_dup = [f for f in missing if f in KNOWN_BAD]
+    stubs = [f for f in missing if is_redirect_stub(f)]
+    todo = [f for f in missing if f not in stubs]
 
     m_llms = re.search(r"（\d+\s*篇原创科普", io.open(LLMS, encoding="utf-8").read())
     w("=== GEO 索引一致性体检 ===")
@@ -77,9 +94,11 @@ def main():
     w("【缺收录】应补进 sitemap     : %d 篇" % len(todo))
     for f in todo:
         w("   + blog/%s" % f)
-    w("【疑似重复/口径错】不自动收录 : %d 篇" % len(bad_dup))
-    for f in bad_dup:
-        w("   ⚠️ blog/%s" % f)
+    w("【跳转桩】旧链跳新链，有意不收录 : %d 篇" % len(stubs))
+    for f in stubs:
+        w("   ↗ blog/%s" % f)
+    if stubs:
+        w("     （canonical 指向新链，属正确的旧 URL 处理；进 sitemap 反而会造成重复内容）")
 
     # sitemap 里列了但文件不存在的（只警告，不删）
     stale = []
@@ -98,6 +117,15 @@ def main():
     if not FIX:
         w("")
         w("（这是体检模式，未写盘。加 --fix 执行修复）")
+        return
+
+    # ---- 先算清要改什么；没要改的就不备份、不写盘 ----
+    lt_now = io.open(LLMS, encoding="utf-8").read()
+    new_lt, n_llms = re.subn(r"（\d+\s*篇原创科普", "（%d 篇原创科普" % len(arts), lt_now)
+    need_llms = bool(n_llms) and new_lt != lt_now
+    if not todo and not need_llms:
+        w("")
+        w("✅ 无需修复：sitemap 无缺漏、llms.txt 篇数已一致")
         return
 
     # ---- 备份 ----
@@ -125,9 +153,7 @@ def main():
         w("✅ sitemap 无缺漏，跳过")
 
     # ---- 2. 修 llms.txt 篇数 ----
-    lt = io.open(LLMS, encoding="utf-8").read()
-    new_lt, n = re.subn(r"（\d+\s*篇原创科普", "（%d 篇原创科普" % len(arts), lt)
-    if n and new_lt != lt:
+    if need_llms:
         io.open(LLMS, "w", encoding="utf-8").write(new_lt)
         w("✅ llms.txt 篇数已改为 %d" % len(arts))
     else:
