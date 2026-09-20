@@ -67,6 +67,28 @@
 
     .nf-slogan { text-align: center; margin-top: 40px; color: var(--text-light); font-size: 14px; }
   </style>
+  <script>
+    /* 智能纠错：链接末尾多一个斜杠时（很多平台/输入法会自动补），自动跳回正确页面。
+       例：/camp/ → /camp.html ；/blog/xxx.html/ → /blog/xxx.html */
+    (function () {
+      var p = location.pathname, cand = null;
+      if (p !== '/' && /\/+$/.test(p)) {
+        var q = p.replace(/\/+$/, '');
+        cand = /\.html$/i.test(q) ? q : q + '.html';
+      }
+      if (!cand) return;
+      try {
+        var x = new XMLHttpRequest();
+        x.open('GET', cand, true);
+        x.onreadystatechange = function () {
+          if (x.readyState === 4 && x.status === 200) {
+            location.replace(cand + location.search + location.hash);
+          }
+        };
+        x.send();
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
 
