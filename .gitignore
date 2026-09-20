@@ -2,3 +2,4 @@ build.py
 *.pyc
 __pycache__/
 .DS_Store
+backup_index_fix/
