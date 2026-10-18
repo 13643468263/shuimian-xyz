@@ -73,6 +73,22 @@
     .wechat-card { background: var(--warm-light); border: 1px dashed var(--warm); border-radius: 12px; padding: 20px; margin-top: 24px; text-align: left; }
     .wechat-card h4 { color: var(--warm-dark); font-size: 16px; margin-bottom: 8px; }
     .wechat-card p { color: var(--text-mid); font-size: 14px; line-height: 1.7; margin-bottom: 0; }
+    /* 🆕 2026-10-18 留资卡片 */
+    .lead-card { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 22px 20px; margin-top: 24px; text-align: left; box-shadow: var(--shadow); }
+    .lead-card h4 { font-family: "Noto Serif SC", serif; color: var(--text); font-size: 17px; margin-bottom: 8px; }
+    .lead-card .lead-sub { color: var(--text-mid); font-size: 14px; line-height: 1.75; margin: 0 0 14px; }
+    .lead-card .lead-sub b { color: var(--text); }
+    .lead-row { display: flex; gap: 10px; }
+    .lead-row input { flex: 1 1 auto; min-width: 0; padding: 11px 14px; font-size: 15px; border: 1px solid var(--border); border-radius: 10px; color: var(--text); background: #FBFAF7; outline: none; }
+    .lead-row input:focus { border-color: var(--warm); background: #fff; }
+    .lead-row .btn { flex: 0 0 auto; padding: 11px 20px; font-size: 15px; white-space: nowrap; }
+    .lead-status { font-size: 13px; line-height: 1.6; margin: 10px 0 0; color: var(--text-light); min-height: 18px; }
+    .lead-status.is-err { color: #C0392B; }
+    .lead-status.is-ok { color: #2E7D57; }
+    .lead-done { text-align: center; padding: 10px 0 4px; }
+    .lead-done .ld-ico { font-size: 34px; line-height: 1; margin-bottom: 8px; }
+    .lead-done h4 { color: #2E7D57; margin-bottom: 6px; }
+    .lead-done p { color: var(--text-mid); font-size: 14px; line-height: 1.7; margin: 0; }
     .wechat-id { font-weight: 700; color: var(--text); font-size: 15px; }
 
     .btn-full { width: 100%; justify-content: center; max-width: 360px; }
@@ -180,6 +196,18 @@
           <button class="btn btn-restart btn-full" onclick="restartQuiz()">重新测评</button>
           <a href="/psqi.html" class="btn btn-restart btn-full">知道分型后，再看看你的睡眠质量如何 →</a>
         </div>
+      </div>
+
+      <!-- 🆕 2026-10-18 留资入口：百度/AI 搜索来的陌生人不会主动加微信，
+           但愿意留一个微信号换一份详细分析。这是国内站从「0 留资」到「有留资」的关键一步。 -->
+      <div class="lead-card" id="lead-card">
+        <h4>把你的详细分析发你</h4>
+        <p class="lead-sub">留下微信号，我把 <b>12 题的逐题解读</b>和<b>一份 7 天改善清单</b>发给你。不收费，也不发广告。</p>
+        <div class="lead-row">
+          <input type="text" id="lead-contact" maxlength="60" placeholder="你的微信号" autocomplete="off">
+          <button type="button" id="lead-submit" class="btn btn-primary" onclick="submitLead()">发给我</button>
+        </div>
+        <p class="lead-status" id="lead-status"></p>
       </div>
 
       <div class="wechat-card" id="wechat-cta">
@@ -550,6 +578,59 @@
   }
 
   const WX_ID = 'gao13621262967';
+  /* ========== 留资入口（2026-10-18 新增）==========
+     国内站是静态站、零后端 ⇒ 提交到海外站同一套云数据库的 domestic_leads 表。
+     · Worker 已把跨域响应头回显成访客 Origin，所以 shuimian.xyz 可以写
+     · 该表只授了 INSERT（无 SELECT）⇒ 客户端连自己刚写的那行都读不到，隐私安全
+     · 失败不阻断页面：只提示一句，并给出微信兜底
+  */
+  const LEAD_API = 'https://wuyousleep.net/.cloud/database/rest/domestic_leads';
+  const LEAD_KEY = 'wbpk_Fu5j2M97m76woNurF1iUSc_m0ND2W6BP5CP4iOB2LbqMTKh7NXvwg98';
+
+  async function submitLead() {
+    const input = document.getElementById('lead-contact');
+    const btn = document.getElementById('lead-submit');
+    const st = document.getElementById('lead-status');
+    if (!input || !btn || !st) return;
+    const v = (input.value || '').trim();
+    if (v.length < 3) {
+      st.textContent = '填一个能找到你的微信号，我才发得出去。';
+      st.className = 'lead-status is-err';
+      input.focus();
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = '发送中…';
+    st.textContent = '';
+    st.className = 'lead-status';
+    try {
+      const r = await fetch(LEAD_API, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-wb-webapp-access-key': LEAD_KEY
+        },
+        body: JSON.stringify({
+          channel: '微信',
+          contact: v,
+          sleep_type: window.__type ? window.__type.pName : '',
+          note: buildResultCode(),
+          source: location.pathname,
+          lang: 'zh'
+        })
+      });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      document.getElementById('lead-card').innerHTML =
+        '<div class="lead-done"><div class="ld-ico">🌙</div><h4>收到了</h4>' +
+        '<p>我会亲自加你，把 12 题的逐题解读和一份 7 天清单发过去 —— 通常一两天内。</p></div>';
+    } catch (e) {
+      btn.disabled = false;
+      btn.textContent = '发给我';
+      st.textContent = '刚才没发出去。也可以直接加微信 ' + WX_ID + '，一样能找到我。';
+      st.className = 'lead-status is-err';
+    }
+  }
+
   function copyWx() {
     if (navigator.clipboard) {
       navigator.clipboard.writeText(WX_ID).then(() => alert('微信号已复制，去微信添加吧'));
