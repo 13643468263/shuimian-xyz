@@ -96,6 +96,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://shuimian.xyz/blog/%E7%9D%A1%E7%9C%A0%E6%89%8B%E7%8E%AF%E6%B5%8B%E7%9A%84%E6%B7%B1%E7%9D%A1%E5%87%86%E5%90%97.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://shuimian.xyz/blog/CBT-I%E5%88%BA%E6%BF%80%E6%8E%A7%E5%88%B6%E5%AE%9E%E6%93%8D.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
