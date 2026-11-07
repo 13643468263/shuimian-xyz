@@ -1,0 +1,38 @@
+{
+  "name": "无忧睡眠科技 · 失眠分型测评",
+  "short_name": "无忧睡眠",
+  "description": "2分钟12题，先分清你是哪一种失眠，再动手。",
+  "start_url": "/assess/?src=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0E1E3A",
+  "theme_color": "#0E1E3A",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "/images/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/app-icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/images/app-icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

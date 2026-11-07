@@ -57,6 +57,12 @@
   }
   </script>
 
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0E1E3A">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="无忧睡眠">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="/images/app-icon-180.png">
 </head>
 <body>
 
@@ -363,5 +369,13 @@
 </footer>
 
 <script src="/js/track.js" defer></script>
+<script>
+/* PWA 注册：失败静默，不影响任何已有功能 */
+if ('serviceWorker' in navigator && location.protocol === 'https:') {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/sw.js').catch(function () {});
+  });
+}
+</script>
 </body>
 </html>
